@@ -25,6 +25,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.1",
+    "eslint-config-trybe-backend": "^1.0.4",
     "express": "^4.17.1",
     "http-status-code": "^2.1.0",
     "mongodb": "^4.2.2"
