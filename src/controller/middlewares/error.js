@@ -1,4 +1,4 @@
-const { StatusCodes: { INTERNAL_SERVER_ERROR } } = require('http-status-code');
+const { StatusCodes } = require('http-status-code');
 
 module.exports = async (err, _req, res, _next) => {
   const { status = null, message } = err;
@@ -10,6 +10,6 @@ module.exports = async (err, _req, res, _next) => {
   }
 
   return res
-    .status(INTERNAL_SERVER_ERROR)
+    .status(StatusCodes.INTERNAL_SERVER_ERROR)
     .json({ error: { message: 'sorry, internal error.' } });
 };
