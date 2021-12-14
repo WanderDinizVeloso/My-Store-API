@@ -1,0 +1,20 @@
+{
+  "name": "my-store-api",
+  "version": "1.0.0",
+  "description": "Projeto criado visando colocar em prática os conhecimentos adquisitos em Back-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WanderDinizVeloso/My-Store-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WanderDinizVeloso/My-Store-API/issues"
+  },
+  "homepage": "https://github.com/WanderDinizVeloso/My-Store-API#readme"
+}
