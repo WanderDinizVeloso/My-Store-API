@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/WanderDinizVeloso/My-Store-API/issues"
   },
-  "homepage": "https://github.com/WanderDinizVeloso/My-Store-API#readme"
+  "homepage": "https://github.com/WanderDinizVeloso/My-Store-API#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "express": "^4.17.1",
+    "http-status-code": "^2.1.0",
+    "mongodb": "^4.2.2"
+  }
 }
