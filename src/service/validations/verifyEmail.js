@@ -10,6 +10,8 @@ module.exports = (email) => {
   if (!emailVerificationRegex) {
     return MESSAGE_INVALID_EMAIL;
   }
+
+  return email;
 };
 
 // regex criado através do site regexr.com
