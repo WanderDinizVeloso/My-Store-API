@@ -1,6 +1,6 @@
 const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
-const { update } = require('../../service/documents/users');
+const { update } = require('../../../service/documents/users');
 
 const MESSAGE_OK = 'successfully modified user';
 const MESSAGE_NOT_FOUND = 'user not found';

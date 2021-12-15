@@ -1,6 +1,6 @@
 const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
-const { remove } = require('../../service/documents/users');
+const { remove } = require('../../../service/documents/users');
 
 const MESSAGE_OK = 'user deleted successfully';
 const MESSAGE_NOT_FOUND = 'user not found';

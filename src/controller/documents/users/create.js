@@ -1,6 +1,6 @@
 const { CREATED } = require('http-status-codes').StatusCodes;
 
-const { create } = require('../../service/documents/users');
+const { create } = require('../../../service/documents/users');
 
 const MESSAGE = 'user created successfully.';
 

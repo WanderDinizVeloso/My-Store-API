@@ -8,7 +8,7 @@ const {
   searchAll,
   searchById,
   update,
-} = require('../documents');
+} = require('../documents/users');
 
 const router = express.Router({ mergeParams: true });
 

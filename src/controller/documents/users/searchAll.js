@@ -2,7 +2,7 @@ const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
 const MESSAGE_NOT_FOUND = 'no registered user';
 
-const { searchAll } = require('../../service/documents/users');
+const { searchAll } = require('../../../service/documents/users');
 
 module.exports = async (_req, res, next) => {
   const users = await searchAll();

@@ -1,6 +1,6 @@
 const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
-const { searchById } = require('../../service/documents/users');
+const { searchById } = require('../../../service/documents/users');
 
 const MESSAGE_NOT_FOUND = 'user not found';
 
