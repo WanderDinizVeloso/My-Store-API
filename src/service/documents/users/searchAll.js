@@ -4,11 +4,11 @@ module.exports = async () => {
   const allUsers = await searchAll();
 
   if (!allUsers.length) {
-    return { users: [] };
+    return null;
   }
 
   const users = allUsers
     .map(({ password, ...userWithoutPassword }) => userWithoutPassword);
   
-  return { users };
+  return users;
 };
