@@ -1,15 +1,13 @@
 const { searchById } = require('../../../model');
 
 module.exports = async (id) => {
-  const findUser = await searchById(id);
+  const user = await searchById(id);
 
-  if (!findUser) {
+  if (!user) {
     return null;
   }
 
-  const { password, ...userWithoutPassword } = findUser;
+  const { password, ...userWithoutPassword } = user;
 
-  const user = userWithoutPassword;
-
-  return { user };
+  return userWithoutPassword;
 };
