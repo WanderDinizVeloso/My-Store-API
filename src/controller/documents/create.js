@@ -15,6 +15,6 @@ module.exports = async (req, res, _next) => {
     .status(CREATED)
     .json({
       message: MESSAGE,
-      createdUser: { created },
+      createdUser: created,
     });
 };
