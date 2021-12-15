@@ -10,4 +10,6 @@ module.exports = (password) => {
   if (password.length < LENGTH) {
     return MESSAGE_NO_LENGTH;
   }
+
+  return password;
 };
