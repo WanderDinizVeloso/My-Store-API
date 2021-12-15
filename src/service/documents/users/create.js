@@ -1,9 +1,11 @@
-const { create, searchById } = require('../../../model')('users');
+const { create } = require('../../../model')('users');
+
+const searchById = require('./searchById');
 
 module.exports = async (user) => {
   const { insertedId } = await create(user);
 
-  const { password, ...userWithoutPassword } = await searchById(insertedId);
+  const created = await searchById(insertedId);
 
-  return userWithoutPassword;
+  return created;
 };
