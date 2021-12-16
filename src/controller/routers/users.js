@@ -7,6 +7,7 @@ const {
   validateLastName,
   validateId,
   validatePassword,
+  auth,
 } = require('../middlewares');
 
 const {
@@ -34,6 +35,7 @@ router.post('/',
   wrapper(create));
 
 router.put('/:id',
+  wrapper(auth),
   wrapper(validateId),
   wrapper(validateEmail),
   wrapper(validateFirstName),
@@ -42,6 +44,7 @@ router.put('/:id',
   wrapper(update));
 
 router.delete('/:id',
+  wrapper(auth),
   wrapper(validateId),
   wrapper(remove));
 
