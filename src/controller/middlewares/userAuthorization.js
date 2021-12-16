@@ -6,7 +6,7 @@ const ROLE_ADM = 'adm';
 
 module.exports = async (req, _res, next) => {
   const { id } = req.params;
-  const { id: idAuth, role } = req.user;  
+  const { _id: idAuth, role } = req.user;
 
   if (id !== idAuth && role !== ROLE_ADM) {
     return next({
