@@ -1,6 +1,6 @@
 const { UNAUTHORIZED } = require('http-status-codes').StatusCodes;
 
-const { notAuthorization } = require('../../service/utils/messages');
+const { notAuthorization } = require('../../../service/utils/messages');
 
 const ROLE_ADM = 'adm';
 

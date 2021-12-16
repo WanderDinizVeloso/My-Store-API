@@ -1,8 +1,8 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
-const { verifyEmail } = require('../../service/validations');
+const { verifyEmail } = require('../../../service/validations');
 
-const { required, invalid } = require('../../service/utils/messages');
+const { required, invalid } = require('../../../service/utils/messages');
 
 const EMAIL = 'email';
 

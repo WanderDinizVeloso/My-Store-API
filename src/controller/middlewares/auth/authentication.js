@@ -1,7 +1,7 @@
 const { BAD_REQUEST, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
-const { verifyToken } = require('../../service/auth');
-const { invalid, notFound } = require('../../service/utils/messages');
+const { verifyToken } = require('../../../service/auth');
+const { invalid, notFound } = require('../../../service/utils/messages');
 
 const TOKEN = 'token';
 
