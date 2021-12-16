@@ -25,6 +25,9 @@ const notRegistered = (param) =>
 const registered = () =>
   'User email is already.';
 
+const notAuthorization = () =>
+  'Request not allowed for this user.';
+
 module.exports = {
   required,
   invalid,
@@ -35,4 +38,5 @@ module.exports = {
   notFound,
   notRegistered,
   registered,
+  notAuthorization,
 };
