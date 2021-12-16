@@ -1,26 +1,21 @@
-const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
+const { BAD_REQUEST, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
 const { verifyToken } = require('../../service/auth');
-const { invalid } = require('../../service/utils/messages');
-const { verifyRequeriment } = require('../../service/validations');
+const { invalid, notFound } = require('../../service/utils/messages');
 
 const TOKEN = 'token';
-const LENGTH = 301;
-const MESSAGE_NO_LENGTH = 'no length';
 
 module.exports = (req, _res, next) => {
   const { authorization } = req.headers;
 
-  const verifyAuthorization = verifyRequeriment(authorization, LENGTH);
-
-  if (!verifyAuthorization || verifyAuthorization === MESSAGE_NO_LENGTH) {
+  if (!authorization) {
     return next({
-      status: BAD_REQUEST,
-      message: invalid(TOKEN),
+      status: NOT_FOUND,
+      message: notFound(TOKEN),
     });
   }
 
-  const user = verifyToken(authorization) || null;
+  const user = verifyToken(authorization);
 
   if (!user) {
     return next({
