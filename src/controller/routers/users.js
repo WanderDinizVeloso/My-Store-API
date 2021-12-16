@@ -1,6 +1,13 @@
 const express = require('express');
 
-const { wrapper } = require('../middlewares');
+const {
+  wrapper,
+  validateEmail,
+  validateFirstName,
+  validateLastName,
+  validateId,
+  validatePassword,
+} = require('../middlewares');
 
 const {
   create,
@@ -16,15 +23,26 @@ router.get('/',
   wrapper(searchAll));
 
 router.get('/:id',
+  wrapper(validateId),
   wrapper(searchById));
 
 router.post('/',
+  wrapper(validateEmail),
+  wrapper(validateFirstName),
+  wrapper(validateLastName),  
+  wrapper(validatePassword),
   wrapper(create));
 
 router.put('/:id',
+  wrapper(validateId),
+  wrapper(validateEmail),
+  wrapper(validateFirstName),
+  wrapper(validateLastName),  
+  wrapper(validatePassword),
   wrapper(update));
 
 router.delete('/:id',
+  wrapper(validateId),
   wrapper(remove));
 
 module.exports = router;
