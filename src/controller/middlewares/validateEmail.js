@@ -4,6 +4,8 @@ const { verifyEmail } = require('../../service/validations');
 
 const { required, invalid } = require('../../service/utils/messages');
 
+const EMAIL = 'email';
+
 module.exports = async (req, _res, next) => {
   const { email } = req.body;
 
@@ -12,14 +14,14 @@ module.exports = async (req, _res, next) => {
   if (!validation) {
     return next({
       status: BAD_REQUEST,
-      message: required('email'),
+      message: required(EMAIL),
     });
   }
 
-  if (validation === invalid('email')) {
+  if (validation === invalid(EMAIL)) {
     return next({
       status: BAD_REQUEST,
-      message: invalid('email'),
+      message: invalid(EMAIL),
     });
   }
 
