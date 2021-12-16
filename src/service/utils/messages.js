@@ -1,11 +1,11 @@
 const required = (param) =>
-  `The "${param}" field is required.`;
+  `The '${param}' field is required.`;
 
 const invalid = (param) =>
-  `The invalid "${param}" field.`;
+  `The invalid '${param}' field.`;
 
 const notLength = (param, length) =>
-  `The "${param}" field must contain at least ${length} characters`;
+  `The '${param}' field must contain at least ${length} characters`;
 
 const createdSuccessfully = (param) => 
   `${param} created successfully.`;
@@ -22,6 +22,9 @@ const notFound = (param) =>
 const notRegistered = (param) =>
   `no registered ${param}.`;
 
+  const registered = () =>
+  'User email is already.';
+
 module.exports = {
   required,
   invalid,
@@ -31,4 +34,5 @@ module.exports = {
   modifiedSuccessfully,
   notFound,
   notRegistered,
+  registered,
 };
