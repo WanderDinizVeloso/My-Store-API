@@ -5,6 +5,7 @@ const validateFirstName = require('./validateFirstName');
 const validateLastName = require('./validateLastName');
 const validateId = require('./validateId');
 const validatePassword = require('./validatePassword');
+const auth = require('./auth');
 
 module.exports = {
   error,
@@ -14,4 +15,5 @@ module.exports = {
   validateLastName,
   validateId,
   validatePassword,
+  auth,
 };
