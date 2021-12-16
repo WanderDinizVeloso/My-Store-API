@@ -7,7 +7,7 @@ const {
   validateLastName,
   validateId,
   validatePassword,
-  auth,
+  authentication,
 } = require('../middlewares');
 
 const {
@@ -21,9 +21,11 @@ const {
 const router = express.Router({ mergeParams: true });
 
 router.get('/',
+  wrapper(authentication),
   wrapper(searchAll));
 
 router.get('/:id',
+  wrapper(authentication),
   wrapper(validateId),
   wrapper(searchById));
 
@@ -35,7 +37,7 @@ router.post('/',
   wrapper(create));
 
 router.put('/:id',
-  wrapper(auth),
+  wrapper(authentication),
   wrapper(validateId),
   wrapper(validateEmail),
   wrapper(validateFirstName),
@@ -44,7 +46,7 @@ router.put('/:id',
   wrapper(update));
 
 router.delete('/:id',
-  wrapper(auth),
+  wrapper(authentication),
   wrapper(validateId),
   wrapper(remove));
 
