@@ -2,8 +2,7 @@ const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
 const { remove } = require('../../../service/documents/users');
 
-const MESSAGE_OK = 'user deleted successfully';
-const MESSAGE_NOT_FOUND = 'user not found';
+const { deletedSuccessfully, notFound } = require('../../../service/utils/messages');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
@@ -13,14 +12,14 @@ module.exports = async (req, res, next) => {
   if (!removed) {
     return next({
       status: NOT_FOUND,
-      message: MESSAGE_NOT_FOUND,
+      message: notFound('user'),
     });
   }
 
   return res
     .status(OK)
     .json({
-      message: MESSAGE_OK,
+      message: deletedSuccessfully('user'),
       deletedUser: removed,
     });
 };

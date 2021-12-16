@@ -2,7 +2,7 @@ const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
 const { searchById } = require('../../../service/documents/users');
 
-const MESSAGE_NOT_FOUND = 'user not found';
+const { notFound } = require('../../../service/utils/messages');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
@@ -12,7 +12,7 @@ module.exports = async (req, res, next) => {
   if (!user) {
     return next({
       status: NOT_FOUND,
-      message: MESSAGE_NOT_FOUND,
+      message: notFound('user'),
     });
   }
 

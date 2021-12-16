@@ -2,7 +2,7 @@ const { CREATED } = require('http-status-codes').StatusCodes;
 
 const { create } = require('../../../service/documents/users');
 
-const MESSAGE = 'user created successfully.';
+const { createdSuccessfully } = require('../../../service/utils/messages');
 
 module.exports = async (req, res, _next) => {
   const { firstName, lastName, email, password } = req.body;
@@ -14,7 +14,7 @@ module.exports = async (req, res, _next) => {
   return res
     .status(CREATED)
     .json({
-      message: MESSAGE,
+      message: createdSuccessfully('user'),
       createdUser: created,
     });
 };

@@ -2,8 +2,7 @@ const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
 const { update } = require('../../../service/documents/users');
 
-const MESSAGE_OK = 'successfully modified user';
-const MESSAGE_NOT_FOUND = 'user not found';
+const { modifiedSuccessfully, notFound } = require('../../../service/utils/messages');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
@@ -16,14 +15,14 @@ module.exports = async (req, res, next) => {
   if (!updated) {
     return next({
       status: NOT_FOUND,
-      message: MESSAGE_NOT_FOUND,
+      message: notFound('users'),
     });
   }
 
   return res
     .status(OK)
     .json({
-      message: MESSAGE_OK,
+      message: modifiedSuccessfully('user'),
       updatedUser: updated,
     });
 };

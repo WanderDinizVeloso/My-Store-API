@@ -2,9 +2,7 @@ const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { verifyEmail } = require('../../service/validations');
 
-const MESSAGE_NOT_EXISTS = 'The "email" field is required';
-
-const MESSAGE_NOT_VALID = 'The invalid "email" field';
+const { required, invalid } = require('../../service/utils/messages');
 
 module.exports = async (req, _res, next) => {
   const { email } = req.body;
@@ -14,14 +12,14 @@ module.exports = async (req, _res, next) => {
   if (!validation) {
     return next({
       status: BAD_REQUEST,
-      message: MESSAGE_NOT_EXISTS,
+      message: required('email'),
     });
   }
 
-  if (validation === 'invalid email') {
+  if (validation === invalid('email')) {
     return next({
       status: BAD_REQUEST,
-      message: MESSAGE_NOT_VALID,
+      message: invalid('email'),
     });
   }
 
