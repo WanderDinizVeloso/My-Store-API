@@ -22,7 +22,7 @@ const notFound = (param) =>
 const notRegistered = (param) =>
   `no registered ${param}.`;
 
-  const registered = () =>
+const registered = () =>
   'User email is already.';
 
 module.exports = {
