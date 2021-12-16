@@ -9,9 +9,13 @@ module.exports = async ({ email, password }) => {
 
   const searchUser = allUsers.find((user) => user.email === email);
 
+  if (!allUsers.length || !searchUser) {
+    return null;
+  }
+
   const matchPassword = await compare(password, searchUser.password);
 
-  if (!allUsers.length || !searchUser.length || !matchPassword) {
+  if (!matchPassword) {
     return null;
   }
 
