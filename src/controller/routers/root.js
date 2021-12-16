@@ -6,6 +6,6 @@ const login = require('./login');
 const root = express.Router({ mergeParams: true });
 
 root.use('/users', users);
-root.use('.login', login);
+root.use('/login', login);
 
 module.exports = root;
