@@ -6,6 +6,7 @@ const searchById = require('./searchById');
 const searchAll = require('./searchAll');
 
 const SALT_ROUNDS = 10;
+const USER = 'user';
 
 module.exports = async (user) => {
   const allUsers = await searchAll() || [];
@@ -20,9 +21,13 @@ module.exports = async (user) => {
 
   const hashedPassword = await hash(password, SALT_ROUNDS);
 
-  const userWithHashedPassword = { ...userWithoutPassword, password: hashedPassword };
+  const userWithHashedPasswordAndRole = {
+    ...userWithoutPassword,
+    password: hashedPassword,
+    role: USER,
+  };
 
-  const { insertedId } = await create(userWithHashedPassword);
+  const { insertedId } = await create(userWithHashedPasswordAndRole);
 
   const created = await searchById(insertedId);
 
