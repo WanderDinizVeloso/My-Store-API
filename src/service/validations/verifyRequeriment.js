@@ -5,6 +5,8 @@ module.exports = (param, length) => {
     return null;
   }
 
+  console.log(param.length, length);
+
   if (param.length < length) {
     return MESSAGE_NO_LENGTH;
   }

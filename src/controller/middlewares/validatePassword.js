@@ -9,9 +9,9 @@ const lENGTH = 10;
 const MESSAGE_NO_LENGTH = 'no length';
 
 module.exports = async (req, _res, next) => {
-  const { lastName } = req.body;
+  const { password } = req.body;
 
-  const validation = verifyRequeriment(lastName, lENGTH);
+  const validation = verifyRequeriment(password, lENGTH);
 
   if (!validation) {
     return next({
