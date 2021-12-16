@@ -1,7 +1,11 @@
+const { hash } = require('bcrypt');
+
 const { create } = require('../../../model')('users');
 
 const searchById = require('./searchById');
 const searchAll = require('./searchAll');
+
+const SALT_ROUNDS = 10;
 
 module.exports = async (user) => {
   const allUsers = await searchAll() || [];
@@ -12,7 +16,13 @@ module.exports = async (user) => {
     return null;
   }
 
-  const { insertedId } = await create(user);
+  const { password, ...userWithoutPassword } = user;
+
+  const hashedPassword = await hash(password, SALT_ROUNDS);
+
+  const userWithHashedPassword = { ...userWithoutPassword, password: hashedPassword };
+
+  const { insertedId } = await create(userWithHashedPassword);
 
   const created = await searchById(insertedId);
 
