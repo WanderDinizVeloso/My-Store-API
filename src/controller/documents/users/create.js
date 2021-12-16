@@ -15,7 +15,8 @@ module.exports = async (req, res, next) => {
 
   if (!created) {
     return next({
-      status: BAD_REQUEST, message: registered(),
+      status: BAD_REQUEST,
+      message: registered(),
     });
   }
 

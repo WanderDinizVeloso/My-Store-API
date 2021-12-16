@@ -12,13 +12,15 @@ module.exports = async (req, res, next) => {
 
   if (!removed) {
     return next({
-      status: NOT_FOUND, message: notFound(USER),
+      status: NOT_FOUND,
+      message: notFound(USER),
     });
   }
 
   return res
     .status(OK)
     .json({
-      message: deletedSuccessfully(USER), deletedUser: removed,
+      message: deletedSuccessfully(USER),
+      deletedUser: removed,
     });
 };

@@ -13,13 +13,15 @@ module.exports = async (req, _res, next) => {
 
   if (!validation) {
     return next({
-      status: BAD_REQUEST, message: required(EMAIL),
+      status: BAD_REQUEST,
+      message: required(EMAIL),
     });
   }
 
   if (validation === invalid(EMAIL)) {
     return next({
-      status: BAD_REQUEST, message: invalid(EMAIL),
+      status: BAD_REQUEST,
+      message: invalid(EMAIL),
     });
   }
 

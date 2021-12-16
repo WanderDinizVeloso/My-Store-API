@@ -10,7 +10,8 @@ module.exports = async (req, _res, next) => {
 
   if (id !== idAuth && role !== ROLE_ADM) {
     return next({
-      status: UNAUTHORIZED, message: notAuthorization(),
+      status: UNAUTHORIZED,
+      message: notAuthorization(),
     });
   }
 
