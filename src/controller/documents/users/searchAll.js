@@ -10,8 +10,7 @@ module.exports = async (_req, res, next) => {
 
   if (!users) {
     return next({
-      status: NOT_FOUND,
-      message: notRegistered(USERS),
+      status: NOT_FOUND, message: notRegistered(USERS),
     });
   }
 

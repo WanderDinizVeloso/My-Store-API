@@ -15,8 +15,7 @@ module.exports = async (req, res, next) => {
 
   if (!updated) {
     return next({
-      status: NOT_FOUND,
-      message: notFound(USER),
+      status: NOT_FOUND, message: notFound(USER),
     });
   }
 

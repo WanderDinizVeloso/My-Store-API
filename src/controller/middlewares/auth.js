@@ -10,8 +10,7 @@ module.exports = (req, _res, next) => {
 
   if (!authorization) {
     return next({
-      status: NOT_FOUND,
-      message: notFound(TOKEN),
+      status: NOT_FOUND, message: notFound(TOKEN),
     });
   }
 
@@ -19,8 +18,7 @@ module.exports = (req, _res, next) => {
 
   if (!user) {
     return next({
-      status: BAD_REQUEST,
-      message: invalid(TOKEN),
+      status: BAD_REQUEST, message: invalid(TOKEN),
     });
   }
 

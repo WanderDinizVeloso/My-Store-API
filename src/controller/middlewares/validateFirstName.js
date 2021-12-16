@@ -15,15 +15,13 @@ module.exports = async (req, _res, next) => {
 
   if (!validation) {
     return next({
-      status: BAD_REQUEST,
-      message: required(FIRST_NAME),
+      status: BAD_REQUEST, message: required(FIRST_NAME),
     });
   }
 
   if (validation === MESSAGE_NO_LENGTH) {
     return next({
-      status: BAD_REQUEST,
-      message: notLength(FIRST_NAME, lENGTH),
+      status: BAD_REQUEST, message: notLength(FIRST_NAME, lENGTH),
     });
   }
 
