@@ -7,6 +7,9 @@ const invalid = (param) =>
 const notLength = (param, length) =>
   `The '${param}' field must contain at least ${length} characters`;
 
+const notNumber = (param) =>
+  `The ${param} field must be a number.`;
+
 const createdSuccessfully = (param) => 
   `${param} created successfully.`;
 
@@ -39,4 +42,5 @@ module.exports = {
   notRegistered,
   registered,
   notAuthorization,
+  notNumber,
 };
