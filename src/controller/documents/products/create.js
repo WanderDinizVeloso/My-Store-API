@@ -6,9 +6,9 @@ const { createdSuccessfully, registered } = require('../../../service/utils/mess
 const PRODUCT = 'product';
 
 module.exports = async (req, res, next) => {
-  const { name, unity, quantity, category, price } = req.body;
+  const { name, category, unity, quantity, price } = req.body;
 
-  const newProduct = { name, unity, quantity, category, price };
+  const newProduct = { name, category, unity, quantity, price };
 
   const created = await create(newProduct);
 

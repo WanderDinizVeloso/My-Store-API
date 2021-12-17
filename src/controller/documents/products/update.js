@@ -7,9 +7,9 @@ const PRODUCT = 'product';
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
-  const { name, unity, quantity, category, price } = req.body;
+  const { name, category, unity, quantity, price } = req.body;
 
-  const newUpdate = { id, name, unity, quantity, category, price };
+  const newUpdate = { id, name, category, unity, quantity, price };
 
   const updated = await update(newUpdate);
 
