@@ -22,8 +22,8 @@ const notFound = (param) =>
 const notRegistered = (param) =>
   `no registered ${param}.`;
 
-const registered = () =>
-  'User email is already.';
+const registered = (param) =>
+  `${param} is already.`;
 
 const notAuthorization = () =>
   'Request not allowed for this user.';
