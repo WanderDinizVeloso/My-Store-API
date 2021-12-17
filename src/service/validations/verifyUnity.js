@@ -5,7 +5,7 @@ module.exports = (param, initialNumber, finalNumber) => {
     return null;
   }
 
-  if (param.length > finalNumber && param.length < initialNumber) {
+  if (param.length > finalNumber || param.length < initialNumber) {
     return MESSAGE_NO_LENGTH;
   }
 
