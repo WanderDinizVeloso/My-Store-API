@@ -12,6 +12,7 @@ const validateProductQuantity = require('./validations/validateProductQuantity')
 const validateProductUnity = require('./validations/validateProductUnity');
 const authentication = require('./auth/authentication');
 const userAuthorization = require('./auth/userAuthorization');
+const admAuthorization = require('./auth/admAuthorization');
 
 module.exports = {
   error,
@@ -28,4 +29,5 @@ module.exports = {
   validateProductUnity,
   authentication,
   userAuthorization,
+  admAuthorization,
 };
