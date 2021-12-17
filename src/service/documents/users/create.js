@@ -9,7 +9,7 @@ const SALT_ROUNDS = 10;
 const USER = 'user';
 
 module.exports = async (user) => {
-  const allUsers = await searchAll();
+  const allUsers = await searchAll() || [];
 
   const verifyUser = allUsers.find(({ email }) => email === user.email);
 
