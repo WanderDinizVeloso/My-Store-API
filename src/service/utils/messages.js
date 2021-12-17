@@ -7,6 +7,9 @@ const invalid = (param) =>
 const notLength = (param, length) =>
   `The '${param}' field must contain at least ${length} characters`;
 
+const notBetweenTwoNumbers = (param, initialLength, finalLength) =>
+  `The ${param} field must contain between ${initialLength} and ${finalLength} characters.`;
+
 const notNumber = (param) =>
   `The ${param} field must be a number.`;
 
@@ -35,6 +38,7 @@ module.exports = {
   required,
   invalid,
   notLength,
+  notBetweenTwoNumbers,
   createdSuccessfully,
   deletedSuccessfully,
   modifiedSuccessfully,
