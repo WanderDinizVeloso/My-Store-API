@@ -2,8 +2,7 @@ const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
 const { searchAll } = require('../../../service/documents/products');
 const { notRegistered } = require('../../../service/utils/messages');
-
-const PRODUCTS = 'products';
+const { PRODUCTS } = require('../../../service/utils/strings');
 
 module.exports = async (_req, res, next) => {
   const products = await searchAll();

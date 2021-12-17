@@ -1,6 +1,5 @@
 const { invalid } = require('../utils/messages');
-
-const EMAIL = 'email';
+const { EMAIL } = require('../utils/strings');
 
 module.exports = (email) => {
   const emailVerificationRegex = /(\w+[@]\w+\.[a-z]{3,3}(\.[a-z]{2,2})?)$/.test(email);

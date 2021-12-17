@@ -1,7 +1,7 @@
 const { compare } = require('bcrypt');
 
-const { searchAll } = require('../../../model')('users');
-
+const { USERS } = require('../../utils/strings');
+const { searchAll } = require('../../../model')(USERS);
 const { getToken } = require('../../auth');
 
 module.exports = async ({ email, password }) => {

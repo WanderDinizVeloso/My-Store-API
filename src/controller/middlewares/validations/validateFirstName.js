@@ -3,8 +3,8 @@ const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 const { verifyRequeriment } = require('../../../service/validations');
 
 const { required, notLength } = require('../../../service/utils/messages');
+const { FIRST_NAME } = require('../../../service/utils/strings');
 
-const FIRST_NAME = 'firstName';
 const lENGTH = 3;
 const MESSAGE_NO_LENGTH = 'no length';
 

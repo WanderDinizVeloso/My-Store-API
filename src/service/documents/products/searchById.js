@@ -1,4 +1,5 @@
-const { searchById } = require('../../../model')('products');
+const { PRODUCTS } = require('../../utils/strings');
+const { searchById } = require('../../../model')(PRODUCTS);
 
 module.exports = async (id) => {
   const product = await searchById(id);

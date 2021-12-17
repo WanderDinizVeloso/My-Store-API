@@ -1,10 +1,9 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { verifyNumbers } = require('../../../service/validations');
-
 const { required, notNumber } = require('../../../service/utils/messages');
+const { PRICE } = require('../../../service/utils/strings');
 
-const PRICE = 'price';
 const DECIMAL_PLACES = 2;
 const MESSAGE_NOT_A_NUMBER = 'not a number';
 

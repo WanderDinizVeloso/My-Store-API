@@ -1,6 +1,7 @@
 const { hash } = require('bcrypt');
 
-const { update } = require('../../../model')('users');
+const { USERS } = require('../../utils/strings');
+const { update } = require('../../../model')(USERS);
 
 const searchByid = require('./searchById');
 

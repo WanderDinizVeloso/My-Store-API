@@ -2,8 +2,7 @@ const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
 const { searchAll } = require('../../../service/documents/users');
 const { notRegistered } = require('../../../service/utils/messages');
-
-const USERS = 'users';
+const { USERS } = require('../../../service/utils/strings');
 
 module.exports = async (_req, res, next) => {
   const users = await searchAll();

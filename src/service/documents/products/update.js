@@ -1,4 +1,5 @@
-const { update } = require('../../../model')('products');
+const { PRODUCTS } = require('../../utils/strings');
+const { update } = require('../../../model')(PRODUCTS);
 
 const searchById = require('./searchById');
 

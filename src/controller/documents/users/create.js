@@ -2,9 +2,7 @@ const { CREATED, BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { create } = require('../../../service/documents/users');
 const { createdSuccessfully, registered } = require('../../../service/utils/messages');
-
-const USER = 'user';
-const EMAIL = 'email';
+const { EMAIL, USER } = require('../../../service/utils/strings');
 
 module.exports = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;

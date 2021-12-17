@@ -1,8 +1,7 @@
 const { UNAUTHORIZED } = require('http-status-codes').StatusCodes;
 
 const { notAuthorization } = require('../../../service/utils/messages');
-
-const ROLE_ADM = 'adm';
+const { ROLE_ADM } = require('../../../service/utils/strings');
 
 module.exports = async (req, _res, next) => {
   const { id } = req.params;

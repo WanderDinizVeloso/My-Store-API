@@ -2,8 +2,7 @@ const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
 
 const { searchById } = require('../../../service/documents/products');
 const { notFound } = require('../../../service/utils/messages');
-
-const PRODUCT = 'product';
+const { PRODUCT } = require('../../../service/utils/strings');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;

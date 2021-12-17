@@ -1,10 +1,9 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { verifyRequeriment } = require('../../../service/validations');
-
 const { required, notLength } = require('../../../service/utils/messages');
+const { PASSWORD } = require('../../../service/utils/strings');
 
-const PASSWORD = 'password';
 const lENGTH = 10;
 const MESSAGE_NO_LENGTH = 'no length';
 

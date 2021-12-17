@@ -1,4 +1,5 @@
-const { remove } = require('../../../model')('users');
+const { USERS } = require('../../utils/strings');
+const { remove } = require('../../../model')(USERS);
 
 const searchByid = require('./searchById');
 

@@ -1,10 +1,8 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { verifyEmail } = require('../../../service/validations');
-
 const { required, invalid } = require('../../../service/utils/messages');
-
-const EMAIL = 'email';
+const { EMAIL } = require('../../../service/utils/strings');
 
 module.exports = async (req, _res, next) => {
   const { email } = req.body;

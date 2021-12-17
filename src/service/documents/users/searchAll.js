@@ -1,4 +1,5 @@
-const { searchAll } = require('../../../model')('users');
+const { USERS } = require('../../utils/strings');
+const { searchAll } = require('../../../model')(USERS);
 
 module.exports = async () => {
   const allUsers = await searchAll();

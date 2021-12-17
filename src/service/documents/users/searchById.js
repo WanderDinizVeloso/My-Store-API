@@ -1,4 +1,5 @@
-const { searchById } = require('../../../model')('users');
+const { USERS } = require('../../utils/strings');
+const { searchById } = require('../../../model')(USERS);
 
 module.exports = async (id) => {
   const user = await searchById(id);
