@@ -1,8 +1,7 @@
 const { CREATED, BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { create } = require('../../../service/documents/users');
-const { createdSuccessfully } = require('../../../service/utils/messages');
-const { registered } = require('../../../service/utils/messages');
+const { createdSuccessfully, registered } = require('../../../service/utils/messages');
 
 const USER = 'user';
 const EMAIL = 'email';
