@@ -2,7 +2,7 @@ const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { verifyUnity } = require('../../../service/validations');
 
-const { required, notLength } = require('../../../service/utils/messages');
+const { required, notBetweenTwoNumbers } = require('../../../service/utils/messages');
 
 const UNITY = 'unity';
 const INITIAL_LENGTH = 2;
@@ -24,9 +24,13 @@ module.exports = async (req, _res, next) => {
   if (validation === MESSAGE_NO_LENGTH) {
     return next({
       status: BAD_REQUEST,
-      message: notLength(UNITY, INITIAL_LENGTH, FINAL_LENGTH),
+      message: notBetweenTwoNumbers(UNITY, INITIAL_LENGTH, FINAL_LENGTH),
     });
   }
+
+  const upperCase = unity.toUpperCase();
+
+  req.body.unity = upperCase;
 
   return next();
 };
