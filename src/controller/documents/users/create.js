@@ -5,6 +5,7 @@ const { createdSuccessfully } = require('../../../service/utils/messages');
 const { registered } = require('../../../service/utils/messages');
 
 const USER = 'user';
+const EMAIL = 'email';
 
 module.exports = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;
@@ -16,7 +17,7 @@ module.exports = async (req, res, next) => {
   if (!created) {
     return next({
       status: BAD_REQUEST,
-      message: registered(),
+      message: registered(EMAIL),
     });
   }
 
