@@ -3,7 +3,7 @@ const { update } = require('../../../model')('products');
 const searchById = require('./searchById');
 
 module.exports = async (dataProduct) => {
-  const { id, dataProductWithoutId } = dataProduct;
+  const { id, ...dataProductWithoutId } = dataProduct;
 
   const product = await searchById(id);
 
