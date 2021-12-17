@@ -5,6 +5,9 @@ const FIRST_NAME = 'firstName';
 const ID = 'id';
 const LAST_NAME = 'lastName';
 const NAME = 'name';
+const NO_LENGTH = 'no length';
+const NOT_A_NUMBER = 'not a number';
+const NOT_A_EMAIL = 'not a email';
 const PASSWORD = 'password';
 const PRICE = 'price';
 const PRODUCT = 'product';
@@ -24,6 +27,9 @@ module.exports = {
   ID,
   LAST_NAME,
   NAME,
+  NO_LENGTH,
+  NOT_A_NUMBER,
+  NOT_A_EMAIL,
   PASSWORD,
   PRICE,
   PRODUCT,

@@ -2,10 +2,9 @@ const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { verifyRequeriment } = require('../../../service/validations');
 const { required, notLength } = require('../../../service/utils/messages');
-const { CATEGORY } = require('../../../service/utils/strings');
+const { CATEGORY, NO_LENGTH } = require('../../../service/utils/strings');
 
 const lENGTH = 4;
-const MESSAGE_NO_LENGTH = 'no length';
 
 module.exports = async (req, _res, next) => {
   const { category } = req.body;
@@ -19,7 +18,7 @@ module.exports = async (req, _res, next) => {
     });
   }
 
-  if (validation === MESSAGE_NO_LENGTH) {
+  if (validation === NO_LENGTH) {
     return next({
       status: BAD_REQUEST,
       message: notLength(CATEGORY, lENGTH),

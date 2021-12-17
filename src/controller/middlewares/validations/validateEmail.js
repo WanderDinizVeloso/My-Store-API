@@ -2,7 +2,7 @@ const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { verifyEmail } = require('../../../service/validations');
 const { required, invalid } = require('../../../service/utils/messages');
-const { EMAIL } = require('../../../service/utils/strings');
+const { EMAIL, NOT_A_EMAIL } = require('../../../service/utils/strings');
 
 module.exports = async (req, _res, next) => {
   const { email } = req.body;
@@ -16,7 +16,7 @@ module.exports = async (req, _res, next) => {
     });
   }
 
-  if (validation === invalid(EMAIL)) {
+  if (validation === NOT_A_EMAIL) {
     return next({
       status: BAD_REQUEST,
       message: invalid(EMAIL),

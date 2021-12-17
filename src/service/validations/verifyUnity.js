@@ -1,4 +1,4 @@
-const MESSAGE_NO_LENGTH = 'no length';
+const { NO_LENGTH } = require('../utils/strings');
 
 module.exports = (param, initialNumber, finalNumber) => {
   if (!param || param === '') {
@@ -6,7 +6,7 @@ module.exports = (param, initialNumber, finalNumber) => {
   }
 
   if (param.length > finalNumber || param.length < initialNumber) {
-    return MESSAGE_NO_LENGTH;
+    return NO_LENGTH;
   }
 
   return param;

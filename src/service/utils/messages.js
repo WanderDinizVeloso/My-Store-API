@@ -34,6 +34,9 @@ const registered = (param) =>
 const notAuthorization = () =>
   'Request not allowed for this user.';
 
+const internalError = () =>
+  'sorry, internal error.';
+
 module.exports = {
   required,
   invalid,
@@ -47,4 +50,5 @@ module.exports = {
   registered,
   notAuthorization,
   notNumber,
+  internalError,
 };

@@ -1,6 +1,6 @@
 const { INTERNAL_SERVER_ERROR } = require('http-status-codes').StatusCodes;
 
-const ERROR_MESSAGE = 'sorry, internal error.';
+const { internalError } = require('../../../service/utils/messages');
 
 module.exports = async (err, _req, res, _next) => {
   const { status = null, message } = err;
@@ -13,5 +13,5 @@ module.exports = async (err, _req, res, _next) => {
 
   return res
     .status(INTERNAL_SERVER_ERROR)
-    .json({ error: { message: ERROR_MESSAGE } });
+    .json({ error: { message: internalError() } });
 };
