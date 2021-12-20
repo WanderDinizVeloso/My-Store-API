@@ -4,6 +4,13 @@ const { create } = require('../../../service/documents/users');
 const { createdSuccessfully, registered } = require('../../../service/utils/messages');
 const { EMAIL, USER } = require('../../../service/utils/strings');
 
+const ERROR = {
+  BAD_REQUEST: {
+    status: BAD_REQUEST,
+    message: registered(EMAIL),
+  },
+};
+
 module.exports = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;
 
@@ -11,12 +18,7 @@ module.exports = async (req, res, next) => {
 
   const created = await create(newUser);
 
-  if (!created) {
-    return next({
-      status: BAD_REQUEST,
-      message: registered(EMAIL),
-    });
-  }
+  if (!created) { return next(ERROR.BAD_REQUEST); }
 
   return res
     .status(CREATED)

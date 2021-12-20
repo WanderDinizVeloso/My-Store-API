@@ -4,6 +4,13 @@ const { create } = require('../../../service/documents/products');
 const { createdSuccessfully, registered } = require('../../../service/utils/messages');
 const { PRODUCT } = require('../../../service/utils/strings');
 
+const ERROR = {
+  BAD_REQUEST: {
+    status: BAD_REQUEST,
+    message: registered(PRODUCT),
+  },
+};
+
 module.exports = async (req, res, next) => {
   const { name, category, unity, quantity, price } = req.body;
 
@@ -11,12 +18,7 @@ module.exports = async (req, res, next) => {
 
   const created = await create(newProduct);
 
-  if (!created) {
-    return next({
-      status: BAD_REQUEST,
-      message: registered(PRODUCT),
-    });
-  }
+  if (!created) { return next(ERROR.BAD_REQUEST); }
 
   return res
     .status(CREATED)

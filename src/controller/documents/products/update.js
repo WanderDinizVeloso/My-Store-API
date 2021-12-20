@@ -4,6 +4,13 @@ const { update } = require('../../../service/documents/products');
 const { modifiedSuccessfully, notFound } = require('../../../service/utils/messages');
 const { PRODUCT } = require('../../../service/utils/strings');
 
+const ERROR = {
+  NOT_FOUND: {
+    status: NOT_FOUND,
+    message: notFound(PRODUCT),
+  },
+};
+
 module.exports = async (req, res, next) => {
   const { id } = req.params;
   const { name, category, unity, quantity, price } = req.body;
@@ -12,12 +19,7 @@ module.exports = async (req, res, next) => {
 
   const updated = await update(newUpdate);
 
-  if (!updated) {
-    return next({
-      status: NOT_FOUND,
-      message: notFound(PRODUCT),
-    });
-  }
+  if (!updated) { return next(ERROR.NOT_FOUND); }
 
   return res
     .status(OK)
