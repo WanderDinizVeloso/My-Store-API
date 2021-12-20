@@ -13,6 +13,9 @@ const notBetweenTwoNumbers = (param, initialLength, finalLength) =>
 const notNumber = (param) =>
   `The ${param} field must be a number.`;
 
+const notString = (param) =>
+  `The ${param} field must be a string.`;
+
 const createdSuccessfully = (param) => 
   `${param} created successfully.`;
 
@@ -50,5 +53,6 @@ module.exports = {
   registered,
   notAuthorization,
   notNumber,
+  notString,
   internalError,
 };
