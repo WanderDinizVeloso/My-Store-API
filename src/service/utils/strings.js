@@ -8,6 +8,7 @@ const NAME = 'name';
 const NO_LENGTH = 'no length';
 const NOT_A_NUMBER = 'not a number';
 const NOT_A_EMAIL = 'not a email';
+const NOT_A_STRING = 'not a string';
 const PASSWORD = 'password';
 const PRICE = 'price';
 const PRODUCT = 'product';
@@ -30,6 +31,7 @@ module.exports = {
   NO_LENGTH,
   NOT_A_NUMBER,
   NOT_A_EMAIL,
+  NOT_A_STRING,
   PASSWORD,
   PRICE,
   PRODUCT,
