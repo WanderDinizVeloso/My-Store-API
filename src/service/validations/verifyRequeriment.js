@@ -1,7 +1,7 @@
 const { NO_LENGTH, NOT_A_STRING } = require('../utils/strings');
 
 module.exports = (param, length) => {
-  if (!param || param === '') {
+  if (!param) {
     return null;
   }
 
