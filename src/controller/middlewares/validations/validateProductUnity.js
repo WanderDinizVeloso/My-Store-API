@@ -28,8 +28,8 @@ module.exports = async (req, _res, next) => {
   const validation = verifyUnity(unity, INITIAL_LENGTH, FINAL_LENGTH);
 
   if (!validation) { return next(ERROR.BAD_REQUEST_REQUIRED); }
-  if (validation === NO_LENGTH) { return next(ERROR.BAD_REQUEST_NOT_LENGTH); }
   if (validation === NOT_A_STRING) { return next(ERROR.BAD_REQUEST_NOT_STRING); }
+  if (validation === NO_LENGTH) { return next(ERROR.BAD_REQUEST_NOT_LENGTH); }
 
   const upperCase = unity.toUpperCase();
 
