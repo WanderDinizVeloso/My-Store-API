@@ -4,7 +4,7 @@ const { verifyRequeriment } = require('../../../service/validations');
 const { required, notLength, notString } = require('../../../service/utils/messages');
 const { FIRST_NAME, NO_LENGTH, NOT_A_STRING } = require('../../../service/utils/strings');
 
-const lENGTH = 3;
+const LENGTH = 3;
 
 const ERROR = {
   BAD_REQUEST_REQUIRED: {
@@ -13,7 +13,7 @@ const ERROR = {
   },
   BAD_REQUEST_NOT_LENGTH: {
     status: BAD_REQUEST,
-    message: notLength(FIRST_NAME, lENGTH),
+    message: notLength(FIRST_NAME, LENGTH),
   },
   BAD_REQUEST_NOT_STRING: {
     status: BAD_REQUEST,
@@ -24,7 +24,7 @@ const ERROR = {
 module.exports = async (req, _res, next) => {
   const { firstName } = req.body;
 
-  const validation = verifyRequeriment(firstName, lENGTH);
+  const validation = verifyRequeriment(firstName, LENGTH);
 
   if (!validation) { return next(ERROR.BAD_REQUEST_REQUIRED); }
   if (validation === NO_LENGTH) { return next(ERROR.BAD_REQUEST_NOT_LENGTH); }
