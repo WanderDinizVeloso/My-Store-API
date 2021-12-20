@@ -16,6 +16,8 @@ const PRODUCT = 'product';
 const PRODUCTS = 'products';
 const QUANTITY = 'quantity';
 const ROLE_ADM = 'adm';
+const SALES = 'sales';
+const SALE = 'sale';
 const TOKEN = 'token';
 const UNITY = 'unity';
 const USER = 'user';
@@ -40,6 +42,8 @@ module.exports = {
   PRODUCTS,
   QUANTITY,
   ROLE_ADM,
+  SALE,
+  SALES,
   TOKEN,
   UNITY,
   USER,
