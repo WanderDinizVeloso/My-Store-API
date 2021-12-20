@@ -40,6 +40,12 @@ const notAuthorization = () =>
 const internalError = () =>
   'sorry, internal error.';
 
+const invalidCaracters = (param) =>
+  `The '${param}' field must contain at least one: `
+  + 'capital letter, '
+  + 'a number and '
+  + 'a special character (!, $, #, %, _).';
+
 module.exports = {
   required,
   invalid,
@@ -55,4 +61,5 @@ module.exports = {
   notNumber,
   notString,
   internalError,
+  invalidCaracters,
 };
