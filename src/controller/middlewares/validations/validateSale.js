@@ -1,7 +1,13 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
-const { verifySales } = require('../../../service/validations');
-const { invalid } = require('../../../service/utils/messages');
+const { verifySales, verifyProductInventary } = require('../../../service/validations');
+
+const {
+  invalid,
+  insufficientStock,
+  productNotRegistered,
+} = require('../../../service/utils/messages');
+
 const { SALE } = require('../../../service/utils/strings');
 
 const ERROR = {
@@ -9,6 +15,14 @@ const ERROR = {
     status: BAD_REQUEST,
     message: invalid(SALE),
   },
+  BAD_REQUEST_NOT_REGISTERED: {
+    status: BAD_REQUEST,
+    message: productNotRegistered(),
+  },
+  BAD_REQUEST_STOCK: (productList) => ({
+    status: BAD_REQUEST,
+    message: insufficientStock(productList),
+  }),
 };
 
 module.exports = async (req, _res, next) => {
@@ -18,7 +32,15 @@ module.exports = async (req, _res, next) => {
 
   if (validation.error) { return next(ERROR.BAD_REQUEST); }
 
-  req.body = validation.products;
+  const checkInventary = await verifyProductInventary(validation.products);
+
+  if (checkInventary.error) { return next(ERROR.BAD_REQUEST_STOCK(checkInventary.errorList)); }
+
+  if (checkInventary.count !== saleData.length) { return next(ERROR.BAD_REQUEST_NOT_REGISTERED); }
+
+  const newBody = checkInventary.products;
+
+  req.body = newBody;
 
   return next();
 };
