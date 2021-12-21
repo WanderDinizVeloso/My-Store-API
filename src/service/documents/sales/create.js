@@ -1,8 +1,8 @@
 const { SALES } = require('../../utils/strings');
 const { create } = require('../../../model')(SALES);
+const { salesWithTotalAndAmount } = require('../../functions');
 
 const searchById = require('./searchById');
-const salesWithTotalAndAmount = require('../../utils/salesWithTotalAndAmount');
 
 module.exports = async (sales) => {
   const result = salesWithTotalAndAmount(sales);
