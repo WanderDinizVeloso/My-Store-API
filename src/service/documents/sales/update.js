@@ -4,20 +4,17 @@ const { salesWithTotalAndAmount } = require('../../functions');
 
 const searchById = require('./searchById');
 
-module.exports = async (newDataSale) => {
-  const { id, dataSale } = newDataSale;
-
-  const result = salesWithTotalAndAmount(dataSale);
+module.exports = async ({ id, dataSale, userId }) => {
+  const newSaleData = salesWithTotalAndAmount(dataSale);
   const sale = await searchById(id);
 
   if (!sale) {
     return null;
   }
 
-  const modifiedSale = {
-    ...sale,
-    ...result,
-  };
+  const date = new Date();
+  const modifiedDate = { userId, date };
+  const modifiedSale = { modifiedDate, ...sale, ...newSaleData };
 
   const { modifiedCount } = await update(modifiedSale);
 

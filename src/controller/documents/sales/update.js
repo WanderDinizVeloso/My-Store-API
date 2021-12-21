@@ -13,12 +13,10 @@ const ERROR = {
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
-
+  const { _id: userId } = req.user;
   const dataSale = req.body;
 
-  const newDataSale = { id, dataSale };
-
-  const updated = await update(newDataSale);
+  const updated = await update({ id, dataSale, userId });
 
   if (!updated) { return next(ERROR.NOT_FOUND); }
 
