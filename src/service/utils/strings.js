@@ -3,6 +3,7 @@ const EMAIL = 'email';
 const EMAIL_OR_PASSWORD = 'email or password';
 const FIRST_NAME = 'firstName';
 const ID = 'id';
+const INVALID_DATA_SALE = 'invalid data sale';
 const LAST_NAME = 'lastName';
 const NAME = 'name';
 const NO_LENGTH = 'no length';
@@ -29,6 +30,7 @@ module.exports = {
   EMAIL_OR_PASSWORD,
   FIRST_NAME,
   ID,
+  INVALID_DATA_SALE,
   LAST_NAME,
   NAME,
   NO_LENGTH,
