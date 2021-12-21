@@ -5,6 +5,8 @@ const verifyUnity = require('./verifyUnity');
 const verifyCaracters = require('./verifyCaracters');
 const verifyAdm = require('./verifyAdm');
 const verifySales = require('./verifySales');
+const verifySalesNumbers = require('./verifySalesNumbers');
+const verifySalesStrings = require('./verifySalesStrings');
 
 module.exports = {
   verifyEmail,
@@ -14,4 +16,6 @@ module.exports = {
   verifyCaracters,
   verifyAdm,
   verifySales,
+  verifySalesNumbers,
+  verifySalesStrings,
 };
