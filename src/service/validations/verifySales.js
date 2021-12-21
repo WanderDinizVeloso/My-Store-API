@@ -5,7 +5,8 @@ const verifyUnity = require('./verifyUnity');
 const LENGTH = 4;
 const INITIAL_LENGTH = 2;
 const FINAL_LENGTH = 3;
-const DECIMAL_PLACES = 2;
+const QUANTITY_DECIMAL_PLACES = 3;
+const PRICE_DECIMAL_PLACES = 2;
 
 const validationStrings = (sale) => {
   const { name, category, unity } = sale;
@@ -38,8 +39,8 @@ const dataConvert = (sale) => {
   const { unity, quantity, price } = sale;
 
   const upperCase = unity.toUpperCase();
-  const quantityConvert = quantity.toFixed(DECIMAL_PLACES);
-  const priceConvert = price.toFixed(DECIMAL_PLACES);
+  const quantityConvert = quantity.toFixed(QUANTITY_DECIMAL_PLACES);
+  const priceConvert = price.toFixed(PRICE_DECIMAL_PLACES);
 
   const saleModified = {
     ...sale,
