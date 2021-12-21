@@ -25,6 +25,6 @@ module.exports = async (req, res, next) => {
     .status(OK)
     .json({
       message: modifiedSuccessfully(PRODUCT),
-      updatedUser: updated,
+      updatedProduct: updated,
     });
 };
