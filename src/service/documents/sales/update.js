@@ -2,9 +2,14 @@ const { SALES } = require('../../utils/strings');
 const { update } = require('../../../model')(SALES);
 
 const searchById = require('./searchById');
+const salesWithTotalAndAmount = require('../../utils/salesWithTotalAndAmount');
 
-module.exports = async (dataSale) => {
-  const { id, ...dataSaleWithoutId } = dataSale;
+module.exports = async (newDataSale) => {
+  const { id, dataSale } = newDataSale;
+
+  const result = salesWithTotalAndAmount(dataSale);
+
+  console.log(result);
 
   const sale = await searchById(id);
 
@@ -14,14 +19,14 @@ module.exports = async (dataSale) => {
 
   const modifiedSale = {
     ...sale,
-    ...dataSaleWithoutId,
+    ...result,
   };
 
   const { modifiedCount } = await update(modifiedSale);
 
-  const newSaleData = await searchById(id);
+  const newData = await searchById(id);
 
-  const updated = { modifiedCount, newSaleData };
+  const updated = { modifiedCount, newData };
 
   return updated;
 };
