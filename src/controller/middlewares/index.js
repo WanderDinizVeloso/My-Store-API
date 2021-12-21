@@ -10,6 +10,7 @@ const validateProductName = require('./validations/validateProductName');
 const validateProductPrice = require('./validations/validateProductPrice');
 const validateProductQuantity = require('./validations/validateProductQuantity');
 const validateProductUnity = require('./validations/validateProductUnity');
+const validateSale = require('./validations/validateSale');
 const authentication = require('./auth/authentication');
 const userAuthorization = require('./auth/userAuthorization');
 const admAuthorization = require('./auth/admAuthorization');
@@ -27,6 +28,7 @@ module.exports = {
   validateProductPrice,
   validateProductQuantity,
   validateProductUnity,
+  validateSale,
   authentication,
   userAuthorization,
   admAuthorization,
