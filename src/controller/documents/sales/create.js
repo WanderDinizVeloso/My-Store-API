@@ -13,8 +13,9 @@ const ERROR = {
 
 module.exports = async (req, res, next) => {
   const newSale = req.body;
+  const { _id: userId } = req.user;
 
-  const created = await create(newSale);
+  const created = await create({ newSale, userId });
 
   if (!created) { return next(ERROR.BAD_REQUEST); }
 
