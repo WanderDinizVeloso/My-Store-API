@@ -5,11 +5,11 @@ const { salesWithTotalAndAmount } = require('../../functions');
 const searchById = require('./searchById');
 
 module.exports = async ({ sales, userId }) => {
-  const result = salesWithTotalAndAmount(sales);
+  const newSales = salesWithTotalAndAmount(sales);
   
   const date = new Date();
   const creationDate = { userId, date };
-  const createdSale = { creationDate, ...result };
+  const createdSale = { creationDate, ...newSales };
 
   const { insertedId } = await create(createdSale);
 
