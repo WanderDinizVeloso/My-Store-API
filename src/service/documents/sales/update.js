@@ -8,9 +8,6 @@ module.exports = async (newDataSale) => {
   const { id, dataSale } = newDataSale;
 
   const result = salesWithTotalAndAmount(dataSale);
-
-  console.log(result);
-
   const sale = await searchById(id);
 
   if (!sale) {
