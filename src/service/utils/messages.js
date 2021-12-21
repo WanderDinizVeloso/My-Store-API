@@ -46,6 +46,12 @@ const invalidCaracters = (param) =>
   + 'a number and '
   + 'a special character (!, $, #, %, _).';
 
+const insufficientStock = (param) => 
+  `Insufficient stock of products: ${param}`;
+
+const productNotRegistered = () => 
+  'There is a product not registered in the shopping list';
+
 module.exports = {
   required,
   invalid,
@@ -62,4 +68,6 @@ module.exports = {
   notString,
   internalError,
   invalidCaracters,
+  insufficientStock,
+  productNotRegistered,
 };
