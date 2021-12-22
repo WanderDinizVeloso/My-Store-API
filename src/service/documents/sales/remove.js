@@ -1,5 +1,7 @@
-const { SALES } = require('../../utils/strings');
+const { SALES, ADDITION } = require('../../utils/strings');
 const { remove } = require('../../../model')(SALES);
+
+const { updateBalance } = require('../../functions');
 
 const searchById = require('./searchById');
 
@@ -13,7 +15,8 @@ module.exports = async (id) => {
   const { deletedCount } = await remove(id);
 
   const deleted = { deletedCount, saleDeleted };
-  console.log(deleted);
+
+  await updateBalance(saleDeleted, ADDITION);
 
   return deleted;
 };
