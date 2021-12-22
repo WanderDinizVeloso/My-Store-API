@@ -1,6 +1,6 @@
-const { SALES } = require('../../utils/strings');
+const { SALES, SUBTRACTION } = require('../../utils/strings');
 const { create } = require('../../../model')(SALES);
-const { salesWithTotalAndAmount } = require('../../functions');
+const { salesWithTotalAndAmount, updateBalance } = require('../../functions');
 
 const searchById = require('./searchById');
 
@@ -14,6 +14,8 @@ module.exports = async ({ sales, userId }) => {
   const { insertedId } = await create(createdSale);
 
   const created = await searchById(insertedId);
+
+  await updateBalance(created, SUBTRACTION);
 
   return created;
 };
