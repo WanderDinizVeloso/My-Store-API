@@ -1,3 +1,4 @@
+const ADDITION = 'addition';
 const CATEGORY = 'category';
 const EMAIL = 'email';
 const EMAIL_EXISTS = 'email exists';
@@ -21,12 +22,14 @@ const QUANTITY = 'quantity';
 const ROLE_ADM = 'adm';
 const SALES = 'sales';
 const SALE = 'sale';
+const SUBTRACTION = 'subtraction';
 const TOKEN = 'token';
 const UNITY = 'unity';
 const USER = 'user';
 const USERS = 'users';
 
 module.exports = {
+  ADDITION,
   CATEGORY,
   EMAIL,
   EMAIL_EXISTS,
@@ -50,6 +53,7 @@ module.exports = {
   ROLE_ADM,
   SALE,
   SALES,
+  SUBTRACTION,
   TOKEN,
   UNITY,
   USER,
