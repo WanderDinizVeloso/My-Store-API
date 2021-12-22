@@ -4,15 +4,16 @@ const { remove } = require('../../../model')(SALES);
 const searchById = require('./searchById');
 
 module.exports = async (id) => {
-  const sale = await searchById(id);
+  const saleDeleted = await searchById(id);
 
-  if (!sale) {
+  if (!saleDeleted) {
     return null;
   }
 
   const { deletedCount } = await remove(id);
 
-  const deleted = { deletedCount, sale };
+  const deleted = { deletedCount, saleDeleted };
+  console.log(deleted);
 
   return deleted;
 };
