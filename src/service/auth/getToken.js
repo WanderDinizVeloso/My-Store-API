@@ -1,10 +1,10 @@
 const { sign } = require('jsonwebtoken');
 
-const { SECRET } = process.env;
+const { SECRET, EXPIRES_IN, ALGORITHM } = process.env;
 
 const JWT_CONFIG = {
-  expiresIn: '1h',
-  algorithm: 'HS256',
+  expiresIn: EXPIRES_IN,
+  algorithm: ALGORITHM,
 };
 
 module.exports = (data) => sign(
