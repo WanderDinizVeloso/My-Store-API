@@ -15,10 +15,10 @@ const ERROR = {
     status: BAD_REQUEST,
     message: invalid(SALE),
   },
-  BAD_REQUEST_NOT_REGISTERED: {
+  BAD_REQUEST_NOT_REGISTERED: (productList) => ({
     status: BAD_REQUEST,
-    message: productNotRegistered(),
-  },
+    message: productNotRegistered(productList),
+  }),
   BAD_REQUEST_STOCK: (productList) => ({
     status: BAD_REQUEST,
     message: insufficientStock(productList),
@@ -36,7 +36,9 @@ module.exports = async (req, _res, next) => {
 
   if (checkInventary.error) { return next(ERROR.BAD_REQUEST_STOCK(checkInventary.errorList)); }
 
-  if (checkInventary.count !== saleData.length) { return next(ERROR.BAD_REQUEST_NOT_REGISTERED); }
+  if (checkInventary.count !== saleData.length) { 
+    return next(ERROR.BAD_REQUEST_NOT_REGISTERED(checkInventary.notRegisteredList));
+  }
 
   const newBody = checkInventary.products;
 
