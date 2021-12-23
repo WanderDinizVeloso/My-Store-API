@@ -49,8 +49,8 @@ const invalidCaracters = (param) =>
 const insufficientStock = (param) => 
   `Insufficient stock of products: ${param}`;
 
-const productNotRegistered = () => 
-  'There is a product not registered in the shopping list';
+const productNotRegistered = (param) => 
+  `shopping list with unregistered products: ${param}`;
 
 module.exports = {
   required,
