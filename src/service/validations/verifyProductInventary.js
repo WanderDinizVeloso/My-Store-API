@@ -1,30 +1,16 @@
 const { searchAll } = require('../documents/products');
+const { notRegisteredProduct } = require('../functions');
 
-const RADIX = 10;
+const verifySaleData = require('./verifySaleData');
 
 module.exports = async (saleData) => {
   const allproducts = await searchAll() || [];
 
-  const verifySaleData = saleData.reduce((acc, sale) => {
-    const { name, quantity } = sale;
+  const verify = verifySaleData(saleData, allproducts);
 
-    allproducts.forEach((product) => {
-      const quantityConvert = parseInt(quantity, RADIX);
-      const salesQuantityConvert = parseInt(product.quantity, RADIX);
+  const notRegisteredList = notRegisteredProduct(saleData, verify.products);
 
-      if (product.name === name && salesQuantityConvert < quantityConvert) {
-        acc.error = true;
-        acc.errorList = [...acc.errorList, name];
-      }
+  const verifyWithNotRegisteredList = { ...verify, notRegisteredList };
 
-      if (product.name === name) {
-        acc.products = [...acc.products, { ...product, ...sale }];
-        acc.count += 1;
-      }
-    });
-    
-    return acc;
-  }, { error: false, errorList: [], products: [], count: 0 });
-
-  return verifySaleData;
+  return verifyWithNotRegisteredList;
 };
