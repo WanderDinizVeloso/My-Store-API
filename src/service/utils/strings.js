@@ -3,6 +3,7 @@ const CATEGORY = 'category';
 const EMAIL = 'email';
 const EMAIL_EXISTS = 'email exists';
 const EMAIL_OR_PASSWORD = 'email or password';
+const ERROR = 'error';
 const FIRST_NAME = 'firstName';
 const ID = 'id';
 const INVALID_DATA_SALE = 'invalid data sale';
@@ -34,6 +35,7 @@ module.exports = {
   EMAIL,
   EMAIL_EXISTS,
   EMAIL_OR_PASSWORD,
+  ERROR,
   FIRST_NAME,
   ID,
   INVALID_DATA_SALE,
