@@ -8,6 +8,7 @@ const verifySales = require('./verifySales');
 const verifySalesNumbers = require('./verifySalesNumbers');
 const verifySalesStrings = require('./verifySalesStrings');
 const verifyProductInventary = require('./verifyProductInventary');
+const verifySaleData = require('./verifySaleData');
 
 module.exports = {
   verifyEmail,
@@ -20,4 +21,5 @@ module.exports = {
   verifySalesNumbers,
   verifySalesStrings,
   verifyProductInventary,
+  verifySaleData,
 };
