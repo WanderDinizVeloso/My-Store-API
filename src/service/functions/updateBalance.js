@@ -16,9 +16,9 @@ module.exports = async (productList, operator) => productList.soldProducts
       let newQuantity = 0;
 
       if (operator === ADDITION) {
-        newQuantity = parseInt(currentQuantity, 10) + parseInt(saleQuantity, RADIX);
+        newQuantity = parseInt(currentQuantity, RADIX) + parseInt(saleQuantity, RADIX);
       } else if (operator === SUBTRACTION) {
-        newQuantity = parseInt(currentQuantity, 10) - parseInt(saleQuantity, RADIX);
+        newQuantity = parseInt(currentQuantity, RADIX) - parseInt(saleQuantity, RADIX);
       }
 
       const quantityConvert = newQuantity.toFixed(QUANTITY_DECIMAL_PLACES);
