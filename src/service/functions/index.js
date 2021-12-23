@@ -3,6 +3,7 @@ const dataSalesConvert = require('./dataSalesConvert');
 const findEmail = require('./findEmail');
 const newEmailUpdateVerify = require('./newEmailUpdateVerify');
 const updateBalance = require('./updateBalance');
+const notRegisteredProduct = require('./notRegisteredProduct');
 
 module.exports = {
   salesWithTotalAndAmount,
@@ -10,4 +11,5 @@ module.exports = {
   findEmail,
   newEmailUpdateVerify,
   updateBalance,
+  notRegisteredProduct,
 };
