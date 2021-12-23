@@ -4,6 +4,7 @@ const EMAIL = 'email';
 const EMAIL_EXISTS = 'email exists';
 const EMAIL_OR_PASSWORD = 'email or password';
 const ERROR = 'error';
+const ERRORS = 'errors';
 const FIRST_NAME = 'firstName';
 const ID = 'id';
 const INVALID_DATA_SALE = 'invalid data sale';
@@ -36,6 +37,7 @@ module.exports = {
   EMAIL_EXISTS,
   EMAIL_OR_PASSWORD,
   ERROR,
+  ERRORS,
   FIRST_NAME,
   ID,
   INVALID_DATA_SALE,
