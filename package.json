@@ -1,7 +1,7 @@
 {
   "name": "my-store-api",
   "version": "1.0.0",
-  "description": "Projeto criado visando colocar em prática os conhecimentos adquisitos em Back-end",
+  "description": "Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-end",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/api/server.js",
