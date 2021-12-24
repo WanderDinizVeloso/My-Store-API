@@ -41,8 +41,8 @@ const internalError = () =>
   'sorry, internal error.';
 
 const invalidCaracters = (param) =>
-  `The '${param}' field must contain at least one: `
-  + 'capital letter, '
+  `The '${param}' field must contain at least: `
+  + 'a capital letter, '
   + 'a number and '
   + 'a special character (!, $, #, %, _).';
 
