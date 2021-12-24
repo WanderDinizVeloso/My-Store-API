@@ -26,6 +26,7 @@ const SALES = 'sales';
 const SALE = 'sale';
 const SUBTRACTION = 'subtraction';
 const TOKEN = 'token';
+const UNAUTHENTICATED = 'unauthenticated';
 const UNITY = 'unity';
 const USER = 'user';
 const USERS = 'users';
@@ -58,6 +59,7 @@ module.exports = {
   SALE,
   SALES,
   SUBTRACTION,
+  UNAUTHENTICATED,
   TOKEN,
   UNITY,
   USER,
