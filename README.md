@@ -316,6 +316,111 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
 
+
+#### Users remove
+
+- Rota: '/users:id'
+
+- Método: DELETE
+
+- Retorno:
+
+    ```json
+    {
+      "message": "'user' deleted successfully,",
+      "deletedUser": {
+        "deletedCount": 1,
+        "user": {
+          "_id": " ",
+          "firstName": " ",
+          "lastName": " ",
+          "email": " ",
+          "role": " "
+        }
+      }
+    }
+    ```
+    Tradução da mensagem: "'usuário' excluido com sucesso."
+
+⚠️ ATENÇÃO ⚠️
+ - Para a execução de `remove` é necessáro:
+    - Estar logado e;
+    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
+
+    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+ 
+- Campos obrigatórios:
+
+  - `id`:
+    
+    - Tradução: id
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Conter ao menos 24 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'id' field must contain at least 24 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+
+      - `id/usuário deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'user' not found."
+            }
+          }
+          ```
+          Tradução da mensagem: "'usuário' não encontrado" 
+
+
+#### Users searchAll
+
+- Rota: '/users'
+
+- Método: GET
+
+- Retorno:
+
+    ```json
+    {
+      "users": [
+        {
+          "_id": " ",
+          "firstName": " ",
+          "lastName": " ",
+          "email": " ",
+          "role": "  "
+        },
+        ...
+      ]
+    }
+    ```
+
+⚠️ ATENÇÃO ⚠️
+ - Para a execução de `searchAll` é necessáro:
+    - Estar logado e;
+    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
+
+    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+- Erro retornado:
+
+  - `nenhum usuário cadastrado no banco de dados`:
+      ```json
+      {
+        "error": {
+          "message": "no registered 'users'."
+        }
+      }
+      ```
+      Tradução da mensagem: "não há 'usuários' registrados". 
+
 ---
 
 ## Autor
