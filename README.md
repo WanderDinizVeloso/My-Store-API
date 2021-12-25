@@ -1261,7 +1261,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
       }
     }
     ```
-    Tradução da mensagem: "'product' modificado com sucesso."
+    Tradução da mensagem: "'produto' modificado com sucesso."
 
 >⚠️ ATENÇÃO ⚠️
 > - Para a execução de `update` é necessáro:
