@@ -737,6 +737,9 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     }
     ```
 
+⚠️ ATENÇÃO ⚠️
+ - Para efetuar login como administrator do sistema, o `email` e `password`, além de atenderem os requisitos abaixo descritos, devem ser os mesmos cadastrados no arquivo [.env](#.env).
+
 - Erro retornado no login:
 
   - `Email ou senha incorreto`:
