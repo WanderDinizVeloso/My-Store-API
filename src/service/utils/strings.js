@@ -11,6 +11,7 @@ const INVALID_DATA_SALE = 'invalid data sale';
 const LAST_NAME = 'lastName';
 const NAME = 'name';
 const NEW_EMAIL = 'new email';
+const NEW_PRODUCT_NAME = 'new product name';
 const NO_LENGTH = 'no length';
 const NOT_A_NUMBER = 'not a number';
 const NOT_A_EMAIL = 'not a email';
@@ -46,6 +47,7 @@ module.exports = {
   LAST_NAME,
   NAME,
   NEW_EMAIL,
+  NEW_PRODUCT_NAME,
   NO_LENGTH,
   NOT_A_NUMBER,
   NOT_A_EMAIL,
