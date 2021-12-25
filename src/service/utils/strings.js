@@ -19,6 +19,7 @@ const INVALID_PASSWORD = 'invalid email';
 const PASSWORD = 'password';
 const PRICE = 'price';
 const PRODUCT = 'product';
+const PRODUCT_NAME_EXISTS = 'product name exists';
 const PRODUCTS = 'products';
 const QUANTITY = 'quantity';
 const ROLE_ADM = 'adm';
@@ -53,6 +54,7 @@ module.exports = {
   PASSWORD,
   PRICE,
   PRODUCT,
+  PRODUCT_NAME_EXISTS,
   PRODUCTS,
   QUANTITY,
   ROLE_ADM,
