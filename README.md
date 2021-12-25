@@ -37,6 +37,9 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
 - [Orientações detalhadas de como utilizar](#orientações-detalhadas-de-como-utilizar)
   - [Users](#users)
     - [Users create](#users-create)
+    - [Users remove](#users-remove)
+    - [Users searchAll](#users-searchall)
+    - [Users searchById](#users-searchbyid)
 - [Autor](#autor)
 
 ---
@@ -72,7 +75,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 - Escrever assinaturas para APIs intuitivas e facilmente entendíveis;
 - Autenticar rotas do Express, usando o token JWT;
 - Gerar tokens a partir de informações como login e senha;
-- Entender como utilizar o bcript para criptografar senhas de usuários;
+- Entender como utilizar o bcrypt para criptografar senhas de usuários;
 
 ---
 
@@ -405,11 +408,9 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 ⚠️ ATENÇÃO ⚠️
  - Para a execução de `searchAll` é necessáro:
     - Estar logado e;
-    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
+    - Ser usuário administrator do sistema (role: "adm").
 
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
-
-- Erro retornado:
+- Erro retornado no searchAll:
 
   - `nenhum usuário cadastrado no banco de dados`:
       ```json
@@ -443,11 +444,9 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     ```
 
 ⚠️ ATENÇÃO ⚠️
- - Para a execução de `searchById` é necessáro:
+ - Para a execução de `searchId` é necessáro:
     - Estar logado e;
-    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
-
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
+    - Ser usuário administrator do sistema (role: "adm").
 
  
 - Campos obrigatórios:
