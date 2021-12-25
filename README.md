@@ -854,15 +854,15 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
 ### Products
 
-⚠️ ATENÇÃO ⚠️
- - Para a execução de `searchAll` e `searchId` é necessáro:
-    - Estar logado.
-
- - Para a execução de `create`, `remove` e `update` é necessáro:
-    - Estar logado e;
-    - Ser usuário administrator do sistema (role: "adm").
-
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchAll` e `searchId` é necessáro:
+>    - Estar logado.
+>
+> - Para a execução de `create`, `remove` e `update` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
      
 
 #### Products create
