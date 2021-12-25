@@ -40,6 +40,7 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
     - [Users remove](#users-remove)
     - [Users searchAll](#users-searchall)
     - [Users searchById](#users-searchbyid)
+    - [Users update](#users-update)
 - [Autor](#autor)
 
 ---
@@ -76,6 +77,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 - Autenticar rotas do Express, usando o token JWT;
 - Gerar tokens a partir de informações como login e senha;
 - Entender como utilizar o bcrypt para criptografar senhas de usuários;
+- Entender e aplicar os conceitos de markdown na criação de um README estruturado.
 
 ---
 
@@ -289,16 +291,6 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           ```
           Tradução da mensagem: "O campo 'senha' deve ser uma string."
 
-      - `Ser um texto/string`:
-          ```json
-          {
-            "error": {
-              "message": "The 'password' field must be a string."
-            }
-          }
-          ```
-          Tradução da mensagem: "O campo 'senha' deve ser uma string."
-
       - `Conter ao menos 10 caracteres`:
           ```json
           {
@@ -410,6 +402,8 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     - Estar logado e;
     - Ser usuário administrator do sistema (role: "adm").
 
+    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
 - Erro retornado no searchAll:
 
   - `nenhum usuário cadastrado no banco de dados`:
@@ -448,6 +442,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     - Estar logado e;
     - Ser usuário administrator do sistema (role: "adm").
 
+    Vide: [Authentication](#authentication), [Authorization](#authorization)
  
 - Campos obrigatórios:
 
@@ -476,6 +471,249 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           }
           ```
           Tradução da mensagem: "'usuário' não encontrado" 
+
+
+#### Users update
+
+- Rota: '/users:id'
+
+- Método: PUT
+
+- Retorno:
+
+    ```json
+    {
+      "message": "'user' modified successfully.",
+      "updatedUser": {
+        "modifiedCount": 1,
+        "newUserData": {
+          "_id": " ",
+          "firstName": " ",
+          "lastName": " ",
+          "email": " ",
+          "role": " "
+        }
+      }
+    }
+    ```
+    Tradução da mensagem: "'usuário' modificado com sucesso."
+
+    ⚠️ ATENÇÃO: Campos `"_id"`, `"role"` e `modifiedCount` são gerados automaticamente pelo sistema. ⚠️
+
+⚠️ ATENÇÃO ⚠️
+  - Para a execução de `update` é necessáro:
+    - Estar logado e;
+    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
+
+    Vide: [Authentication](#authentication), [Authorization](#authorization)
+ 
+- Campos obrigatórios:
+
+  - `id`:
+    
+    - Tradução: id
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Conter ao menos 24 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'id' field must contain at least 24 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+
+      - `id/usuário deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'user' not found."
+            }
+          }
+          ```
+          Tradução da mensagem: "'usuário' não encontrado" 
+
+  - `firstName`:
+    
+    - Tradução: nome
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'firstName' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' é obrigatório."
+
+      - `Conter ao menos 03 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'firstName' field must contain at least 3 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' deve conter pelo menos 3 caracteres"
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'firstName' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' deve ser uma string."
+
+  - `lastName`:
+    
+    - Tradução: sobrenome
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'lastName' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'sobrenome' é obrigatório."
+
+      - `Conter ao menos 03 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'lastName' field must contain at least 3 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'sobrenome' deve conter pelo menos 3 caracteres"
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'lastName' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'sobrenome' deve ser uma string."
+
+  - `email`:
+      
+    - Tradução: email
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'email' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'email' é obrigatório."
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'email' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'email' deve ser uma string."
+
+      - `Ser um email válido`:
+          ```json
+          {
+            "error": {
+              "message": "The invalid 'email' field."
+            }
+          }
+          ```
+          Tradução da mensagem: "Campo 'email' inválido."
+
+      - `Ser único no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'email' is already."
+            }
+          }
+          ```
+          Tradução da mensagem: "'email' ja existe."
+
+      - `Para troca de email, o novo email não deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'new email' is already."
+            }
+          }
+          ```
+          Tradução da mensagem: "'novo email' ja existe."
+
+  - `password`:
+
+    - Tradução: senha
+
+    ⚠️ ATENÇÃO ⚠️
+      - Visando maior segurança as senhas:
+        - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
+        - Não são retornadas em consultas por `searchAll` e `searchId`.      
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'password' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'senha' é obrigatório."
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'password' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'senha' deve ser uma string."
+
+      - `Conter ao menos 10 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'password' field must contain at least 10 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'senha' deve conter pelo menos 10 caracteres"
+
+      - `Conter caracters maiúsculos, números e especiais`:
+          ```json
+          {
+            "error": {
+              "message": "The 'password' field must contain at least one: a capital letter, a number and a special character (!, $, #, %, _)."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
+
 ---
 
 ## Autor
