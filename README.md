@@ -849,6 +849,101 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
 
 
+### Products
+
+⚠️ ATENÇÃO ⚠️
+ - Para a execução de `searchAll` e `searchId` é necessáro:
+    - Estar logado.
+
+ - Para a execução de `create`, `remove` e `update` é necessáro:
+    - Estar logado e;
+    - Ser usuário administrator do sistema (role: "adm").
+
+    Vide: [Authentication](#authentication), [Authorization](#authorization)
+     
+
+#### Products create
+
+- Rota: '/products'
+
+- Método: POST
+
+- Retorno:
+
+    ```json
+    {
+      "message": "'product' created successfully.",
+      "createdProduct": {
+        "_id": " ",
+        "name": " ",
+        "category": " ",
+        "unity": " ",
+        "quantity": " ",
+        "price": " "
+      }
+    }
+    ```
+    Tradução da mensagem: "'produto' criado com sucesso."
+
+    ⚠️ ATENÇÃO: O Campo `"_id"` é gerado automaticamente pelo sistema. ⚠️
+
+⚠️ ATENÇÃO ⚠️
+ - Para a execução de `create` é necessáro:
+    - Estar logado e;
+    - Ser usuário administrator do sistema (role: "adm").
+
+    Vide: [Authentication](#authentication), [Authorization](#authorization)
+ 
+- Campos obrigatórios:
+
+  - `name`:
+    
+    - Tradução: nome
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'name' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' é obrigatório."
+
+      - `Conter ao menos 04 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'name' field must contain at least 4 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' deve conter pelo menos 4 caracteres"
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'name' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' deve ser uma string."
+
+      - `Ser único no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'product' is already."
+            }
+          }
+          ```
+          Tradução da mensagem: "'produto' ja existe."
+
+
+
 ---
 
 ## Autor
