@@ -946,7 +946,129 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           ```
           Tradução da mensagem: "'produto' ja existe."
 
+  - `category`:
+    
+    - Tradução: categoria
 
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'category' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'categoria' é obrigatório."
+
+      - `Conter ao menos 04 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'category' field must contain at least 4 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'categoria' deve conter pelo menos 4 caracteres"
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'category' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'categoria' deve ser uma string."
+
+  - `unity`:
+    
+    - Tradução: unidade
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'unity' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'unidade' é obrigatório."
+
+      - `Conter ao entre 02 e 03 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'unity' field must contain between 2 and 3 characters."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'unidade' deve conter entre 2 e 3 caracteres."
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'unity' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'unidade' deve ser uma string."
+
+  - `quantity`:
+    
+    - Tradução: quantidade
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'quantity' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'quantidade' é obrigatório."
+
+      - `Ser um número`:
+          ```json
+          {
+            "error": {
+              "message": "The 'quantity' field must be a number."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'quantidade' deve ser um número."
+
+  - `price`:
+    
+    - Tradução: preço
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'price' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'preço' é obrigatório."
+
+      - `Ser um número`:
+          ```json
+          {
+            "error": {
+              "message": "The 'preço' field must be a number."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'preço' deve ser um número."
 
 ---
 
