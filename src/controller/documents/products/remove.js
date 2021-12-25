@@ -22,6 +22,6 @@ module.exports = async (req, res, next) => {
     .status(OK)
     .json({
       message: deletedSuccessfully(PRODUCT),
-      deletedUser: removed,
+      deletedProduct: removed,
     });
 };
