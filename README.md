@@ -1070,6 +1070,177 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           ```
           Tradução da mensagem: "O campo 'preço' deve ser um número."
 
+
+#### Products remove
+
+- Rota: '/products:id'
+
+- Método: DELETE
+
+- Retorno:
+
+    ```json
+    {
+      "message": "product deleted successfully,",
+      "deletedProduct": {
+        "deletedCount": 1,
+        "product": {
+          "_id": " ",
+          "name": " ",
+          "category": " ",
+          "unity": " ",
+          "quantity": " ",
+          "price": " "
+        }
+      }
+    }
+    ```
+    Tradução da mensagem: "'usuário' excluido com sucesso."
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `remove` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+- Campos obrigatórios:
+
+  - `id`:
+    
+    - Tradução: id
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Conter ao menos 24 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'id' field must contain at least 24 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+
+      - `id/produto deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'product' not found."
+            }
+          }
+          ```
+          Tradução da mensagem: "'product' não encontrado" 
+
+
+#### Users searchAll
+
+- Rota: '/product'
+
+- Método: GET
+
+- Retorno:
+
+    ```json
+    {
+      "products": [
+        {
+          "_id": " ",
+          "name": " ",
+          "category": " ",
+          "unity": " ",
+          "quantity": " ",
+          "price": " "
+        },
+        {
+          "_id": " ",
+          "name": " ",
+          "category": " ",
+          "unity": " ",
+          "quantity": " ",
+          "price": " "
+        },
+        ...
+      ]
+    }
+    ```
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchAll` é necessáro:
+>    - Estar logado.
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+- Erro retornado no searchAll:
+
+  - `nenhum usuário cadastrado no banco de dados`:
+      ```json
+      {
+        "error": {
+          "message": "no registered 'products'."
+        }
+      }
+      ```
+      Tradução da mensagem: "não há 'produtos' registrados".
+
+
+#### Users searchById
+
+- Rota: '/products:id'
+
+- Método: GET
+
+- Retorno:
+
+    ```json
+    {
+      "product": {
+        "_id": " ",
+        "name": " ",
+        "category": " ",
+        "unity": " ",
+        "quantity": " ",
+        "price": " "
+      }
+    }
+    ```
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchById` é necessáro:
+>    - Estar logado.
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+ 
+- Campos obrigatórios:
+
+  - `id`:
+    
+    - Tradução: id
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Conter ao menos 24 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'id' field must contain at least 24 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+
+      - `id/usuário deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'product' not found."
+            }
+          }
+          ```
+          Tradução da mensagem: "'produto' não encontrado" 
+
+
+
 ---
 
 ## Autor
