@@ -54,6 +54,8 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
     - [Sales searchAll](#sales-searchall)
     - [Sales searchById](#sales-searchbyid)
     - [Sales update](#sales-update)
+  - [Error](#error)
+    - [Error searchAll](#error-searchall)
 - [Autor](#autor)
 
 ---
@@ -1923,7 +1925,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
       ```
       Tradução da mensagem: "O campo de 'venda' inválido.".
 
-  - `Um ou mais produtos na lista de venda não existem no banco de dados`:
+  - `Um ou mais produtos na lista de venda não existe no banco de dados`:
       ```json
       {
         "error": {
@@ -1943,6 +1945,61 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
       ```
       Tradução da mensagem: "Estoque insuficiente de produtos: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos com ausência de saldo.
 
+
+### Error
+
+Responsável por capturar e guardar todos os error internos disparados na execução da API.
+
+#### Error searchAll
+
+- Rota: '/error'
+
+- Método: GET
+
+- Retorno:
+
+    ```json
+    {
+      "errors": [
+        {
+          "_id": " ",
+          "message": " ",
+          "URL": " ",
+          "bodyWithoutPassword": {
+            ...
+          },
+          "user": {
+            "_id": " ",
+            "email": " ",
+            "role": " "
+          },
+          "date": " "
+        },
+        {
+          "_id": " ",
+          "message": " ",
+          "URL": " ",
+          "bodyWithoutPassword": {
+            ...
+          },
+          "user": {
+            "_id": " ",
+            "email": " ",
+            "role": " "
+          },
+          "date": " "
+        },
+        ...
+      ]
+    }
+    ```
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchAll` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
 
 
 ---
