@@ -42,6 +42,12 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
     - [Users searchById](#users-searchbyid)
     - [Users update](#users-update)
   - [Login](#login)
+  - [Products](#products)
+    - [Products create](#products-create)
+    - [Products remove](#products-remove)
+    - [Products searchAll](#products-searchall)
+    - [Products searchById](#products-searchbyid)
+    - [Products update](#products-update)
 - [Autor](#autor)
 
 ---
