@@ -1617,7 +1617,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
       Tradução da mensagem: "Lista de compras com produtos não cadastrados: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos não cadastrados no banco.
 
   - `Um ou mais produtos na lista de venda não contém saldo suficiente para a venda`:
-        ```json
+      ```json
       {
         "error": {
           "message": "Insufficient stock of products: (list)"
@@ -1934,7 +1934,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
       Tradução da mensagem: "Lista de compras com produtos não cadastrados: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos não cadastrados no banco.
 
   - `Um ou mais produtos na lista de venda não contém saldo suficiente para a venda`:
-        ```json
+      ```json
       {
         "error": {
           "message": "Insufficient stock of products: (list)"
