@@ -419,8 +419,64 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
         }
       }
       ```
-      Tradução da mensagem: "não há 'usuários' registrados". 
+      Tradução da mensagem: "não há 'usuários' registrados".
 
+
+#### Users searchById
+
+- Rota: '/users:id'
+
+- Método: GET
+
+- Retorno:
+
+    ```json
+    {
+      "user": {
+        "_id": " ",
+        "firstName": " ",
+        "lastName": " ",
+        "email": " ",
+        "role": " "
+      }
+    }
+    ```
+
+⚠️ ATENÇÃO ⚠️
+ - Para a execução de `searchById` é necessáro:
+    - Estar logado e;
+    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
+
+    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+ 
+- Campos obrigatórios:
+
+  - `id`:
+    
+    - Tradução: id
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Conter ao menos 24 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'id' field must contain at least 24 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+
+      - `id/usuário deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'user' not found."
+            }
+          }
+          ```
+          Tradução da mensagem: "'usuário' não encontrado" 
 ---
 
 ## Autor
