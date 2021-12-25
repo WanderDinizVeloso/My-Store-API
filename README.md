@@ -48,6 +48,12 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
     - [Products searchAll](#products-searchall)
     - [Products searchById](#products-searchbyid)
     - [Products update](#products-update)
+  - [Sales](#sales)
+    - [Sales create](#sales-create)
+    - [Sales remove](#sales-remove)
+    - [Sales searchAll](#sales-searchall)
+    - [Sales searchById](#sales-searchbyid)
+    - [Sales update](#sales-update)
 - [Autor](#autor)
 
 ---
