@@ -41,6 +41,7 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
     - [Users searchAll](#users-searchall)
     - [Users searchById](#users-searchbyid)
     - [Users update](#users-update)
+  - [Login](#login)
 - [Autor](#autor)
 
 ---
@@ -720,6 +721,133 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           }
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
+
+
+### Login
+
+- Rota: '/login'
+
+- Método: POST
+
+- Retorno:
+
+    ```json
+    {
+      "token": " "
+    }
+    ```
+
+- Erro retornado no login:
+
+  - `Email ou senha incorreto`:
+      ```json
+      {
+        "error": {
+          "message": "The invalid 'email or password' field."
+        }
+      }
+      ```
+      Tradução da mensagem: "O campo de 'e-mail ou senha' inválido.".
+ 
+- Campos obrigatórios:
+
+  - `email`:
+      
+    - Tradução: email
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'email' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'email' é obrigatório."
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'email' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'email' deve ser uma string."
+
+      - `Ser um email válido`:
+          ```json
+          {
+            "error": {
+              "message": "The invalid 'email' field."
+            }
+          }
+          ```
+          Tradução da mensagem: "Campo 'email' inválido."
+
+      - `Ser único no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'email' is already."
+            }
+          }
+          ```
+          Tradução da mensagem: "'email' ja existe."
+
+  - `password`:
+
+    - Tradução: senha
+
+    ⚠️ ATENÇÃO ⚠️
+      - Visando maior segurança as senhas:
+        - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
+        - Não são retornadas em consultas por `searchAll` e `searchId`.      
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'password' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'senha' é obrigatório."
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'password' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'senha' deve ser uma string."
+
+      - `Conter ao menos 10 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'password' field must contain at least 10 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'senha' deve conter pelo menos 10 caracteres"
+
+      - `Conter caracters maiúsculos, números e especiais`:
+          ```json
+          {
+            "error": {
+              "message": "The 'password' field must contain at least one: a capital letter, a number and a special character (!, $, #, %, _)."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
+
 
 ---
 
