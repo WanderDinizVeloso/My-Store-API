@@ -734,8 +734,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
 - Rota: '/login'
 
-- Método: POST
-
+- Método: POST"The invalid 'sale' field."
 - Retorno:
 
     ```json
@@ -1483,7 +1482,461 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           }
           ```
           Tradução da mensagem: "O campo 'preço' deve ser um número."
-          
+
+
+### Sales
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `create`,`searchAll` e `searchId` é necessáro:
+>    - Estar logado.
+>
+> - Para a execução de `remove` e `update` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+>⚠️ ATENÇÃO ⚠️
+> - Para criar / atualizar uma venda, é necessário enviar um array de produtos, sendo eles previamente cadastrados no banco de dados;
+> - Na execução de `create` e `update` será checado:
+>   - Se o produto contém saldo suficiente para a sua venda / atualização;
+>   - Se cada produto a ser vendido contém os mesmos requisitos de criaçao / atualização verificados no [create](#products-create) e [update](#products-update) do [Products](#products) 
+> - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluida.
+>
+> EXEMPLO DE ARRAY DE PRODUTOS VENDIDOS:
+> ```json
+>  [
+>    {
+>      "name": " ",
+>      "category": " ",
+>      "unity": " ",
+>      "quantity": " ",
+>      "price": " "
+>    },
+>    {
+>      "name": " ",
+>      "category": " ",
+>      "unity": " ",
+>      "quantity": " ",
+>      "price": " "
+>    },
+>    ...
+>  ]
+>  ```
+     
+
+#### Sales create
+
+- Rota: '/sales'
+
+- Método: POST
+
+- Retorno:
+
+    ```json
+    {
+      "message": "'sale' created successfully.",
+      "createdSale": {
+        "_id": " ",
+        "creationDate": {
+          "userId": " ",
+          "date": " "
+        },
+        "amount": " ",
+        "soldProducts": [
+          {
+            "_id": " ",
+            "name": " ",
+            "category": " ",
+            "unity": " ",
+            "quantity": " ",
+            "price": " ",
+            "total": " "
+          },
+          {
+            "_id": " ",
+            "name": " ",
+            "category": " ",
+            "unity": " ",
+            "quantity": " ",
+            "price": " ",
+            "total": " "
+          },
+          ...
+        ]
+      }
+    }
+    ```
+    Tradução da mensagem: "'venda' criada com sucesso."
+
+    >⚠️ ATENÇÃO ⚠️
+    > Os seguintes campos serão gerados automaticamente pelo sistema:
+    > - `"_id"`: id da venda;
+    > - `"creationDate"`: armazena o id do usuário que criou a venda e a respectiva data e hora;
+    > - `"amount"`: valor total da venda;
+    > - `"total"`: multiplicação da quantidade do produto vendido pelo seu preço unitário.
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `create` é necessário:
+>    - Estar logado.
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+>⚠️ ATENÇÃO ⚠️
+> - Para criar uma venda, é necessário enviar um array de produtos, sendo eles previamente cadastrados no banco de dados. [exemplo](#sales);
+> - Na execução de `create` será checado:
+>   - Se o produto contém saldo suficiente para a sua venda;
+>   - Se cada produto a ser vendido contém os mesmos requisitos de criaçao verificados no [create](#products-create) do [Products](#products)
+
+- Erro(s) retornado(s) no create:
+
+  - `Não atendimento aos mesmos requisitos de criação de um produto`:
+      ```json
+      {
+        "error": {
+          "message": "The invalid 'sale' field."
+        }
+      }
+      ```
+      Tradução da mensagem: "O campo de 'venda' inválido.".
+
+  - `Um ou mais produtos na lista de venda não existem no banco de dados`:
+      ```json
+      {
+        "error": {
+          "message": "shopping list with unregistered products: (list)"
+        }
+      }
+      ```
+      Tradução da mensagem: "Lista de compras com produtos não cadastrados: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos não cadastrados no banco.
+
+  - `Um ou mais produtos na lista de venda não contém saldo suficiente para a venda`:
+        ```json
+      {
+        "error": {
+          "message": "Insufficient stock of products: (list)"
+        }
+      }
+      ```
+      Tradução da mensagem: "Estoque insuficiente de produtos: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos com ausência de saldo.
+
+
+#### Sales remove
+
+- Rota: '/sales:id'
+
+- Método: DELETE
+
+- Retorno:
+
+    ```json
+    {
+      "message": "'sale' deleted successfully,",
+      "deletedUser": {
+        "deletedCount": 1,
+        "saleDeleted": {
+          "_id": " ",
+          "creationDate": {
+            "userId": " ",
+            "date": " "
+          },
+          "amount": " ",
+          "soldProducts": [
+            {
+              "_id": " ",
+              "name": " ",
+              "category": " ",
+              "unity": " ",
+              "quantity": " ",
+              "price": " ",
+              "total": " "
+            }
+          ]
+        }
+      }
+    }
+    ```
+    Tradução da mensagem: "'venda' excluida com sucesso."
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `remove` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+>⚠️ ATENÇÃO ⚠️
+> - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluida.
+
+- Campos obrigatórios:
+
+  - `id`:
+    
+    - Tradução: id
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Conter ao menos 24 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'id' field must contain at least 24 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+
+      - `id/venda deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'sale' not found."
+            }
+          }
+          ```
+          Tradução da mensagem: "'venda' não encontrada" 
+
+
+#### Sales searchAll
+
+- Rota: '/sales'
+
+- Método: GET
+
+- Retorno:
+
+    ```json
+    {
+      "sales": [
+        {
+          "_id": " ",
+          "creationDate": {
+            "userId": " ",
+            "date": " "
+          },
+          "amount": " ",
+          "soldProducts": [
+            {
+              "_id": " ",
+              "name": " ",
+              "category": " ",
+              "unity": " ",
+              "quantity": " ",
+              "price": " ",
+              "total": " "
+            },
+            {
+              "_id": " ",
+              "name": " ",
+              "category": " ",
+              "unity": " ",
+              "quantity": " ",
+              "price": " ",
+              "total": " "
+            },
+            ...
+          ]
+        }
+      ]
+    }
+    ```
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchAll` é necessáro:
+>    - Estar logado.
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+- Erro retornado no searchAll:
+
+  - `nenhum usuário cadastrado no banco de dados`:
+      ```json
+      {
+        "error": {
+          "message": "no registered 'sales'."
+        }
+      }
+      ```
+      Tradução da mensagem: "não há 'vendas' registradas".
+
+
+#### Sales searchById
+
+- Rota: '/sales:id'
+
+- Método: GET
+
+- Retorno:
+
+    ```json
+    {
+      "sale": {
+        "_id": " ",
+        "creationDate": {
+          "userId": " ",
+          "date": " "
+        },
+        "amount": " ",
+        "soldProducts": [
+          {
+            "_id": " ",
+            "name": " ",
+            "category": " ",
+            "unity": " ",
+            "quantity": " ",
+            "price": " ",
+            "total": " "
+          },
+          {
+            "_id": " ",
+            "name": " ",
+            "category": " ",
+            "unity": " ",
+            "quantity": " ",
+            "price": " ",
+            "total": " "
+          },
+          ...
+        ]
+      }
+    }
+    ```
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchById` é necessáro:
+>    - Estar logado.
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+ 
+- Campos obrigatórios:
+
+  - `id`:
+    
+    - Tradução: id
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Conter ao menos 24 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'id' field must contain at least 24 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+
+      - `id/sale deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'sale' not found."
+            }
+          }
+          ```
+          Tradução da mensagem: "'venda' não encontrada"
+
+
+#### Sales update
+
+- Rota: '/sales:id'
+
+- Método: PUT
+
+- Retorno:
+
+    ```json
+    {
+      "message": "'sale' modified successfully.",
+      "updatedSale": {
+        "modifiedCount": 1,
+        "newData": {
+          "_id": " ",
+          "creationDate": {
+            "userId": " ",
+            "date": " "
+          },
+          "amount": " ",
+          "soldProducts": [
+            {
+              "_id": " ",
+              "name": " ",
+              "category": " ",
+              "unity": " ",
+              "quantity": " ",
+              "price": " ",
+              "total": " "
+            },
+            {
+              "_id": " ",
+              "name": " ",
+              "category": " ",
+              "unity": " ",
+              "quantity": " ",
+              "price": " ",
+              "total": " "
+            },
+            ...
+          ],
+          "modifiedDate": {
+            "userId": " ",
+            "date": " "
+          }
+        }
+      }
+    }
+    ```
+    Tradução da mensagem: "'venda' modificada com sucesso."
+
+    >⚠️ ATENÇÃO ⚠️
+    > Os seguintes campos serão gerados automaticamente pelo sistema:
+    > - `"modifiedDate"`: armazena o id do usuário que modificou a venda e a respectiva data e hora.
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `update` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+>⚠️ ATENÇÃO ⚠️
+> - Para modificar uma venda, é necessário enviar um array de produtos, sendo eles previamente cadastrados no banco de dados. [exemplo](#sales);
+> - Na execução de `update` será checado:
+>   - Se o produto contém saldo suficiente para a sua modificação;
+>   - Se cada produto a ser modificado contém os mesmos requisitos de criaçao verificados no [create](#products-create) do [Products](#products)
+
+- Erro(s) retornado(s) no update:
+
+  - `Não atendimento aos mesmos requisitos de criação de um produto`:
+      ```json
+      {
+        "error": {
+          "message": "The invalid 'sale' field."
+        }
+      }
+      ```
+      Tradução da mensagem: "O campo de 'venda' inválido.".
+
+  - `Um ou mais produtos na lista de venda não existem no banco de dados`:
+      ```json
+      {
+        "error": {
+          "message": "shopping list with unregistered products: (list)"
+        }
+      }
+      ```
+      Tradução da mensagem: "Lista de compras com produtos não cadastrados: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos não cadastrados no banco.
+
+  - `Um ou mais produtos na lista de venda não contém saldo suficiente para a venda`:
+        ```json
+      {
+        "error": {
+          "message": "Insufficient stock of products: (list)"
+        }
+      }
+      ```
+      Tradução da mensagem: "Estoque insuficiente de produtos: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos com ausência de saldo.
+
 
 
 ---
