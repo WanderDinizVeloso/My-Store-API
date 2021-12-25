@@ -139,7 +139,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     ```
     Tradução da mensagem: "'usuário' criado com sucesso."
 
-    ⚠️ ATENÇÃO: Campos `"_id"` e `"role"` são gerados automaticamente pelo sistema. ⚠️
+    >⚠️ ATENÇÃO: Campos `"_id"` e `"role"` são gerados automaticamente pelo sistema. ⚠️
  
 - Campos obrigatórios:
 
@@ -263,12 +263,13 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
   - `password`:
 
-    - Tradução: senha
-
     >⚠️ ATENÇÃO ⚠️
     > - Visando maior segurança as senhas:
     >   - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
-    >   - Não são retornadas em consultas por `searchAll` e `searchId`.      
+    >   - Não são retornadas em consultas por `searchAll` e `searchId`.
+
+    - Tradução: senha
+
 
     - Requisitos do campo / Erro retornado:
 
@@ -673,12 +674,12 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
   - `password`:
 
-    - Tradução: senha
-
     >⚠️ ATENÇÃO ⚠️
     >  - Visando maior segurança as senhas:
     >    - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
-    >    - Não são retornadas em consultas por `searchAll` e `searchId`.      
+    >    - Não são retornadas em consultas por `searchAll` e `searchId`.
+
+    - Tradução: senha
 
     - Requisitos do campo / Erro retornado:
 
@@ -802,12 +803,12 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
   - `password`:
 
-    - Tradução: senha
-
     >⚠️ ATENÇÃO ⚠️
     >  - Visando maior segurança as senhas:
     >    - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
     >    - Não são retornadas em consultas por `searchAll` e `searchId`.      
+
+    - Tradução: senha
 
     - Requisitos do campo / Erro retornado:
 
