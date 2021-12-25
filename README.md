@@ -105,16 +105,16 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
 ### Users
 
-⚠️ ATENÇÃO ⚠️
- - Para a execução de `searchAll` e `searchId` é necessáro:
-    - Estar logado e;
-    - Ser usuário administrator do sistema (role: "adm").
-
- - Para a execução de `remove` e `update` é necessáro:
-    - Estar logado e;
-    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
-
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchAll` e `searchId` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+> - Para a execução de `remove` e `update` é necessáro:
+>    - Estar logado e;
+>    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
      
 
 #### Users create
@@ -265,10 +265,10 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
     - Tradução: senha
 
-    ⚠️ ATENÇÃO ⚠️
-      - Visando maior segurança as senhas:
-        - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
-        - Não são retornadas em consultas por `searchAll` e `searchId`.      
+    >⚠️ ATENÇÃO ⚠️
+    > - Visando maior segurança as senhas:
+    >   - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
+    >   - Não são retornadas em consultas por `searchAll` e `searchId`.      
 
     - Requisitos do campo / Erro retornado:
 
@@ -338,12 +338,12 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     ```
     Tradução da mensagem: "'usuário' excluido com sucesso."
 
-⚠️ ATENÇÃO ⚠️
- - Para a execução de `remove` é necessáro:
-    - Estar logado e;
-    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
-
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `remove` é necessáro:
+>    - Estar logado e;
+>    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
 
  
 - Campos obrigatórios:
@@ -405,12 +405,12 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     }
     ```
 
-⚠️ ATENÇÃO ⚠️
- - Para a execução de `searchAll` é necessáro:
-    - Estar logado e;
-    - Ser usuário administrator do sistema (role: "adm").
-
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchAll` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
 
 - Erro retornado no searchAll:
 
@@ -445,12 +445,12 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     }
     ```
 
-⚠️ ATENÇÃO ⚠️
- - Para a execução de `searchId` é necessáro:
-    - Estar logado e;
-    - Ser usuário administrator do sistema (role: "adm").
-
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `searchId` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
  
 - Campos obrigatórios:
 
@@ -506,14 +506,14 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     ```
     Tradução da mensagem: "'usuário' modificado com sucesso."
 
-    ⚠️ ATENÇÃO: Campos `"_id"`, `"role"` e `modifiedCount` são gerados automaticamente pelo sistema. ⚠️
+    >⚠️ ATENÇÃO: Campos `"_id"`, `"role"` e `modifiedCount` são gerados automaticamente pelo sistema. ⚠️
 
-⚠️ ATENÇÃO ⚠️
-  - Para a execução de `update` é necessáro:
-    - Estar logado e;
-    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
-
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
+>⚠️ ATENÇÃO ⚠️
+>  - Para a execução de `update` é necessáro:
+>    - Estar logado e;
+>    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
  
 - Campos obrigatórios:
 
@@ -675,10 +675,10 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
     - Tradução: senha
 
-    ⚠️ ATENÇÃO ⚠️
-      - Visando maior segurança as senhas:
-        - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
-        - Não são retornadas em consultas por `searchAll` e `searchId`.      
+    >⚠️ ATENÇÃO ⚠️
+    >  - Visando maior segurança as senhas:
+    >    - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
+    >    - Não são retornadas em consultas por `searchAll` e `searchId`.      
 
     - Requisitos do campo / Erro retornado:
 
@@ -737,8 +737,8 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     }
     ```
 
-⚠️ ATENÇÃO ⚠️
- - Para efetuar login como administrator do sistema, o `email` e `password`, além de atenderem os requisitos abaixo descritos, devem ser os mesmos cadastrados no arquivo [.env](#.env).
+>⚠️ ATENÇÃO ⚠️
+> - Para efetuar login como administrator do sistema, o `email` e `password`, além de atenderem os requisitos abaixo descritos, devem ser os mesmos cadastrados no arquivo [.env](#.env).
 
 - Erro retornado no login:
 
@@ -804,10 +804,10 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
     - Tradução: senha
 
-    ⚠️ ATENÇÃO ⚠️
-      - Visando maior segurança as senhas:
-        - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
-        - Não são retornadas em consultas por `searchAll` e `searchId`.      
+    >⚠️ ATENÇÃO ⚠️
+    >  - Visando maior segurança as senhas:
+    >    - São encriptadas antes de armazenadas no banco de dados, através do [bcrypt](https://www.npmjs.com/package/bcrypt);
+    >    - Não são retornadas em consultas por `searchAll` e `searchId`.      
 
     - Requisitos do campo / Erro retornado:
 
@@ -888,14 +888,14 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
     ```
     Tradução da mensagem: "'produto' criado com sucesso."
 
-    ⚠️ ATENÇÃO: O Campo `"_id"` é gerado automaticamente pelo sistema. ⚠️
+    >⚠️ ATENÇÃO: O Campo `"_id"` é gerado automaticamente pelo sistema. ⚠️
 
-⚠️ ATENÇÃO ⚠️
- - Para a execução de `create` é necessáro:
-    - Estar logado e;
-    - Ser usuário administrator do sistema (role: "adm").
-
-    Vide: [Authentication](#authentication), [Authorization](#authorization)
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `create` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
  
 - Campos obrigatórios:
 
