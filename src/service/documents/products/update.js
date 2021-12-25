@@ -1,6 +1,7 @@
-const { PRODUCTS } = require('../../utils/strings');
+const { PRODUCTS, PRODUCT_NAME_EXISTS } = require('../../utils/strings');
 const { update } = require('../../../model')(PRODUCTS);
 
+const newProductNameUpdateVerify = require('../../functions/newProductNameUpdateVerify');
 const searchById = require('./searchById');
 
 module.exports = async (dataProduct) => {
@@ -11,6 +12,10 @@ module.exports = async (dataProduct) => {
   if (!product) {
     return null;
   }
+
+  const newProductNameVerify = await newProductNameUpdateVerify(dataProduct, product);
+
+  if (newProductNameVerify) { return PRODUCT_NAME_EXISTS; }
 
   const modifiedProduct = {
     ...product,
