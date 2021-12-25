@@ -1240,6 +1240,245 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
           Tradução da mensagem: "'produto' não encontrado" 
 
 
+#### Products update
+
+- Rota: '/products:id'
+
+- Método: PUT
+
+- Retorno:
+
+    ```json
+    {
+      "message": "'product' modified successfully.",
+      "createdProduct": {
+        "_id": " ",
+        "name": " ",
+        "category": " ",
+        "unity": " ",
+        "quantity": " ",
+        "price": " "
+      }
+    }
+    ```
+    Tradução da mensagem: "'product' modificado com sucesso."
+
+>⚠️ ATENÇÃO ⚠️
+> - Para a execução de `update` é necessáro:
+>    - Estar logado e;
+>    - Ser usuário administrator do sistema (role: "adm").
+>
+>    Vide: [Authentication](#authentication), [Authorization](#authorization)
+ 
+- Campos obrigatórios:
+
+  - `id`:
+    
+    - Tradução: id
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Conter ao menos 24 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'id' field must contain at least 24 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+
+      - `id/usuário deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'product' not found."
+            }
+          }
+          ```
+          Tradução da mensagem: "'produto' não encontrado" 
+
+  - `name`:
+    
+    - Tradução: nome
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'name' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' é obrigatório."
+
+      - `Conter ao menos 04 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'name' field must contain at least 4 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' deve conter pelo menos 4 caracteres"
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'name' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'nome' deve ser uma string."
+
+      - `Ser único no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'product' is already."
+            }
+          }
+          ```
+          Tradução da mensagem: "'produto' ja existe."
+
+      - `Para troca de nome do produto, o novo nome não deve existir no banco de dados`:
+          ```json
+          {
+            "error": {
+              "message": "'new product name' is already."
+            }
+          }
+          ```
+          Tradução da mensagem: "'novo nome do produto' ja existe."
+
+  - `category`:
+    
+    - Tradução: categoria
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'category' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'categoria' é obrigatório."
+
+      - `Conter ao menos 04 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'category' field must contain at least 4 characters"
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'categoria' deve conter pelo menos 4 caracteres"
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'category' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'categoria' deve ser uma string."
+
+  - `unity`:
+    
+    - Tradução: unidade
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'unity' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'unidade' é obrigatório."
+
+      - `Conter ao entre 02 e 03 caracteres`:
+          ```json
+          {
+            "error": {
+              "message": "The 'unity' field must contain between 2 and 3 characters."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'unidade' deve conter entre 2 e 3 caracteres."
+
+      - `Ser um texto/string`:
+          ```json
+          {
+            "error": {
+              "message": "The 'unity' field must be a string."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'unidade' deve ser uma string."
+
+  - `quantity`:
+    
+    - Tradução: quantidade
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'quantity' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'quantidade' é obrigatório."
+
+      - `Ser um número`:
+          ```json
+          {
+            "error": {
+              "message": "The 'quantity' field must be a number."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'quantidade' deve ser um número."
+
+  - `price`:
+    
+    - Tradução: preço
+
+    - Requisitos do campo / Erro retornado:
+
+      - `Obrigatório`:
+          ```json
+          {
+            "error": {
+              "message": "The 'price' field is required."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'preço' é obrigatório."
+
+      - `Ser um número`:
+          ```json
+          {
+            "error": {
+              "message": "The 'preço' field must be a number."
+            }
+          }
+          ```
+          Tradução da mensagem: "O campo 'preço' deve ser um número."
+          
+
 
 ---
 
