@@ -9,6 +9,7 @@ const {
   validatePassword,
   authentication,
   userAuthorization,
+  admAuthorization,
 } = require('../middlewares');
 
 const {
@@ -23,10 +24,12 @@ const router = express.Router({ mergeParams: true });
 
 router.get('/',
   wrapper(authentication),
+  wrapper(admAuthorization),
   wrapper(searchAll));
 
 router.get('/:id',
   wrapper(authentication),
+  wrapper(admAuthorization),
   wrapper(validateId),
   wrapper(searchById));
 
@@ -39,8 +42,8 @@ router.post('/',
 
 router.put('/:id',
   wrapper(authentication),
-  wrapper(validateId),
   wrapper(userAuthorization),
+  wrapper(validateId),
   wrapper(validateEmail),
   wrapper(validateFirstName),
   wrapper(validateLastName),  
@@ -49,8 +52,8 @@ router.put('/:id',
 
 router.delete('/:id',
   wrapper(authentication),
-  wrapper(validateId),
   wrapper(userAuthorization),
+  wrapper(validateId),
   wrapper(remove));
 
 module.exports = router;
