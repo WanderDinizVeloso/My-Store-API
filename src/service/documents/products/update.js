@@ -1,11 +1,11 @@
-const { PRODUCTS, PRODUCT_NAME_EXISTS } = require('../../utils/strings');
+const { PRODUCTS, PRODUCT_NAME_EXIST } = require('../../utils/strings');
 const { update } = require('../../../model')(PRODUCTS);
 
-const newProductNameUpdateVerify = require('../../functions/newProductNameUpdateVerify');
+const newProductNameUpdateVerify = require('../../validations/newProductNameUpdateVerify');
 const searchById = require('./searchById');
 
-module.exports = async (dataProduct) => {
-  const { id, ...dataProductWithoutId } = dataProduct;
+module.exports = async (productData) => {
+  const { id, ...productDataWithoutId } = productData;
 
   const product = await searchById(id);
 
@@ -13,13 +13,13 @@ module.exports = async (dataProduct) => {
     return null;
   }
 
-  const newProductNameVerify = await newProductNameUpdateVerify(dataProduct, product);
+  const verifiedNewProductName = await newProductNameUpdateVerify(productData, product);
 
-  if (newProductNameVerify) { return PRODUCT_NAME_EXISTS; }
+  if (verifiedNewProductName) { return PRODUCT_NAME_EXIST; }
 
   const modifiedProduct = {
     ...product,
-    ...dataProductWithoutId,
+    ...productDataWithoutId,
   };
 
   const { modifiedCount } = await update(modifiedProduct);
