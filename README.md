@@ -377,15 +377,15 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Requisitos do campo / Erro retornado:
 
-      - `Conter ao menos 24 caracteres`:
+      - `Conter 24 caracteres`:
           ```json
           {
             "error": {
-              "message": "The 'id' field must contain at least 24 characters"
+              "message": "The 'id' field must contain 24 characters"
             }
           }
           ```
-          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+          Tradução da mensagem: "O campo 'id' deve conter 24 caracteres" 
 
       - `id/usuário deve existir no banco de dados`:
           ```json
@@ -483,15 +483,15 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Requisitos do campo / Erro retornado:
 
-      - `Conter ao menos 24 caracteres`:
+      - `Conter 24 caracteres`:
           ```json
           {
             "error": {
-              "message": "The 'id' field must contain at least 24 characters"
+              "message": "The 'id' field must contain 24 characters"
             }
           }
           ```
-          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+          Tradução da mensagem: "O campo 'id' deve conter 24 caracteres" 
 
       - `id/usuário deve existir no banco de dados`:
           ```json
@@ -546,15 +546,15 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Requisitos do campo / Erro retornado:
 
-      - `Conter ao menos 24 caracteres`:
+      - `Conter 24 caracteres`:
           ```json
           {
             "error": {
-              "message": "The 'id' field must contain at least 24 characters"
+              "message": "The 'id' field must contain 24 characters"
             }
           }
           ```
-          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+          Tradução da mensagem: "O campo 'id' deve conter 24 caracteres" 
 
       - `id/usuário deve existir no banco de dados`:
           ```json
@@ -811,16 +811,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           }
           ```
           Tradução da mensagem: "Campo 'email' inválido."
-
-      - `Ser único no banco de dados`:
-          ```json
-          {
-            "error": {
-              "message": "'email' is already."
-            }
-          }
-          ```
-          Tradução da mensagem: "'email' ja existe."
 
   - `password`:
 
@@ -1133,15 +1123,15 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Requisitos do campo / Erro retornado:
 
-      - `Conter ao menos 24 caracteres`:
+      - `Conter 24 caracteres`:
           ```json
           {
             "error": {
-              "message": "The 'id' field must contain at least 24 characters"
+              "message": "The 'id' field must contain 24 characters"
             }
           }
           ```
-          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+          Tradução da mensagem: "O campo 'id' deve conter 24 caracteres" 
 
       - `id/produto deve existir no banco de dados`:
           ```json
@@ -1154,7 +1144,7 @@ O projeto está organizado e estruturado da seguinte maneira:
           Tradução da mensagem: "'product' não encontrado" 
 
 
-#### Users searchAll
+#### Products searchAll
 
 - Rota: '/product'
 
@@ -1205,7 +1195,7 @@ O projeto está organizado e estruturado da seguinte maneira:
       Tradução da mensagem: "não há 'produtos' registrados".
 
 
-#### Users searchById
+#### Products searchById
 
 - Rota: '/products:id'
 
@@ -1240,15 +1230,15 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Requisitos do campo / Erro retornado:
 
-      - `Conter ao menos 24 caracteres`:
+      - `Conter 24 caracteres`:
           ```json
           {
             "error": {
-              "message": "The 'id' field must contain at least 24 characters"
+              "message": "The 'id' field must contain 24 characters"
             }
           }
           ```
-          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+          Tradução da mensagem: "O campo 'id' deve conter 24 caracteres" 
 
       - `id/usuário deve existir no banco de dados`:
           ```json
@@ -1299,15 +1289,15 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Requisitos do campo / Erro retornado:
 
-      - `Conter ao menos 24 caracteres`:
+      - `Conter 24 caracteres`:
           ```json
           {
             "error": {
-              "message": "The 'id' field must contain at least 24 characters"
+              "message": "The 'id' field must contain 24 characters"
             }
           }
           ```
-          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+          Tradução da mensagem: "O campo 'id' deve conter 24 caracteres" 
 
       - `id/usuário deve existir no banco de dados`:
           ```json
@@ -1692,15 +1682,15 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Requisitos do campo / Erro retornado:
 
-      - `Conter ao menos 24 caracteres`:
+      - `Conter 24 caracteres`:
           ```json
           {
             "error": {
-              "message": "The 'id' field must contain at least 24 characters"
+              "message": "The 'id' field must contain 24 characters"
             }
           }
           ```
-          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+          Tradução da mensagem: "O campo 'id' deve conter 24 caracteres" 
 
       - `id/venda deve existir no banco de dados`:
           ```json
@@ -1765,7 +1755,7 @@ O projeto está organizado e estruturado da seguinte maneira:
 
 - Erro retornado no searchAll:
 
-  - `nenhum usuário cadastrado no banco de dados`:
+  - `nenhuma venda cadastrada no banco de dados`:
       ```json
       {
         "error": {
@@ -1832,15 +1822,15 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Requisitos do campo / Erro retornado:
 
-      - `Conter ao menos 24 caracteres`:
+      - `Conter 24 caracteres`:
           ```json
           {
             "error": {
-              "message": "The 'id' field must contain at least 24 characters"
+              "message": "The 'id' field must contain 24 characters"
             }
           }
           ```
-          Tradução da mensagem: "O campo 'id' deve conter pelo menos 24 caracteres" 
+          Tradução da mensagem: "O campo 'id' deve conter 24 caracteres" 
 
       - `id/sale deve existir no banco de dados`:
           ```json
@@ -1972,28 +1962,26 @@ Responsável por capturar e guardar todos os error internos disparados na execu�
         {
           "_id": " ",
           "message": " ",
+          "method": " ",
           "URL": " ",
           "bodyWithoutPassword": {
             ...
           },
           "user": {
-            "_id": " ",
-            "email": " ",
-            "role": " "
+            ...
           },
           "date": " "
         },
         {
           "_id": " ",
           "message": " ",
+          "method": " ",
           "URL": " ",
           "bodyWithoutPassword": {
             ...
           },
           "user": {
-            "_id": " ",
-            "email": " ",
-            "role": " "
+            ...
           },
           "date": " "
         },
