@@ -3,10 +3,11 @@ const RADIX = 10;
 
 module.exports = (sales) => sales
   .reduce((acc, sale) => {
-    const price = parseInt(sale.price, RADIX);
-    const quantity = parseInt(sale.quantity, RADIX);
+    const convertedPrice = parseInt(sale.price, RADIX);
+    const convertedQuantity = parseInt(sale.quantity, RADIX);
 
-    const total = (price * quantity).toFixed(DECIMAL_PLACES);
+    const total = (convertedPrice * convertedQuantity).toFixed(DECIMAL_PLACES);
+
     const amount = (
       parseInt(acc.amount, RADIX) + parseInt(total, RADIX)
     ).toFixed(DECIMAL_PLACES);

@@ -1,19 +1,13 @@
-const salesWithTotalAndAmount = require('./salesWithTotalAndAmount');
-const dataSalesConvert = require('./dataSalesConvert');
 const findEmail = require('./findEmail');
 const findProductName = require('./findProductName');
-const newEmailUpdateVerify = require('./newEmailUpdateVerify');
-const newProductNameUpdateVerify = require('./newProductNameUpdateVerify');
-const updateBalance = require('./updateBalance');
-const notRegisteredProduct = require('./notRegisteredProduct');
+const includeTotalAndAmountOnSale = require('./includeTotalAndAmountOnSale');
+const inventoryUpdate = require('./inventoryUpdate');
+const saleDataConvert = require('./saleDataConvert');
 
 module.exports = {
-  salesWithTotalAndAmount,
-  dataSalesConvert,
   findEmail,
   findProductName,
-  newEmailUpdateVerify,
-  newProductNameUpdateVerify,
-  updateBalance,
-  notRegisteredProduct,
+  includeTotalAndAmountOnSale,
+  inventoryUpdate,
+  saleDataConvert,
 };

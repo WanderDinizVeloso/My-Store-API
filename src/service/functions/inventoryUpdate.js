@@ -9,9 +9,9 @@ module.exports = async (productList, operator) => productList.soldProducts
     const result = async () => {        
       const { _id: id, quantity: saleQuantity } = product;
   
-      const dataProduct = await searchById(id);
+      const productData = await searchById(id);
       
-      const { _id, quantity: currentQuantity, ...productWithoutIdAndQuantity } = dataProduct;
+      const { _id, quantity: currentQuantity, ...productDataWithoutIdAndQuantity } = productData;
 
       let newQuantity = 0;
 
@@ -21,13 +21,13 @@ module.exports = async (productList, operator) => productList.soldProducts
         newQuantity = parseInt(currentQuantity, RADIX) - parseInt(saleQuantity, RADIX);
       }
 
-      const quantityConvert = newQuantity.toFixed(QUANTITY_DECIMAL_PLACES);
+      const convertedQuantity = newQuantity.toFixed(QUANTITY_DECIMAL_PLACES);
   
-      const productDataUpdated = {
-        id, ...productWithoutIdAndQuantity, quantity: quantityConvert,
+      const updatedProductData = {
+        id, ...productDataWithoutIdAndQuantity, quantity: convertedQuantity,
       };
       
-      await update(productDataUpdated);
+      await update(updatedProductData);
     };
 
     result();

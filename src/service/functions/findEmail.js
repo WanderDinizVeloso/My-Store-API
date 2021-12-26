@@ -1,9 +1,9 @@
-const searchAll = require('../documents/users/searchAll');
+const { searchAll } = require('../documents/users');
 
 module.exports = async (user) => {  
   const allUsers = await searchAll() || [];  
   
-  const verifyUser = allUsers.find(({ email }) => email === user.email);
+  const userList = allUsers.find(({ email }) => email === user.email);
 
-  return verifyUser;
+  return userList;
 };

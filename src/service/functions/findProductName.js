@@ -1,9 +1,9 @@
-const searchAll = require('../documents/products/searchAll');
+const { searchAll } = require('../documents/products');
 
 module.exports = async (product) => {  
   const allProducts = await searchAll() || [];  
   
-  const verifyProduct = allProducts.find(({ name }) => name === product.name);
+  const productList = allProducts.find(({ name }) => name === product.name);
 
-  return verifyProduct;
+  return productList;
 };
