@@ -20,7 +20,7 @@ const invalidCaracters = (param) =>
   + 'a special character (!, $, #, %, _).';
 
 const isNotANumber = (param) =>
-  `The '${param}' field must be a number.`;
+  `The '${param}' field must be a positive number.`;
 
 const isNotAString = (param) =>
   `The '${param}' field must be a string.`;

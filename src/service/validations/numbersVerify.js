@@ -5,7 +5,7 @@ module.exports = (param) => {
     return null;
   }
 
-  if (typeof param !== 'number') {
+  if (typeof param !== 'number' || param <= 0) {
     return IS_NOT_A_NUMBER;
   }
 
