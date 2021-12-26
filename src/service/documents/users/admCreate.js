@@ -11,9 +11,9 @@ const SALT_ROUNDS = 10;
 module.exports = async (user) => {
   const allUsers = await searchAll() || [];
 
-  const verifyUser = allUsers.find(({ email }) => email === user.email);
+  const verifiedUser = allUsers.find(({ email }) => email === user.email);
 
-  if (verifyUser) {
+  if (verifiedUser) {
     return null;
   }
 
