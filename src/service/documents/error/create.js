@@ -1,10 +1,10 @@
 const { ERROR } = require('../../utils/strings');
 const { create } = require('../../../model')(ERROR);
 
-module.exports = async (data) => {
+module.exports = async (error) => {
   const date = new Date();
 
-  const dataWithDate = { ...data, date };
+  const errorWithDate = { ...error, date };
 
-  await create(dataWithDate);
+  await create(errorWithDate);
 };
