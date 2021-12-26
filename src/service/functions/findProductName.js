@@ -1,4 +1,4 @@
-const { searchAll } = require('../documents/products');
+const searchAll = require('../documents/products/searchAll');
 
 module.exports = async (product) => {  
   const allProducts = await searchAll() || [];  
