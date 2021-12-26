@@ -4,7 +4,7 @@ const { update } = require('../../../service/documents/products');
 const { modifiedSuccessfully, notFound, registered } = require('../../../service/utils/messages');
 
 const {
-  PRODUCT, NEW_PRODUCT_NAME, PRODUCT_NAME_EXISTS,
+  PRODUCT, NEW_PRODUCT_NAME, PRODUCT_NAME_EXIST,
 } = require('../../../service/utils/strings');
 
 const ERROR = {
@@ -27,7 +27,7 @@ module.exports = async (req, res, next) => {
   const updated = await update(newUpdate);
 
   if (!updated) { return next(ERROR.NOT_FOUND); }
-  if (updated === PRODUCT_NAME_EXISTS) { return next(ERROR.BAD_REQUEST); }
+  if (updated === PRODUCT_NAME_EXIST) { return next(ERROR.BAD_REQUEST); }
 
   return res
     .status(OK)
