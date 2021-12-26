@@ -120,6 +120,142 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
 O projeto está organizado e estruturado da seguinte maneira:
 
+>├── .example.env
+>├── .env
+>├── README.md
+>└── src
+>    ├── api
+>    │   ├── app.js
+>    │   └── server.js
+>    ├── controller
+>    │   ├── documents
+>    │   │   ├── error
+>    │   │   │   ├── index.js
+>    │   │   │   └── searchAll.js
+>    │   │   ├── login
+>    │   │   │   ├── index.js
+>    │   │   │   └── login.js
+>    │   │   ├── products
+>    │   │   │   ├── create.js
+>    │   │   │   ├── index.js
+>    │   │   │   ├── remove.js
+>    │   │   │   ├── searchAll.js
+>    │   │   │   ├── searchById.js
+>    │   │   │   └── update.js
+>    │   │   ├── sales
+>    │   │   │   ├── create.js
+>    │   │   │   ├── index.js
+>    │   │   │   ├── remove.js
+>    │   │   │   ├── searchAll.js
+>    │   │   │   ├── searchById.js
+>    │   │   │   └── update.js
+>    │   │   └── users
+>    │   │       ├── create.js
+>    │   │       ├── index.js
+>    │   │       ├── remove.js
+>    │   │       ├── searchAll.js
+>    │   │       ├── searchById.js
+>    │   │       └── update.js
+>    │   ├── middlewares
+>    │   │   ├── auth
+>    │   │   │   ├── admAuthorization.js
+>    │   │   │   ├── authentication.js
+>    │   │   │   └── userAuthorization.js
+>    │   │   ├── error
+>    │   │   │   └── error.js
+>    │   │   ├── index.js
+>    │   │   ├── utils
+>    │   │   │   └── wrapper.js
+>    │   │   └── validations
+>    │   │       ├── validateEmail.js
+>    │   │       ├── validateFirstName.js
+>    │   │       ├── validateId.js
+>    │   │       ├── validateLastName.js
+>    │   │       ├── validatePassword.js
+>    │   │       ├── validateProductCategory.js
+>    │   │       ├── validateProductName.js
+>    │   │       ├── validateProductPrice.js
+>    │   │       ├── validateProductQuantity.js
+>    │   │       ├── validateProductUnity.js
+>    │   │       └── validateSale.js
+>    │   └── routers
+>    │       ├── error.js
+>    │       ├── login.js
+>    │       ├── products.js
+>    │       ├── root.js
+>    │       ├── sales.js
+>    │       └── users.js
+>    ├── model
+>    │   ├── connection.js
+>    │   ├── documents
+>    │   │   ├── create.js
+>    │   │   ├── remove.js
+>    │   │   ├── searchAll.js
+>    │   │   ├── searchById.js
+>    │   │   └── update.js
+>    │   └── index.js
+>    └── service
+>        ├── auth
+>        │   ├── getToken.js
+>        │   ├── index.js
+>        │   └── verifyToken.js
+>        ├── documents
+>        │   ├── error
+>        │   │   ├── create.js
+>        │   │   ├── index.js
+>        │   │   └── searchAll.js
+>        │   ├── login
+>        │   │   ├── index.js
+>        │   │   └── login.js
+>        │   ├── products
+>        │   │   ├── create.js
+>        │   │   ├── index.js
+>        │   │   ├── remove.js
+>        │   │   ├── searchAll.js
+>        │   │   ├── searchById.js
+>        │   │   └── update.js
+>        │   ├── sales
+>        │   │   ├── create.js
+>        │   │   ├── index.js
+>        │   │   ├── remove.js
+>        │   │   ├── searchAll.js
+>        │   │   ├── searchById.js
+>        │   │   └── update.js
+>        │   └── users
+>        │       ├── admCreate.js
+>        │       ├── create.js
+>        │       ├── index.js
+>        │       ├── remove.js
+>        │       ├── searchAll.js
+>        │       ├── searchById.js
+>        │       └── update.js
+>        ├── functions
+>        │   ├── findEmail.js
+>        │   ├── findProductName.js
+>        │   ├── includeTotalAndAmountOnSale.js
+>        │   ├── index.js
+>        │   ├── inventoryUpdate.js
+>        │   └── saleDataConvert.js
+>        ├── utils
+>        │   ├── messages.js
+>        │   └── strings.js
+>        └── validations
+>            ├── admVerify.js
+>            ├── caractersVerify.js
+>            ├── emailVerify.js
+>            ├── fieldVerify.js
+>            ├── idVerify.js
+>            ├── index.js
+>            ├── newEmailUpdateVerify.js
+>            ├── newProductNameUpdateVerify.js
+>            ├── numbersVerify.js
+>            ├── productInventaryVerify.js
+>            ├── registeredProductsVerify.js
+>            ├── saleDataVerify.js
+>            ├── saleNumbersVerify.js
+>            ├── saleStringsVerify.js
+>            ├── saleVerify.js
+>            └── unityVerify.js
 
 ---
 
