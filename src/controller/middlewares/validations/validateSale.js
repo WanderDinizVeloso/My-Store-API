@@ -1,6 +1,6 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
-const { verifySales, verifyProductInventary } = require('../../../service/validations');
+const { saleVerify, productInventaryVerify } = require('../../../service/validations');
 
 const {
   invalid,
@@ -26,21 +26,23 @@ const ERROR = {
 };
 
 module.exports = async (req, _res, next) => {
-  const saleData = req.body;
+  const sale = req.body;
 
-  const validation = verifySales(saleData);
+  const verifiedSale = saleVerify(sale);
 
-  if (validation.error) { return next(ERROR.BAD_REQUEST); }
+  if (verifiedSale.error) { return next(ERROR.BAD_REQUEST); }
 
-  const checkInventary = await verifyProductInventary(validation.products);
+  const verifiedProductInventory = await productInventaryVerify(verifiedSale.products);
 
-  if (checkInventary.error) { return next(ERROR.BAD_REQUEST_STOCK(checkInventary.errorList)); }
-
-  if (checkInventary.count !== saleData.length) { 
-    return next(ERROR.BAD_REQUEST_NOT_REGISTERED(checkInventary.notRegisteredList));
+  if (verifiedProductInventory.error) {
+    return next(ERROR.BAD_REQUEST_STOCK(verifiedProductInventory.errorList));
   }
 
-  const newBody = checkInventary.products;
+  if (verifiedProductInventory.count !== sale.length) { 
+    return next(ERROR.BAD_REQUEST_NOT_REGISTERED(verifiedProductInventory.notRegisteredList));
+  }
+
+  const newBody = verifiedProductInventory.products;
 
   req.body = newBody;
 

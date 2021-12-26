@@ -1,18 +1,15 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
-const { verifyRequeriment, verifyCaracters } = require('../../../service/validations');
+const { fieldVerify, caractersVerify } = require('../../../service/validations');
 
 const {
-  required,
-  notLength,
-  notString,
-  invalidCaracters,
+  required, noLength, isNotAString, invalidCaracters,
 } = require('../../../service/utils/messages');
 
 const {
   PASSWORD,
   NO_LENGTH,
-  NOT_A_STRING,
+  IS_NOT_A_STRING,
   INVALID_PASSWORD,
 } = require('../../../service/utils/strings');
 
@@ -23,13 +20,13 @@ const ERROR = {
     status: BAD_REQUEST,
     message: required(PASSWORD),
   },
-  BAD_REQUEST_NOT_LENGTH: {
+  BAD_REQUEST_NO_LENGTH: {
     status: BAD_REQUEST,
-    message: notLength(PASSWORD, LENGTH),
+    message: noLength(PASSWORD, LENGTH),
   },
-  BAD_REQUEST_NOT_STRING: {
+  BAD_REQUEST_IS_NOT_A_STRING: {
     status: BAD_REQUEST,
-    message: notString(PASSWORD),
+    message: isNotAString(PASSWORD),
   },
   BAD_REQUEST_INVALID_PASSWORD: {
     status: BAD_REQUEST,
@@ -40,13 +37,16 @@ const ERROR = {
 module.exports = async (req, _res, next) => {
   const { password } = req.body;
 
-  const validation = verifyRequeriment(password, LENGTH);
-  const caractersValidation = verifyCaracters(password);
+  const verifiedPassword = fieldVerify(password, LENGTH);
+  const verifiedPasswordCaracters = caractersVerify(password);
 
-  if (!validation) { return next(ERROR.BAD_REQUEST_REQUIRED); }
-  if (validation === NOT_A_STRING) { return next(ERROR.BAD_REQUEST_NOT_STRING); }
-  if (caractersValidation === INVALID_PASSWORD) { return next(ERROR.BAD_REQUEST_INVALID_PASSWORD); }
-  if (validation === NO_LENGTH) { return next(ERROR.BAD_REQUEST_NOT_LENGTH); }
+  if (!verifiedPassword) { return next(ERROR.BAD_REQUEST_REQUIRED); }
+  if (verifiedPassword === IS_NOT_A_STRING) { return next(ERROR.BAD_REQUEST_IS_NOT_A_STRING); }
+  if (verifiedPassword === NO_LENGTH) { return next(ERROR.BAD_REQUEST_NO_LENGTH); }
+  
+  if (verifiedPasswordCaracters === INVALID_PASSWORD) {
+    return next(ERROR.BAD_REQUEST_INVALID_PASSWORD);
+  }  
 
   return next();
 };

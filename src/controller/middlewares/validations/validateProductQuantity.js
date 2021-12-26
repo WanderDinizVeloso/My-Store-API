@@ -1,8 +1,8 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
-const { verifyNumbers } = require('../../../service/validations');
-const { required, notNumber } = require('../../../service/utils/messages');
-const { QUANTITY, NOT_A_NUMBER } = require('../../../service/utils/strings');
+const { numbersVerify } = require('../../../service/validations');
+const { required, isNotANumber } = require('../../../service/utils/messages');
+const { QUANTITY, IS_NOT_A_NUMBER } = require('../../../service/utils/strings');
 
 const DECIMAL_PLACES = 3;
 
@@ -11,23 +11,23 @@ const ERROR = {
     status: BAD_REQUEST,
     message: required(QUANTITY),
   },
-  BAD_REQUEST_NOT_NUMBER: {
+  BAD_REQUEST_IS_NOT_A_NUMBER: {
     status: BAD_REQUEST,
-    message: notNumber(QUANTITY),
+    message: isNotANumber(QUANTITY),
   },
 };
 
 module.exports = async (req, _res, next) => {
   const { quantity } = req.body;
 
-  const validation = verifyNumbers(quantity);
+  const verifiedQuantity = numbersVerify(quantity);
 
-  if (!validation) { return next(ERROR.BAD_REQUEST_REQUIRED); }
-  if (validation === NOT_A_NUMBER) { return next(ERROR.BAD_REQUEST_NOT_NUMBER); }
+  if (!verifiedQuantity) { return next(ERROR.BAD_REQUEST_REQUIRED); }
+  if (verifiedQuantity === IS_NOT_A_NUMBER) { return next(ERROR.BAD_REQUEST_IS_NOT_A_NUMBER); }
 
-  const convertDecimalPlaces = quantity.toFixed(DECIMAL_PLACES);
+  const convertedQuantity = quantity.toFixed(DECIMAL_PLACES);
 
-  req.body.quantity = convertDecimalPlaces;
+  req.body.quantity = convertedQuantity;
 
   return next();
 };

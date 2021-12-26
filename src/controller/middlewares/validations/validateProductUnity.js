@@ -1,8 +1,12 @@
 const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
-const { verifyUnity } = require('../../../service/validations');
-const { required, notBetweenTwoNumbers, notString } = require('../../../service/utils/messages');
-const { UNITY, NO_LENGTH, NOT_A_STRING } = require('../../../service/utils/strings');
+const { unityVerify } = require('../../../service/validations');
+
+const {
+  required, noLengthBetweenTwoNumbers, isNotAString,
+} = require('../../../service/utils/messages');
+
+const { UNITY, NO_LENGTH, IS_NOT_A_STRING } = require('../../../service/utils/strings');
 
 const INITIAL_LENGTH = 2;
 const FINAL_LENGTH = 3;
@@ -12,28 +16,28 @@ const ERROR = {
     status: BAD_REQUEST,
     message: required(UNITY),
   },
-  BAD_REQUEST_NOT_LENGTH: {
+  BAD_REQUEST_NO_LENGTH: {
     status: BAD_REQUEST,
-    message: notBetweenTwoNumbers(UNITY, INITIAL_LENGTH, FINAL_LENGTH),
+    message: noLengthBetweenTwoNumbers(UNITY, INITIAL_LENGTH, FINAL_LENGTH),
   },
-  BAD_REQUEST_NOT_STRING: {
+  BAD_REQUEST_IS_NOT_A_STRING: {
     status: BAD_REQUEST,
-    message: notString(UNITY),
+    message: isNotAString(UNITY),
   },
 };
 
 module.exports = async (req, _res, next) => {
   const { unity } = req.body;
 
-  const validation = verifyUnity(unity, INITIAL_LENGTH, FINAL_LENGTH);
+  const verifiedUnity = unityVerify(unity, INITIAL_LENGTH, FINAL_LENGTH);
 
-  if (!validation) { return next(ERROR.BAD_REQUEST_REQUIRED); }
-  if (validation === NOT_A_STRING) { return next(ERROR.BAD_REQUEST_NOT_STRING); }
-  if (validation === NO_LENGTH) { return next(ERROR.BAD_REQUEST_NOT_LENGTH); }
+  if (!verifiedUnity) { return next(ERROR.BAD_REQUEST_REQUIRED); }
+  if (verifiedUnity === IS_NOT_A_STRING) { return next(ERROR.BAD_REQUEST_IS_NOT_A_STRING); }
+  if (verifiedUnity === NO_LENGTH) { return next(ERROR.BAD_REQUEST_NO_LENGTH); }
 
-  const upperCase = unity.toUpperCase();
+  const convertedUnity = unity.toUpperCase();
 
-  req.body.unity = upperCase;
+  req.body.unity = convertedUnity;
 
   return next();
 };
