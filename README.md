@@ -1045,15 +1045,15 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'quantidade' é obrigatório."
 
-      - `Ser um número`:
+      - `Ser um número positivo`:
           ```json
           {
             "error": {
-              "message": "The 'quantity' field must be a number."
+              "message": "The 'quantity' field must be a positive number."
             }
           }
           ```
-          Tradução da mensagem: "O campo 'quantidade' deve ser um número."
+          Tradução da mensagem: "O campo 'quantidade' deve ser um número positivo."
 
   - `price`:
     
@@ -1071,15 +1071,15 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'preço' é obrigatório."
 
-      - `Ser um número`:
+      - `Ser um número positivo`:
           ```json
           {
             "error": {
-              "message": "The 'preço' field must be a number."
+              "message": "The 'preço' field must be a positive number."
             }
           }
           ```
-          Tradução da mensagem: "O campo 'preço' deve ser um número."
+          Tradução da mensagem: "O campo 'preço' deve ser um número positivo."
 
 
 #### Products remove
@@ -1453,15 +1453,15 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'quantidade' é obrigatório."
 
-      - `Ser um número`:
+      - `Ser um número positivo`:
           ```json
           {
             "error": {
-              "message": "The 'quantity' field must be a number."
+              "message": "The 'quantity' field must be a positive number."
             }
           }
           ```
-          Tradução da mensagem: "O campo 'quantidade' deve ser um número."
+          Tradução da mensagem: "O campo 'quantidade' deve ser um número positivo."
 
   - `price`:
     
@@ -1479,15 +1479,15 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'preço' é obrigatório."
 
-      - `Ser um número`:
+      - `Ser um número positivo`:
           ```json
           {
             "error": {
-              "message": "The 'preço' field must be a number."
+              "message": "The 'preço' field must be a positive number."
             }
           }
           ```
-          Tradução da mensagem: "O campo 'preço' deve ser um número."
+          Tradução da mensagem: "O campo 'preço' deve ser um número positivo."
 
 
 ### Sales
