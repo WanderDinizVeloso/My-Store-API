@@ -1,5 +1,5 @@
-const verifySalesNumbers = require('./verifySalesNumbers');
-const verifySalesStrings = require('./verifySalesStrings');
+const verifySalesNumbers = require('./saleNumbersVerify');
+const verifySalesStrings = require('./saleStringsVerify');
 
 const { dataSalesConvert } = require('../functions');
 

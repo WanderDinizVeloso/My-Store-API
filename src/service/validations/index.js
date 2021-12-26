@@ -1,25 +1,25 @@
-const verifyEmail = require('./verifyEmail');
-const verifyRequeriment = require('./verifyRequeriment');
-const verifyNumbers = require('./verifyNumbers');
-const verifyUnity = require('./verifyUnity');
-const verifyCaracters = require('./verifyCaracters');
-const verifyAdm = require('./verifyAdm');
-const verifySales = require('./verifySales');
-const verifySalesNumbers = require('./verifySalesNumbers');
-const verifySalesStrings = require('./verifySalesStrings');
-const verifyProductInventary = require('./verifyProductInventary');
-const verifySaleData = require('./verifySaleData');
+const admVerify = require('./admVerify');
+const caractersVerify = require('./caractersVerify');
+const emailVerify = require('./emailVerify');
+const fieldVerify = require('./fieldVerify');
+const numbersVerify = require('./numbersVerify');
+const productInventaryVerify = require('./productInventaryVerify');
+const saleDataVerify = require('./saleDataVerify');
+const saleNumbersVerify = require('./saleNumbersVerify');
+const saleStringsVerify = require('./saleStringsVerify');
+const saleVerify = require('./saleVerify');
+const unityVerify = require('./unityVerify');
 
 module.exports = {
-  verifyEmail,
-  verifyRequeriment,
-  verifyNumbers,
-  verifyUnity,
-  verifyCaracters,
-  verifyAdm,
-  verifySales,
-  verifySalesNumbers,
-  verifySalesStrings,
-  verifyProductInventary,
-  verifySaleData,
+  admVerify,
+  caractersVerify,
+  emailVerify,
+  fieldVerify,
+  numbersVerify,
+  productInventaryVerify,
+  saleDataVerify,
+  saleNumbersVerify,
+  saleStringsVerify,
+  saleVerify,
+  unityVerify,
 };

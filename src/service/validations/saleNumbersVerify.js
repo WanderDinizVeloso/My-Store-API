@@ -1,4 +1,4 @@
-const verifyNumbers = require('./verifyNumbers');
+const verifyNumbers = require('./numbersVerify');
 
 module.exports = (sale) => {
   const { quantity, price } = sale;

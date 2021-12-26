@@ -34,6 +34,7 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
 - [Habilidades desenvolvidas](#habilidades-desenvolvidas)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Pré-requisitos](#pré-requisitos)
+- [Organização e Estruturação do Projeto](#organização-e-estruturação-do-projeto)
 - [Orientações detalhadas de como utilizar](#orientações-detalhadas-de-como-utilizar)
   - [Users](#users)
     - [Users create](#users-create)
@@ -112,6 +113,13 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 ---
 
 ## Pré-requisitos
+
+---
+
+## Organização e Estruturação do Projeto
+
+O projeto está organizado e estruturado da seguinte maneira:
+
 
 ---
 

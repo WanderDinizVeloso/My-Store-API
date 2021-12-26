@@ -1,5 +1,5 @@
-const verifyRequeriment = require('./verifyRequeriment');
-const verifyUnity = require('./verifyUnity');
+const verifyRequeriment = require('./fieldVerify');
+const verifyUnity = require('./unityVerify');
 
 const LENGTH = 4;
 const INITIAL_LENGTH = 2;
