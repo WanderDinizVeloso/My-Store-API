@@ -1,22 +1,22 @@
 const ADDITION = 'addition';
 const CATEGORY = 'category';
 const EMAIL = 'email';
-const EMAIL_EXISTS = 'email exists';
+const EMAIL_EXIST = 'email exist';
 const EMAIL_OR_PASSWORD = 'email or password';
 const ERROR = 'error';
 const ERRORS = 'errors';
 const FIRST_NAME = 'firstName';
 const ID = 'id';
-const INVALID_DATA_SALE = 'invalid data sale';
+const INVALID_SALE_DATA = 'invalid sale data';
 const LAST_NAME = 'lastName';
 const NAME = 'name';
 const NEW_EMAIL = 'new email';
 const NEW_PRODUCT_NAME = 'new product name';
 const NO_LENGTH = 'no length';
-const NOT_A_NUMBER = 'not a number';
-const NOT_A_EMAIL = 'not a email';
-const NOT_A_STRING = 'not a string';
 const INVALID_PASSWORD = 'invalid email';
+const IS_NOT_A_EMAIL = 'is not a email';
+const IS_NOT_A_NUMBER = 'not a number';
+const IS_NOT_A_STRING = 'is not a string';
 const PASSWORD = 'password';
 const PRICE = 'price';
 const PRODUCT = 'product';
@@ -37,21 +37,21 @@ module.exports = {
   ADDITION,
   CATEGORY,
   EMAIL,
-  EMAIL_EXISTS,
+  EMAIL_EXIST,
   EMAIL_OR_PASSWORD,
   ERROR,
   ERRORS,
   FIRST_NAME,
   ID,
-  INVALID_DATA_SALE,
+  INVALID_SALE_DATA,
   LAST_NAME,
   NAME,
   NEW_EMAIL,
   NEW_PRODUCT_NAME,
   NO_LENGTH,
-  NOT_A_NUMBER,
-  NOT_A_EMAIL,
-  NOT_A_STRING,
+  IS_NOT_A_EMAIL,
+  IS_NOT_A_NUMBER,
+  IS_NOT_A_STRING,
   INVALID_PASSWORD,
   PASSWORD,
   PRICE,
