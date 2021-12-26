@@ -5,10 +5,10 @@ const { createdSuccessfully } = require('../../../service/utils/messages');
 const { SALE } = require('../../../service/utils/strings');
 
 module.exports = async (req, res, _next) => {
-  const sales = req.body;
+  const sale = req.body;
   const { _id: userId } = req.user;
 
-  const created = await create({ sales, userId });
+  const created = await create({ sale, userId });
 
   return res
     .status(CREATED)
