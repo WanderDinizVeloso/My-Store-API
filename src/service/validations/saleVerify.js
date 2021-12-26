@@ -1,22 +1,22 @@
-const verifySalesNumbers = require('./saleNumbersVerify');
-const verifySalesStrings = require('./saleStringsVerify');
+const saleNumbersVerify = require('./saleNumbersVerify');
+const saleStringsVerify = require('./saleStringsVerify');
 
 const { dataSalesConvert } = require('../functions');
 
 module.exports = (saleData) => saleData.reduce((acc, sale) => {
-  const strings = verifySalesStrings(sale);
-  const numbers = verifySalesNumbers(sale);
+  const verifiedStrings = saleStringsVerify(sale);
+  const verifiedNumbers = saleNumbersVerify(sale);
 
-  if (!strings || !numbers) {
+  if (!verifiedStrings || !verifiedNumbers) {
     acc.error = true;
     return acc;
   }
 
-  const convert = dataSalesConvert(sale);
+  const convertedSaleData = dataSalesConvert(sale);
 
   acc.products = [
     ...acc.products,
-    convert,
+    convertedSaleData,
   ];
   
   return acc;

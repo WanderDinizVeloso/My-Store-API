@@ -1,4 +1,4 @@
-const { NOT_A_NUMBER } = require('../utils/strings');
+const { IS_NOT_A_NUMBER } = require('../utils/strings');
 
 module.exports = (param) => {
   if (!param) {
@@ -6,7 +6,7 @@ module.exports = (param) => {
   }
 
   if (typeof param !== 'number') {
-    return NOT_A_NUMBER;
+    return IS_NOT_A_NUMBER;
   }
 
   return param;

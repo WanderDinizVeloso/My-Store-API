@@ -1,4 +1,4 @@
-const { NO_LENGTH, NOT_A_STRING } = require('../utils/strings');
+const { NO_LENGTH, IS_NOT_A_STRING } = require('../utils/strings');
 
 module.exports = (param, length) => {
   if (!param) {
@@ -6,7 +6,7 @@ module.exports = (param, length) => {
   }
 
   if (typeof param !== 'string') {
-    return NOT_A_STRING;
+    return IS_NOT_A_STRING;
   }
 
   if (param.length < length) {

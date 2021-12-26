@@ -1,14 +1,13 @@
 const RADIX = 10;
 
-module.exports = (saleData, allproducts) => saleData
-  .reduce((acc, sale) => {
+module.exports = (saleData, allProducts) => saleData.reduce((acc, sale) => {
   const { name, quantity } = sale;
 
-  allproducts.forEach((product) => {
-    const quantityConvert = parseInt(quantity, RADIX);
-    const salesQuantityConvert = parseInt(product.quantity, RADIX);
+  allProducts.forEach((product) => {
+    const convertedQuantity = parseInt(quantity, RADIX);
+    const convertedSaleQuantity = parseInt(product.quantity, RADIX);
 
-    if (product.name === name && salesQuantityConvert < quantityConvert) {
+    if (product.name === name && convertedSaleQuantity < convertedQuantity) {
       acc.error = true;
       acc.errorList = [...acc.errorList, name];
     }
@@ -18,6 +17,6 @@ module.exports = (saleData, allproducts) => saleData
       acc.count += 1;
     }
   });
-  
+
   return acc;
 }, { error: false, errorList: [], products: [], count: 0 });

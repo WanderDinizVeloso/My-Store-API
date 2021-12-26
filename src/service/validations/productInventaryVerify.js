@@ -1,16 +1,16 @@
 const { searchAll } = require('../documents/products');
 const { notRegisteredProduct } = require('../functions');
 
-const verifySaleData = require('./saleDataVerify');
+const saleDataVerify = require('./saleDataVerify');
 
 module.exports = async (saleData) => {
-  const allproducts = await searchAll() || [];
+  const allProducts = await searchAll() || [];
 
-  const verify = verifySaleData(saleData, allproducts);
+  const dataVerified = saleDataVerify(saleData, allProducts);
 
-  const notRegisteredList = notRegisteredProduct(saleData, verify.products);
+  const unregisteredList = notRegisteredProduct(saleData, dataVerified.products);
 
-  const verifyWithNotRegisteredList = { ...verify, notRegisteredList };
+  const dataVerifiedWithNotRegisteredList = { ...dataVerified, unregisteredList };
 
-  return verifyWithNotRegisteredList;
+  return dataVerifiedWithNotRegisteredList;
 };

@@ -1,4 +1,4 @@
-const { NOT_A_EMAIL, NOT_A_STRING } = require('../utils/strings');
+const { IS_NOT_A_EMAIL, IS_NOT_A_STRING } = require('../utils/strings');
 
 module.exports = (email) => {
   const emailVerificationRegex = /(\w+[@]\w+\.[a-z]{3,3}(\.[a-z]{2,2})?)$/.test(email);
@@ -8,11 +8,11 @@ module.exports = (email) => {
   }
 
   if (typeof email !== 'string') {
-    return NOT_A_STRING;
+    return IS_NOT_A_STRING;
   }
 
   if (!emailVerificationRegex) {
-    return NOT_A_EMAIL;
+    return IS_NOT_A_EMAIL;
   }
 
   return email;
