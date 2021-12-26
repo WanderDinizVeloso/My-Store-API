@@ -2,8 +2,11 @@ const admVerify = require('./admVerify');
 const caractersVerify = require('./caractersVerify');
 const emailVerify = require('./emailVerify');
 const fieldVerify = require('./fieldVerify');
+const newEmailUpdateVerify = require('./newEmailUpdateVerify');
+const newProductNameUpdateVerify = require('./newProductNameUpdateVerify');
 const numbersVerify = require('./numbersVerify');
 const productInventaryVerify = require('./productInventaryVerify');
+const registeredProductsVerify = require('./registeredProductsVerify');
 const saleDataVerify = require('./saleDataVerify');
 const saleNumbersVerify = require('./saleNumbersVerify');
 const saleStringsVerify = require('./saleStringsVerify');
@@ -15,8 +18,11 @@ module.exports = {
   caractersVerify,
   emailVerify,
   fieldVerify,
+  newEmailUpdateVerify,
+  newProductNameUpdateVerify,
   numbersVerify,
   productInventaryVerify,
+  registeredProductsVerify,
   saleDataVerify,
   saleNumbersVerify,
   saleStringsVerify,
