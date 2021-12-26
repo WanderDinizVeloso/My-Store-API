@@ -3,25 +3,25 @@ const { compare } = require('bcrypt');
 const { USERS } = require('../../utils/strings');
 const { searchAll } = require('../../../model')(USERS);
 const { getToken } = require('../../auth');
-const { verifyAdm } = require('../../validations');
+const { admVerify } = require('../../validations');
 
 module.exports = async ({ email, password }) => {
-  await verifyAdm(email, password);
+  await admVerify(email, password);
   const allUsers = await searchAll();
   
-  const searchUser = allUsers.find((user) => user.email === email);
+  const userFound = allUsers.find((user) => user.email === email);
   
-  if (!allUsers.length || !searchUser) {
+  if (!allUsers.length || !userFound) {
     return null;
   }
   
-  const matchPassword = await compare(password, searchUser.password);
+  const user = await compare(password, userFound.password);
  
-  if (!matchPassword) {
+  if (!user) {
     return null;
   }
 
-  const { password: pass, ...userWithoutPassword } = searchUser;
+  const { password: pass, ...userWithoutPassword } = userFound;
 
   const token = getToken(userWithoutPassword);
 
