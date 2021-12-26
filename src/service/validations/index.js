@@ -2,6 +2,7 @@ const admVerify = require('./admVerify');
 const caractersVerify = require('./caractersVerify');
 const emailVerify = require('./emailVerify');
 const fieldVerify = require('./fieldVerify');
+const idVerify = require('./idVerify');
 const newEmailUpdateVerify = require('./newEmailUpdateVerify');
 const newProductNameUpdateVerify = require('./newProductNameUpdateVerify');
 const numbersVerify = require('./numbersVerify');
@@ -18,6 +19,7 @@ module.exports = {
   caractersVerify,
   emailVerify,
   fieldVerify,
+  idVerify,
   newEmailUpdateVerify,
   newProductNameUpdateVerify,
   numbersVerify,
