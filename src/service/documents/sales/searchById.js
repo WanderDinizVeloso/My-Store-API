@@ -2,11 +2,11 @@ const { SALES } = require('../../utils/strings');
 const { searchById } = require('../../../model')(SALES);
 
 module.exports = async (id) => {
-  const sales = await searchById(id);
+  const sale = await searchById(id);
 
-  if (!sales) {
+  if (!sale) {
     return null;
   }
 
-  return sales;
+  return sale;
 };

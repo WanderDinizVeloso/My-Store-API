@@ -1,18 +1,18 @@
 const { SALES, ADDITION, SUBTRACTION } = require('../../utils/strings');
 const { update } = require('../../../model')(SALES);
-const { salesWithTotalAndAmount, updateBalance } = require('../../functions');
+const { includeTotalAndAmountOnSale, inventoryUpdate } = require('../../functions');
 
 const searchById = require('./searchById');
 
-module.exports = async ({ id, dataSale, userId }) => {
-  const newSaleData = salesWithTotalAndAmount(dataSale);
+module.exports = async ({ id, saleData, userId }) => {
+  const newSaleData = includeTotalAndAmountOnSale(saleData);
   const sale = await searchById(id);
   
   if (!sale) {
     return null;
   }
 
-  await updateBalance(sale, ADDITION);
+  await inventoryUpdate(sale, ADDITION);
 
   const date = new Date();
   const modifiedDate = { userId, date };
@@ -24,7 +24,7 @@ module.exports = async ({ id, dataSale, userId }) => {
   
   const updated = { modifiedCount, newData };
   
-  await updateBalance(newData, SUBTRACTION);
+  await inventoryUpdate(newData, SUBTRACTION);
 
   return updated;
 };

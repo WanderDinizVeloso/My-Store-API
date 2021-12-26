@@ -1,22 +1,21 @@
 const { SALES, ADDITION } = require('../../utils/strings');
 const { remove } = require('../../../model')(SALES);
-
-const { updateBalance } = require('../../functions');
+const { inventoryUpdate } = require('../../functions');
 
 const searchById = require('./searchById');
 
 module.exports = async (id) => {
-  const saleDeleted = await searchById(id);
+  const sale = await searchById(id);
 
-  if (!saleDeleted) {
+  if (!sale) {
     return null;
   }
 
   const { deletedCount } = await remove(id);
 
-  const deleted = { deletedCount, saleDeleted };
+  const deleted = { deletedCount, saleDeleted: sale };
 
-  await updateBalance(saleDeleted, ADDITION);
+  await inventoryUpdate(sale, ADDITION);
 
   return deleted;
 };

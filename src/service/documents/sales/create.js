@@ -1,21 +1,21 @@
 const { SALES, SUBTRACTION } = require('../../utils/strings');
 const { create } = require('../../../model')(SALES);
-const { salesWithTotalAndAmount, updateBalance } = require('../../functions');
+const { includeTotalAndAmountOnSale, inventoryUpdate } = require('../../functions');
 
 const searchById = require('./searchById');
 
-module.exports = async ({ sales, userId }) => {
-  const newSales = salesWithTotalAndAmount(sales);
+module.exports = async ({ sale, userId }) => {
+  const newSale = includeTotalAndAmountOnSale(sale);
   
   const date = new Date();
   const creationDate = { userId, date };
-  const createdSale = { creationDate, ...newSales };
+  const newSaleData = { creationDate, ...newSale };
 
-  const { insertedId } = await create(createdSale);
+  const { insertedId } = await create(newSaleData);
 
   const created = await searchById(insertedId);
 
-  await updateBalance(created, SUBTRACTION);
+  await inventoryUpdate(created, SUBTRACTION);
 
   return created;
 };
