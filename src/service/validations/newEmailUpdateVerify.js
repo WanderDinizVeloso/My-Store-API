@@ -1,4 +1,4 @@
-const { findEmail } = require('../functions');
+const findEmail = require('../functions/findEmail');
 
 module.exports = async (dataUser, user) => {
   if (user.email !== dataUser.email) {

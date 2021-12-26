@@ -1,7 +1,7 @@
 const saleNumbersVerify = require('./saleNumbersVerify');
 const saleStringsVerify = require('./saleStringsVerify');
 
-const { dataSalesConvert } = require('../functions');
+const { saleDataConvert } = require('../functions');
 
 module.exports = (saleData) => saleData.reduce((acc, sale) => {
   const verifiedStrings = saleStringsVerify(sale);
@@ -12,7 +12,7 @@ module.exports = (saleData) => saleData.reduce((acc, sale) => {
     return acc;
   }
 
-  const convertedSaleData = dataSalesConvert(sale);
+  const convertedSaleData = saleDataConvert(sale);
 
   acc.products = [
     ...acc.products,

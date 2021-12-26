@@ -1,4 +1,4 @@
-const { findProductName } = require('../functions');
+const findProductName = require('../functions/findProductName');
 
 module.exports = async (dataProduct, product) => {
   if (product.name !== dataProduct.name) {
