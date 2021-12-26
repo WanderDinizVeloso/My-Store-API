@@ -2,7 +2,7 @@ const { OK, NOT_FOUND, BAD_REQUEST } = require('http-status-codes').StatusCodes;
 
 const { update } = require('../../../service/documents/users');
 const { modifiedSuccessfully, notFound, registered } = require('../../../service/utils/messages');
-const { USER, EMAIL_EXISTS, NEW_EMAIL } = require('../../../service/utils/strings');
+const { USER, EMAIL_EXIST, NEW_EMAIL } = require('../../../service/utils/strings');
 
 const ERROR = {
   NOT_FOUND: {
@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
   const updated = await update(newUpdate);
 
   if (!updated) { return next(ERROR.NOT_FOUND); }
-  if (updated === EMAIL_EXISTS) { return next(ERROR.BAD_REQUEST); }
+  if (updated === EMAIL_EXIST) { return next(ERROR.BAD_REQUEST); }
 
   return res
     .status(OK)
