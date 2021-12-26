@@ -20,7 +20,7 @@ const IS_NOT_A_STRING = 'is not a string';
 const PASSWORD = 'password';
 const PRICE = 'price';
 const PRODUCT = 'product';
-const PRODUCT_NAME_EXISTS = 'product name exists';
+const PRODUCT_NAME_EXIST = 'product name exist';
 const PRODUCTS = 'products';
 const QUANTITY = 'quantity';
 const ROLE_ADM = 'adm';
@@ -56,7 +56,7 @@ module.exports = {
   PASSWORD,
   PRICE,
   PRODUCT,
-  PRODUCT_NAME_EXISTS,
+  PRODUCT_NAME_EXIST,
   PRODUCTS,
   QUANTITY,
   ROLE_ADM,
