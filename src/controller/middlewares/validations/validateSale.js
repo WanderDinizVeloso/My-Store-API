@@ -39,7 +39,7 @@ module.exports = async (req, _res, next) => {
   }
 
   if (verifiedProductInventory.count !== sale.length) { 
-    return next(ERROR.BAD_REQUEST_NOT_REGISTERED(verifiedProductInventory.notRegisteredList));
+    return next(ERROR.BAD_REQUEST_NOT_REGISTERED(verifiedProductInventory.unregisteredList));
   }
 
   const newBody = verifiedProductInventory.products;
