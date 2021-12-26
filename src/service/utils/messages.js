@@ -34,6 +34,9 @@ const noLength = (param, length) =>
 const noLengthBetweenTwoNumbers = (param, initialLength, finalLength) =>
   `The '${param}' field must contain between ${initialLength} and ${finalLength} characters.`;
 
+const noLengthEqual = (param, length) =>
+  `The '${param}' field must contain ${length} characters`;  
+
 const notAuthorized = () =>
   'Request not allowed for this user.';
 
@@ -64,6 +67,7 @@ module.exports = {
   modifiedSuccessfully,
   noLength,
   noLengthBetweenTwoNumbers,
+  noLengthEqual,
   notAuthorized,
   notFound,
   notRegistered,
