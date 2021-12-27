@@ -1,15 +1,8 @@
-const { CREATED, BAD_REQUEST } = require('http-status-codes').StatusCodes;
+const { CREATED } = require('http-status-codes').StatusCodes;
 
 const { create } = require('../../../service/documents/users');
-const { createdSuccessfully, registered } = require('../../../service/utils/messages');
+const { createdSuccessfully, registered } = require('../../statusAndMessage');
 const { EMAIL, USER } = require('../../../service/utils/strings');
-
-const ERROR = {
-  BAD_REQUEST: {
-    status: BAD_REQUEST,
-    message: registered(EMAIL),
-  },
-};
 
 module.exports = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;
@@ -18,7 +11,7 @@ module.exports = async (req, res, next) => {
 
   const created = await create(newUser);
 
-  if (!created) { return next(ERROR.BAD_REQUEST); }
+  if (!created) { return next(registered(EMAIL)); }
 
   return res
     .status(CREATED)
