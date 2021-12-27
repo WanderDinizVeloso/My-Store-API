@@ -6,6 +6,7 @@ const idVerify = require('./idVerify');
 const newEmailUpdateVerify = require('./newEmailUpdateVerify');
 const newProductNameUpdateVerify = require('./newProductNameUpdateVerify');
 const numbersVerify = require('./numbersVerify');
+const passwordVerify = require('./passwordVerify');
 const productInventaryVerify = require('./productInventaryVerify');
 const registeredProductsVerify = require('./registeredProductsVerify');
 const saleDataVerify = require('./saleDataVerify');
@@ -23,6 +24,7 @@ module.exports = {
   newEmailUpdateVerify,
   newProductNameUpdateVerify,
   numbersVerify,
+  passwordVerify,
   productInventaryVerify,
   registeredProductsVerify,
   saleDataVerify,
