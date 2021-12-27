@@ -3,9 +3,7 @@ const { BAD_REQUEST } = require('http-status-codes').StatusCodes;
 const { saleVerify, productInventaryVerify } = require('../../../service/validations');
 
 const {
-  invalid,
-  insufficientStock,
-  productNotRegistered,
+  invalid, insufficientStock, productNotRegistered,
 } = require('../../../service/utils/messages');
 
 const { SALE } = require('../../../service/utils/strings');
