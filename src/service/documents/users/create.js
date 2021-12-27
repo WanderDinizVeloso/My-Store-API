@@ -9,9 +9,9 @@ const searchById = require('./searchById');
 const SALT_ROUNDS = 10;
 
 module.exports = async (user) => {
-  const verifiedUserEmail = await findEmail(user);
+  const verifiedUser = await findEmail(user);
 
-  if (verifiedUserEmail) {
+  if (verifiedUser) {
     return null;
   }
 
