@@ -1,7 +1,7 @@
 const { PRODUCTS } = require('../../utils/strings');
 const { create } = require('../../../model')(PRODUCTS);
-const { findProductName } = require('../../functions');
 
+const findProductName = require('../../functions');
 const searchById = require('./searchById');
 
 module.exports = async (product) => {
