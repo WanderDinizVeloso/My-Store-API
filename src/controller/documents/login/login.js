@@ -1,15 +1,8 @@
-const { OK, BAD_REQUEST } = require('http-status-codes').StatusCodes;
+const { OK } = require('http-status-codes').StatusCodes;
 
 const { login } = require('../../../service/documents/login');
-const { invalid } = require('../../../service/utils/messages');
+const { invalid } = require('../../statusAndMessage');
 const { EMAIL_OR_PASSWORD } = require('../../../service/utils/strings');
-
-const ERROR = {
-  BAD_REQUEST: {
-    status: BAD_REQUEST,
-    message: invalid(EMAIL_OR_PASSWORD),
-  },
-};
 
 module.exports = async (req, res, next) => {
   const { email, password } = req.body;
@@ -18,7 +11,7 @@ module.exports = async (req, res, next) => {
 
   const token = await login(newLogin);
 
-  if (!token) { return next(ERROR.BAD_REQUEST); }
+  if (!token) { return next(invalid(EMAIL_OR_PASSWORD)); }
 
   return res
     .status(OK)
