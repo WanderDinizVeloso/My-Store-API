@@ -1,7 +1,7 @@
 const { CREATED } = require('http-status-codes').StatusCodes;
 
 const { create } = require('../../../service/documents/sales');
-const { createdSuccessfully } = require('../../../service/utils/messages');
+const { createdSuccessfully } = require('../../statusAndMessage');
 const { SALE } = require('../../../service/utils/strings');
 
 module.exports = async (req, res, _next) => {
