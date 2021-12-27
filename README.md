@@ -33,8 +33,8 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
 - [Licença](#licença)
 - [Habilidades desenvolvidas](#habilidades-desenvolvidas)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
-- [Pré-requisitos](#pré-requisitos)
 - [Organização e Estruturação do Projeto](#organização-e-estruturação-do-projeto)
+- [Pré-requisitos](#pré-requisitos)
 - [Orientações detalhadas de como utilizar](#orientações-detalhadas-de-como-utilizar)
   - [Users](#users)
     - [Users create](#users-create)
@@ -112,14 +112,10 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
 ---
 
-## Pré-requisitos
-
----
-
 ## Organização e Estruturação do Projeto
 
 O projeto está organizado e estruturado da seguinte maneira:
-
+```bash
 ├── .example.env
 ├── .env
 ├── README.md
@@ -256,6 +252,11 @@ O projeto está organizado e estruturado da seguinte maneira:
             ├── saleStringsVerify.js
             ├── saleVerify.js
             └── unityVerify.js
+```
+
+---
+
+## Pré-requisitos
 
 ---
 
