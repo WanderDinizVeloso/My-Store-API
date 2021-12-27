@@ -13,11 +13,7 @@ const {
 } = require('../middlewares');
 
 const {
-  create,
-  remove,
-  searchAll,
-  searchById,
-  update,
+  create, remove, searchAll, searchById, update,
 } = require('../documents/products');
 
 const router = express.Router({ mergeParams: true });

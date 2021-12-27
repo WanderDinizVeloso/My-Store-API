@@ -1,9 +1,7 @@
 const express = require('express');
 
 const {
-  wrapper,
-  authentication,
-  admAuthorization,
+  wrapper, authentication, admAuthorization,
 } = require('../middlewares');
 
 const { searchAll } = require('../documents/error');

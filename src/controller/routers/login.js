@@ -1,9 +1,7 @@
 const express = require('express');
 
 const {
-  wrapper,
-  validateEmail,
-  validatePassword,
+  wrapper, validateEmail, validatePassword,
 } = require('../middlewares');
 
 const { login } = require('../documents/login');
