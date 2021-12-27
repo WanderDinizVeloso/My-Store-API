@@ -1,15 +1,8 @@
-const { CREATED, BAD_REQUEST } = require('http-status-codes').StatusCodes;
+const { CREATED } = require('http-status-codes').StatusCodes;
 
 const { create } = require('../../../service/documents/products');
-const { createdSuccessfully, registered } = require('../../../service/utils/messages');
+const { createdSuccessfully, registered } = require('../../statusAndMessage');
 const { PRODUCT } = require('../../../service/utils/strings');
-
-const ERROR = {
-  BAD_REQUEST: {
-    status: BAD_REQUEST,
-    message: registered(PRODUCT),
-  },
-};
 
 module.exports = async (req, res, next) => {
   const { name, category, unity, quantity, price } = req.body;
@@ -18,7 +11,7 @@ module.exports = async (req, res, next) => {
 
   const created = await create(newProduct);
 
-  if (!created) { return next(ERROR.BAD_REQUEST); }
+  if (!created) { return next(registered(PRODUCT)); }
 
   return res
     .status(CREATED)
