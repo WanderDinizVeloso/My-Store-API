@@ -1,13 +1,11 @@
 const { PRODUCTS } = require('../../utils/strings');
 const { create } = require('../../../model')(PRODUCTS);
+const { findProductName } = require('../../functions');
 
-const searchAll = require('./searchAll');
 const searchById = require('./searchById');
 
 module.exports = async (product) => {
-  const products = await searchAll() || [];
-
-  const verifiedProduct = products.find(({ name }) => name === product.name);
+  const verifiedProduct = await findProductName(product);
 
   if (verifiedProduct) {
     return null;
