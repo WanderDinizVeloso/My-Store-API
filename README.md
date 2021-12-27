@@ -284,7 +284,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     # Instale as dependências
     $ npm install
     ```
- - Crie o um arquivo cnamado `.env` na raiz do projeto com as seguintes configurações:
+ - Crie o um arquivo chamado `.env` na raiz do projeto com as seguintes configurações:
     - PORT: Porta que rodará localmente o projeto (ex. 3000);
     - URL: URL do banco MongoDB (ex. mongodb://localhost:27017)
     - SECRET: Segredo utilizado na autenticação. [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
@@ -292,7 +292,9 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     - ALGORITHM: algorítmo de criptografia do token. (ex. `HS256`) [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
     - EMAIL_ADM: email para acesso como administrador do sistema. 
     - PASSWORD_ADM: senha para acesso como administrador do sistema.
-    Obs.: tanto o email quanto a senha de administrador deve atender aos mesmos requisitos de sua criação como usuário. vide: [Users create](#users-create).
+
+    >⚠️ ATENÇÃO ⚠️
+    > - Tanto o email quanto a senha de administrador deve atender aos mesmos requisitos de sua criação como usuário. vide: [Users create](#users-create).
 
  - Faça as requisições pelo [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/) ou outro de sua preferência;
 
