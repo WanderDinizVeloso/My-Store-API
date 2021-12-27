@@ -158,29 +158,31 @@ O projeto está organizado e estruturado da seguinte maneira:
     │   │   │   ├── authentication.js
     │   │   │   └── userAuthorization.js
     │   │   ├── error
-    │   │   │   └── error.js
+    │   │   │   └── index.js
     │   │   ├── index.js
-    │   │   ├── utils
-    │   │   │   └── wrapper.js
-    │   │   └── validations
-    │   │       ├── validateEmail.js
-    │   │       ├── validateFirstName.js
-    │   │       ├── validateId.js
-    │   │       ├── validateLastName.js
-    │   │       ├── validatePassword.js
-    │   │       ├── validateProductCategory.js
-    │   │       ├── validateProductName.js
-    │   │       ├── validateProductPrice.js
-    │   │       ├── validateProductQuantity.js
-    │   │       ├── validateProductUnity.js
-    │   │       └── validateSale.js
-    │   └── routers
-    │       ├── error.js
-    │       ├── login.js
-    │       ├── products.js
-    │       ├── root.js
-    │       ├── sales.js
-    │       └── users.js
+    │   │   ├── validations
+    │   │   │   ├── validateEmail.js
+    │   │   │   ├── validateFirstName.js
+    │   │   │   ├── validateId.js
+    │   │   │   ├── validateLastName.js
+    │   │   │   ├── validatePassword.js
+    │   │   │   ├── validateProductCategory.js
+    │   │   │   ├── validateProductName.js
+    │   │   │   ├── validateProductPrice.js
+    │   │   │   ├── validateProductQuantity.js
+    │   │   │   ├── validateProductUnity.js
+    │   │   │   └── validateSale.js
+    │   │   └── wrapper
+    │   │       └── index.js
+    │   ├── routers
+    │   │   ├── error.js
+    │   │   ├── login.js
+    │   │   ├── products.js
+    │   │   ├── root.js
+    │   │   ├── sales.js
+    │   │   └── users.js
+    │   └── statusAndMessage
+    │       └── index.js
     ├── model
     │   ├── connection.js
     │   ├── documents
@@ -232,9 +234,8 @@ O projeto está organizado e estruturado da seguinte maneira:
         │   ├── index.js
         │   ├── inventoryUpdate.js
         │   └── saleDataConvert.js
-        ├── utils
-        │   ├── messages.js
-        │   └── strings.js
+        ├── strings
+        │   └── index.js
         └── validations
             ├── admVerify.js
             ├── caractersVerify.js
@@ -245,6 +246,7 @@ O projeto está organizado e estruturado da seguinte maneira:
             ├── newEmailUpdateVerify.js
             ├── newProductNameUpdateVerify.js
             ├── numbersVerify.js
+            ├── passwordVerify.js
             ├── productInventaryVerify.js
             ├── registeredProductsVerify.js
             ├── saleDataVerify.js
