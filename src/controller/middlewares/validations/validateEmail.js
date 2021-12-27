@@ -7,17 +7,14 @@ module.exports = async (req, _res, next) => {
 
   const verifiedEmail = emailVerify(email);
 
-  if (!verifiedEmail) {
-    return next(required(EMAIL));
+  switch (verifiedEmail) {
+    case null:
+      return next(required(EMAIL));
+    case IS_NOT_A_STRING:
+      return next(isNotAString(EMAIL));
+    case IS_NOT_A_EMAIL:
+      return next(invalid(EMAIL));
+    default:
+      return next();
   }
-
-  if (verifiedEmail === IS_NOT_A_STRING) {
-    return next(isNotAString(EMAIL));
-  }
-
-  if (verifiedEmail === IS_NOT_A_EMAIL) {
-    return next(invalid(EMAIL));
-  }
-
-  return next();
 };

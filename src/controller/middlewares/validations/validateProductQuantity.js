@@ -8,18 +8,15 @@ module.exports = async (req, _res, next) => {
   const { quantity } = req.body;
 
   const verifiedQuantity = numbersVerify(quantity);
-
-  if (!verifiedQuantity) {
-    return next(required(QUANTITY));
-  }
-
-  if (verifiedQuantity === IS_NOT_A_NUMBER) {
-    return next(isNotANumber(QUANTITY));
-  }
-
   const convertedQuantity = quantity.toFixed(DECIMAL_PLACES);
 
-  req.body.quantity = convertedQuantity;
-
-  return next();
+  switch (verifiedQuantity) {
+    case null:
+      return next(required(QUANTITY));
+    case IS_NOT_A_NUMBER:
+      return next(isNotANumber(QUANTITY));
+    default:
+      req.body.quantity = convertedQuantity;
+      return next();
+  }
 };

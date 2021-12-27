@@ -9,17 +9,14 @@ module.exports = async (req, _res, next) => {
 
   const verifiedCategory = fieldVerify(category, LENGTH);
 
-  if (!verifiedCategory) {
-    return next(required(CATEGORY));
+  switch (verifiedCategory) {
+    case null:
+      return next(required(CATEGORY));
+    case IS_NOT_A_STRING:
+      return next(isNotAString(CATEGORY));
+    case NO_LENGTH:
+      return next(noLength(CATEGORY, LENGTH));
+    default:
+      return next();
   }
-
-  if (verifiedCategory === IS_NOT_A_STRING) {
-    return next(isNotAString(CATEGORY));
-  }
-
-  if (verifiedCategory === NO_LENGTH) {
-    return next(noLength(CATEGORY, LENGTH));
-  }
-
-  return next();
 };

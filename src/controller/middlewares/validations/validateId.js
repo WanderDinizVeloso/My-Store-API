@@ -9,17 +9,14 @@ module.exports = async (req, _res, next) => {
 
   const verifiedId = idVerify(id, LENGTH);
 
-  if (!verifiedId) {
-    return next(required(ID));
+  switch (verifiedId) {
+    case null:
+      return next(required(ID));
+    case IS_NOT_A_STRING:
+      return next(isNotAString(ID));
+    case NO_LENGTH:
+      return next(noLengthEqual(ID, LENGTH));
+    default:
+      return next();
   }
-
-  if (verifiedId === IS_NOT_A_STRING) {
-    return next(isNotAString(ID));
-  }
-
-  if (verifiedId === NO_LENGTH) {
-    return next(noLengthEqual(ID, LENGTH));
-  }
-
-  return next();
 };

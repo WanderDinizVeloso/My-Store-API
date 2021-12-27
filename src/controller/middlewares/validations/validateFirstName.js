@@ -9,17 +9,14 @@ module.exports = async (req, _res, next) => {
 
   const verifiedFirsName = fieldVerify(firstName, LENGTH);
 
-  if (!verifiedFirsName) {
-    return next(required(FIRST_NAME));
+  switch (verifiedFirsName) {
+    case null:
+      return next(required(FIRST_NAME));
+    case IS_NOT_A_STRING:
+      return next(isNotAString(FIRST_NAME));
+    case NO_LENGTH:
+      return next(noLength(FIRST_NAME, LENGTH));
+    default:
+      return next();
   }
-
-  if (verifiedFirsName === IS_NOT_A_STRING) {
-    return next(isNotAString(FIRST_NAME));
-  }
-
-  if (verifiedFirsName === NO_LENGTH) {
-    return next(noLength(FIRST_NAME, LENGTH));
-  }
-
-  return next();
 };

@@ -8,18 +8,15 @@ module.exports = async (req, _res, next) => {
   const { price } = req.body;
 
   const verifiedPrice = numbersVerify(price);
-
-  if (!verifiedPrice) {
-    return next(required(PRICE));
-  }
-
-  if (verifiedPrice === IS_NOT_A_NUMBER) {
-    return next(isNotANumber(PRICE));
-  }
-
   const convertedPrice = price.toFixed(DECIMAL_PLACES);
 
-  req.body.price = convertedPrice;
-
-  return next();
+  switch (verifiedPrice) {
+    case null:
+      return next(required(PRICE));
+    case IS_NOT_A_NUMBER:
+      return next(isNotANumber(PRICE));
+    default:
+      req.body.price = convertedPrice;      
+      return next();
+  }
 };
