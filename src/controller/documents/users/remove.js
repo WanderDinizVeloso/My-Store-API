@@ -1,22 +1,15 @@
-const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
+const { OK } = require('http-status-codes').StatusCodes;
 
 const { remove } = require('../../../service/documents/users');
-const { deletedSuccessfully, notFound } = require('../../../service/utils/messages');
+const { deletedSuccessfully, notFound } = require('../../statusAndMessage');
 const { USER } = require('../../../service/utils/strings');
-
-const ERROR = {
-  NOT_FOUND: {
-    status: NOT_FOUND,
-    message: notFound(USER),
-  },
-};
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
 
   const removed = await remove(id);
 
-  if (!removed) { return next(ERROR.NOT_FOUND); }
+  if (!removed) { return next(notFound(USER)); }
 
   return res
     .status(OK)
