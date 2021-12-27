@@ -35,6 +35,9 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Organização e Estruturação do Projeto](#organização-e-estruturação-do-projeto)
 - [Pré-requisitos](#pré-requisitos)
+  - [Ferramentas necessárias](#ferramentas-necessárias)
+  - [Rodando no servidor local](#rodando-no-servidor-local)
+  - [Quer contribuir com o projeto?](#quer-contribuir-com-o-projeto?)
 - [Orientações detalhadas de como utilizar](#orientações-detalhadas-de-como-utilizar)
   - [Users](#users)
     - [Users create](#users-create)
@@ -258,6 +261,64 @@ O projeto está organizado e estruturado da seguinte maneira:
 ---
 
 ## Pré-requisitos
+
+### Ferramentas necessárias
+
+Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
+ - [Git](https://git-scm.com);
+ - [Node.js](https://nodejs.org/en/);
+ - Um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/) ou outro de sua preferência;
+ - Um cliente de API REST como [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/) ou outro de sua preferência;
+
+### Rodando no servidor local
+
+ - Clone do Projeto e instale as dependências
+
+    ```bash
+    # Clone este repositório
+    $ git clone `https://github.com/WanderDinizVeloso/My-Store-API.git`
+
+    # Acesse a pasta do projeto no terminal/cmd
+    $ cd My-Store-API
+
+    # Instale as dependências
+    $ npm install
+    ```
+ - Crie o um arquivo cnamado `.env` na raiz do projeto com as seguintes configurações:
+    - PORT: Porta que rodará localmente o projeto (ex. 3000);
+    - URL: URL do banco MongoDB (ex. mongodb://localhost:27017)
+    - SECRET: Segredo utilizado na autenticação. [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+    - EXPIRES_IN: tempo de duração dos tokens gerados. (ex. `1d`)[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+    - ALGORITHM: algorítmo de criptografia do token. (ex. `HS256`) [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+    - EMAIL_ADM: email para acesso como administrador do sistema. 
+    - PASSWORD_ADM: senha para acesso como administrador do sistema.
+    Obs.: tanto o email quanto a senha de administrador deve atender aos mesmos requisitos de sua criação como usuário. vide: [Users create](#users-create).
+
+ - Faça as requisições pelo [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/) ou outro de sua preferência;
+
+### Quer contribuir com o projeto?
+
+  - Crie uma branch e faça sua contribuição:
+
+    ```bash
+    # Crie uma branch a partir da branch main
+    $ git checkout -b nome-da-nova-branch
+
+    # Adicione as mudanças desejadas e com os devidos commits
+    $ git add . ('adicina as mudança ao stage do Git')
+    $ git commit -m 'informacao do conteúdo do commit' ('salvando as alterações de cada pequena alteracao em um commit')
+    $ git push -u origin nome-da-nova-branch ('adicina a nova branch no reposiótio remoto do Projeto')
+    ```
+  - Crie um novo `Pull Request` (PR):
+     - Vá até a página de `Pull Requests` do repositório no GitHub
+     - Clique no botão verde `"New pull request"`
+     - Clique na caixa de seleção `"Compare"` e escolha a sua branch com atenção
+     - Clique no botão verde `"Create pull request"`
+     - Adicione uma descrição para o Pull Request
+     - Clique no botão verde `"Create pull request"`
+     - Me marque para revisar. `:)` [Wander](https://github.com/WanderDinizVeloso)
+
+// Fonte utilizada na criação do `Pré-requisitos`: [Trybe](https://www.betrybe.com)
 
 ---
 
