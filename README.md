@@ -37,7 +37,7 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
 - [Pré-requisitos](#pré-requisitos)
   - [Ferramentas necessárias](#ferramentas-necessárias)
   - [Rodando no servidor local](#rodando-no-servidor-local)
-  - [Quer contribuir com o projeto?](#quer-contribuir-com-o-projeto?)
+  - [Quer contribuir com o projeto?](#quer-contribuir-com-o-projeto)
 - [Orientações detalhadas de como utilizar](#orientações-detalhadas-de-como-utilizar)
   - [Users](#users)
     - [Users create](#users-create)
