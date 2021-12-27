@@ -889,7 +889,7 @@ O projeto está organizado e estruturado da seguinte maneira:
 
 - Rota: '/login'
 
-- Método: POST"The invalid 'sale' field."
+- Método: POST
 - Retorno:
 
     ```json
@@ -1881,7 +1881,37 @@ O projeto está organizado e estruturado da seguinte maneira:
             },
             ...
           ]
-        }
+        },
+        {
+          "_id": " ",
+          "creationDate": {
+            "userId": " ",
+            "date": " "
+          },
+          "amount": " ",
+          "soldProducts": [
+            {
+              "_id": " ",
+              "name": " ",
+              "category": " ",
+              "unity": " ",
+              "quantity": " ",
+              "price": " ",
+              "total": " "
+            },
+            {
+              "_id": " ",
+              "name": " ",
+              "category": " ",
+              "unity": " ",
+              "quantity": " ",
+              "price": " ",
+              "total": " "
+            },
+            ...
+          ]
+        },
+        ...
       ]
     }
     ```
