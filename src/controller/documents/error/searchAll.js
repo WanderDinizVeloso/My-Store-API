@@ -7,7 +7,9 @@ const { ERRORS } = require('../../../service/utils/strings');
 module.exports = async (_req, res, next) => {
   const errors = await searchAll();
 
-  if (!errors) { return next(notRegistered(ERRORS)); }
+  if (!errors) {
+    return next(notRegistered(ERRORS));
+  }
 
   return res
     .status(OK)

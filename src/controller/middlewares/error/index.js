@@ -16,8 +16,8 @@ module.exports = async (err, req, res, _next) => {
 
   if (status) {
     return res
-    .status(status)
-    .json({ error: { message } });
+      .status(status)
+      .json({ error: { message } });
   }
   
   await create({ message, method, URL, bodyWithoutPassword, user });

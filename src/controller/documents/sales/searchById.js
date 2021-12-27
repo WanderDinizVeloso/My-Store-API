@@ -9,7 +9,9 @@ module.exports = async (req, res, next) => {
 
   const sale = await searchById(id);
 
-  if (!sale) { return next(notFound(SALE)); }
+  if (!sale) {
+    return next(notFound(SALE));
+  }
 
   return res
     .status(OK)

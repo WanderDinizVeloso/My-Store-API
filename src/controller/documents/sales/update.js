@@ -11,7 +11,9 @@ module.exports = async (req, res, next) => {
 
   const updated = await update({ id, sale, userId });
 
-  if (!updated) { return next(notFound(SALE)); }
+  if (!updated) {
+    return next(notFound(SALE));
+  }
 
   return res
     .status(OK)

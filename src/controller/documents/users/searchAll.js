@@ -7,7 +7,9 @@ const { USERS } = require('../../../service/utils/strings');
 module.exports = async (_req, res, next) => {
   const users = await searchAll();
 
-  if (!users) { return next(notRegistered(USERS)); }
+  if (!users) {
+    return next(notRegistered(USERS));
+  }
 
   return res
     .status(OK)

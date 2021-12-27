@@ -9,7 +9,9 @@ module.exports = async (req, res, next) => {
 
   const user = await searchById(id);
 
-  if (!user) { return next(notFound(USER)); }
+  if (!user) {
+    return next(notFound(USER));
+  }
 
   return res
     .status(OK)

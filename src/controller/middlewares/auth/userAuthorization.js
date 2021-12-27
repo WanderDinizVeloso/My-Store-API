@@ -5,7 +5,9 @@ module.exports = async (req, _res, next) => {
   const { id } = req.params;
   const { _id: idAuth, role } = req.user;
 
-  if (id !== idAuth && role !== ROLE_ADM) { return next(notAuthorized()); }
+  if (id !== idAuth && role !== ROLE_ADM) {
+    return next(notAuthorized());
+  }
 
   return next();
 };

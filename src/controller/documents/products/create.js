@@ -11,7 +11,9 @@ module.exports = async (req, res, next) => {
 
   const created = await create(newProduct);
 
-  if (!created) { return next(registered(PRODUCT)); }
+  if (!created) {
+    return next(registered(PRODUCT));
+  }
 
   return res
     .status(CREATED)

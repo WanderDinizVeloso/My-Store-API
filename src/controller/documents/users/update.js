@@ -12,8 +12,13 @@ module.exports = async (req, res, next) => {
 
   const updated = await update(newUpdate);
 
-  if (!updated) { return next(notFound(USER)); }
-  if (updated === EMAIL_EXIST) { return next(registered(NEW_EMAIL)); }
+  if (!updated) {
+    return next(notFound(USER));
+  }
+
+  if (updated === EMAIL_EXIST) {
+    return next(registered(NEW_EMAIL));
+  }
 
   return res
     .status(OK)

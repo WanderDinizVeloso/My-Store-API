@@ -15,8 +15,13 @@ module.exports = async (req, res, next) => {
 
   const updated = await update(newUpdate);
 
-  if (!updated) { return next(notFound(PRODUCT)); }
-  if (updated === PRODUCT_NAME_EXIST) { return next(registered(NEW_PRODUCT_NAME)); }
+  if (!updated) {
+    return next(notFound(PRODUCT));
+  }
+
+  if (updated === PRODUCT_NAME_EXIST) {
+    return next(registered(NEW_PRODUCT_NAME));
+  }
 
   return res
     .status(OK)
