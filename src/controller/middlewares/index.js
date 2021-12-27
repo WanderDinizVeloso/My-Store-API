@@ -1,4 +1,4 @@
-const error = require('./error/error');
+const error = require('./error');
 const wrapper = require('./utils/wrapper');
 const validateEmail = require('./validations/validateEmail');
 const validateFirstName = require('./validations/validateFirstName');
