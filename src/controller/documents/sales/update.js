@@ -1,15 +1,8 @@
-const { OK, NOT_FOUND } = require('http-status-codes').StatusCodes;
+const { OK } = require('http-status-codes').StatusCodes;
 
 const { update } = require('../../../service/documents/sales');
-const { modifiedSuccessfully, notFound } = require('../../../service/utils/messages');
+const { modifiedSuccessfully, notFound } = require('../../statusAndMessage');
 const { SALE } = require('../../../service/utils/strings');
-
-const ERROR = {
-  NOT_FOUND: {
-    status: NOT_FOUND,
-    message: notFound(SALE),
-  },
-};
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
@@ -18,7 +11,7 @@ module.exports = async (req, res, next) => {
 
   const updated = await update({ id, sale, userId });
 
-  if (!updated) { return next(ERROR.NOT_FOUND); }
+  if (!updated) { return next(notFound(SALE)); }
 
   return res
     .status(OK)
