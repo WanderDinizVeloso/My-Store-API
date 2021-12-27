@@ -255,7 +255,6 @@ O projeto está organizado e estruturado da seguinte maneira:
             ├── saleVerify.js
             └── unityVerify.js
 ```
-
 ---
 
 ## Pré-requisitos
@@ -277,7 +276,6 @@ O projeto está organizado e estruturado da seguinte maneira:
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
      
-
 #### Users create
 
 - Rota: '/users'
@@ -431,7 +429,6 @@ O projeto está organizado e estruturado da seguinte maneira:
 
     - Tradução: senha
 
-
     - Requisitos do campo / Erro retornado:
 
       - `Obrigatório`:
@@ -474,7 +471,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
 
-
 #### Users remove
 
 - Rota: '/users:id'
@@ -507,7 +503,6 @@ O projeto está organizado e estruturado da seguinte maneira:
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
 
- 
 - Campos obrigatórios:
 
   - `id`:
@@ -535,7 +530,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           }
           ```
           Tradução da mensagem: "'usuário' não encontrado" 
-
 
 #### Users searchAll
 
@@ -585,7 +579,6 @@ O projeto está organizado e estruturado da seguinte maneira:
       }
       ```
       Tradução da mensagem: "não há 'usuários' registrados".
-
 
 #### Users searchById
 
@@ -641,7 +634,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           }
           ```
           Tradução da mensagem: "'usuário' não encontrado" 
-
 
 #### Users update
 
@@ -884,7 +876,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
 
-
 ### Login
 
 - Rota: '/login'
@@ -1002,7 +993,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
 
-
 ### Products
 
 >⚠️ ATENÇÃO ⚠️
@@ -1015,7 +1005,6 @@ O projeto está organizado e estruturado da seguinte maneira:
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
      
-
 #### Products create
 
 - Rota: '/products'
@@ -1220,7 +1209,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'preço' deve ser um número positivo."
 
-
 #### Products remove
 
 - Rota: '/products:id'
@@ -1282,7 +1270,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "'product' não encontrado" 
 
-
 #### Products searchAll
 
 - Rota: '/product'
@@ -1332,7 +1319,6 @@ O projeto está organizado e estruturado da seguinte maneira:
       }
       ```
       Tradução da mensagem: "não há 'produtos' registrados".
-
 
 #### Products searchById
 
@@ -1388,7 +1374,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           }
           ```
           Tradução da mensagem: "'produto' não encontrado" 
-
 
 #### Products update
 
@@ -1628,7 +1613,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           ```
           Tradução da mensagem: "O campo 'preço' deve ser um número positivo."
 
-
 ### Sales
 
 >⚠️ ATENÇÃO ⚠️
@@ -1669,7 +1653,6 @@ O projeto está organizado e estruturado da seguinte maneira:
 >  ]
 >  ```
      
-
 #### Sales create
 
 - Rota: '/sales'
@@ -1765,7 +1748,6 @@ O projeto está organizado e estruturado da seguinte maneira:
       ```
       Tradução da mensagem: "Estoque insuficiente de produtos: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos com ausência de saldo.
 
-
 #### Sales remove
 
 - Rota: '/sales:id'
@@ -1840,7 +1822,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           }
           ```
           Tradução da mensagem: "'venda' não encontrada" 
-
 
 #### Sales searchAll
 
@@ -1934,7 +1915,6 @@ O projeto está organizado e estruturado da seguinte maneira:
       ```
       Tradução da mensagem: "não há 'vendas' registradas".
 
-
 #### Sales searchById
 
 - Rota: '/sales:id'
@@ -2010,7 +1990,6 @@ O projeto está organizado e estruturado da seguinte maneira:
           }
           ```
           Tradução da mensagem: "'venda' não encontrada"
-
 
 #### Sales update
 
@@ -2112,7 +2091,6 @@ O projeto está organizado e estruturado da seguinte maneira:
       ```
       Tradução da mensagem: "Estoque insuficiente de produtos: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos com ausência de saldo.
 
-
 ### Error
 
 Responsável por capturar e guardar todos os error internos disparados na execução da API.
@@ -2165,7 +2143,6 @@ Responsável por capturar e guardar todos os error internos disparados na execu�
 >    - Ser usuário administrator do sistema (role: "adm").
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
-
 
 ---
 
