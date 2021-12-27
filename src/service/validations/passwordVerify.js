@@ -6,6 +6,10 @@ module.exports = (password, LENGTH) => {
   const verifiedPasswordCaracters = caractersVerify(password);
 
   if (!verifiedPassword) {
+    return null;
+  }
+
+  if (verifiedPassword === password) {
     return verifiedPasswordCaracters;
   }
 
