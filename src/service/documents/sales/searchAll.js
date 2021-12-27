@@ -1,4 +1,4 @@
-const { SALES } = require('../../utils/strings');
+const { SALES } = require('../../strings');
 const { searchAll } = require('../../../model')(SALES);
 
 module.exports = async () => {

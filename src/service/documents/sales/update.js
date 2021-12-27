@@ -1,4 +1,4 @@
-const { SALES, ADDITION, SUBTRACTION } = require('../../utils/strings');
+const { SALES, ADDITION, SUBTRACTION } = require('../../strings');
 const { update } = require('../../../model')(SALES);
 const { includeTotalAndAmountOnSale, inventoryUpdate } = require('../../functions');
 

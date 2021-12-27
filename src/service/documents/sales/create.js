@@ -1,4 +1,4 @@
-const { SALES, SUBTRACTION } = require('../../utils/strings');
+const { SALES, SUBTRACTION } = require('../../strings');
 const { create } = require('../../../model')(SALES);
 const { includeTotalAndAmountOnSale, inventoryUpdate } = require('../../functions');
 

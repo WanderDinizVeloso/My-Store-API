@@ -1,4 +1,4 @@
-const { SALES, ADDITION } = require('../../utils/strings');
+const { SALES, ADDITION } = require('../../strings');
 const { remove } = require('../../../model')(SALES);
 const { inventoryUpdate } = require('../../functions');
 
