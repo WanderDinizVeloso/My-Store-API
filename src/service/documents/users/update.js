@@ -1,6 +1,6 @@
 const { hash } = require('bcrypt');
 
-const { USERS, EMAIL_EXIST } = require('../../utils/strings');
+const { USERS, EMAIL_EXIST } = require('../../strings');
 const { update } = require('../../../model')(USERS);
 
 const newEmailUpdateVerify = require('../../validations/newEmailUpdateVerify');

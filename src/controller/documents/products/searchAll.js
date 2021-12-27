@@ -2,7 +2,7 @@ const { OK } = require('http-status-codes').StatusCodes;
 
 const { searchAll } = require('../../../service/documents/products');
 const { notRegistered } = require('../../statusAndMessage');
-const { PRODUCTS } = require('../../../service/utils/strings');
+const { PRODUCTS } = require('../../../service/strings');
 
 module.exports = async (_req, res, next) => {
   const products = await searchAll();

@@ -1,4 +1,4 @@
-const { IS_NOT_A_NUMBER } = require('../utils/strings');
+const { IS_NOT_A_NUMBER } = require('../strings');
 
 module.exports = (param) => {
   if (!param) {

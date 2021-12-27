@@ -1,4 +1,4 @@
-const { ERROR } = require('../../utils/strings');
+const { ERROR } = require('../../strings');
 const { create } = require('../../../model')(ERROR);
 
 module.exports = async (error) => {

@@ -1,4 +1,4 @@
-const { PRODUCTS } = require('../../utils/strings');
+const { PRODUCTS } = require('../../strings');
 const { create } = require('../../../model')(PRODUCTS);
 
 const findProductName = require('../../functions/findProductName');

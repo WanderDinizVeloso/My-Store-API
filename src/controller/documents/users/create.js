@@ -2,7 +2,7 @@ const { CREATED } = require('http-status-codes').StatusCodes;
 
 const { create } = require('../../../service/documents/users');
 const { createdSuccessfully, registered } = require('../../statusAndMessage');
-const { EMAIL, USER } = require('../../../service/utils/strings');
+const { EMAIL, USER } = require('../../../service/strings');
 
 module.exports = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;

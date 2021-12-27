@@ -2,7 +2,7 @@ const { OK } = require('http-status-codes').StatusCodes;
 
 const { update } = require('../../../service/documents/users');
 const { modifiedSuccessfully, notFound, registered } = require('../../statusAndMessage');
-const { USER, EMAIL_EXIST, NEW_EMAIL } = require('../../../service/utils/strings');
+const { USER, EMAIL_EXIST, NEW_EMAIL } = require('../../../service/strings');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;

@@ -1,6 +1,6 @@
 const { emailVerify } = require('../../../service/validations');
 const { required, invalid, isNotAString } = require('../../statusAndMessage');
-const { EMAIL, IS_NOT_A_EMAIL, IS_NOT_A_STRING } = require('../../../service/utils/strings');
+const { EMAIL, IS_NOT_A_EMAIL, IS_NOT_A_STRING } = require('../../../service/strings');
 
 module.exports = async (req, _res, next) => {
   const { email } = req.body;

@@ -4,7 +4,7 @@ const {
   invalid, insufficientStock, productNotRegistered,
 } = require('../../statusAndMessage');
 
-const { SALE } = require('../../../service/utils/strings');
+const { SALE } = require('../../../service/strings');
 
 module.exports = async (req, _res, next) => {
   const sale = req.body;

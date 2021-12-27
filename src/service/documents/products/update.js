@@ -1,4 +1,4 @@
-const { PRODUCTS, PRODUCT_NAME_EXIST } = require('../../utils/strings');
+const { PRODUCTS, PRODUCT_NAME_EXIST } = require('../../strings');
 const { update } = require('../../../model')(PRODUCTS);
 
 const newProductNameUpdateVerify = require('../../validations/newProductNameUpdateVerify');

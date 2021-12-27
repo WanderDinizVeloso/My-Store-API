@@ -5,7 +5,7 @@ const { modifiedSuccessfully, notFound, registered } = require('../../statusAndM
 
 const {
   PRODUCT, NEW_PRODUCT_NAME, PRODUCT_NAME_EXIST,
-} = require('../../../service/utils/strings');
+} = require('../../../service/strings');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;

@@ -1,6 +1,6 @@
 const { numbersVerify } = require('../../../service/validations');
 const { required, isNotANumber } = require('../../statusAndMessage');
-const { PRICE, IS_NOT_A_NUMBER } = require('../../../service/utils/strings');
+const { PRICE, IS_NOT_A_NUMBER } = require('../../../service/strings');
 
 const DECIMAL_PLACES = 2;
 

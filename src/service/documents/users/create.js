@@ -1,6 +1,6 @@
 const { hash } = require('bcrypt');
 
-const { USERS, USER } = require('../../utils/strings');
+const { USERS, USER } = require('../../strings');
 const { create } = require('../../../model')(USERS);
 const { findEmail } = require('../../functions');
 

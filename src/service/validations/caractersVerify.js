@@ -1,4 +1,4 @@
-const { INVALID_PASSWORD } = require('../utils/strings');
+const { INVALID_PASSWORD } = require('../strings');
 
 module.exports = (password) => {
   const upperCaseRegex = /[A-Z]+/.test(password);

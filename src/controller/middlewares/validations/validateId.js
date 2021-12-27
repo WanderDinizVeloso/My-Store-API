@@ -1,6 +1,6 @@
 const { idVerify } = require('../../../service/validations');
 const { required, noLengthEqual, isNotAString } = require('../../statusAndMessage');
-const { ID, NO_LENGTH, IS_NOT_A_STRING } = require('../../../service/utils/strings');
+const { ID, NO_LENGTH, IS_NOT_A_STRING } = require('../../../service/strings');
 
 const LENGTH = 24;
 

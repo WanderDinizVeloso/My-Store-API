@@ -1,4 +1,4 @@
-const { PRODUCTS } = require('../../utils/strings');
+const { PRODUCTS } = require('../../strings');
 const { remove } = require('../../../model')(PRODUCTS);
 
 const searchById = require('./searchById');

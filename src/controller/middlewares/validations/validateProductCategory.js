@@ -1,6 +1,6 @@
 const { fieldVerify } = require('../../../service/validations');
 const { required, noLength, isNotAString } = require('../../statusAndMessage');
-const { CATEGORY, NO_LENGTH, IS_NOT_A_STRING } = require('../../../service/utils/strings');
+const { CATEGORY, NO_LENGTH, IS_NOT_A_STRING } = require('../../../service/strings');
 
 const LENGTH = 4;
 

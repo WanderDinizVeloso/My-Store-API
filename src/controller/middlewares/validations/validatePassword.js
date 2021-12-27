@@ -6,7 +6,7 @@ const {
 
 const {
   PASSWORD, NO_LENGTH, IS_NOT_A_STRING, INVALID_PASSWORD,
-} = require('../../../service/utils/strings');
+} = require('../../../service/strings');
 
 const LENGTH = 10;
 

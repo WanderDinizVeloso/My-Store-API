@@ -2,7 +2,7 @@ const { OK } = require('http-status-codes').StatusCodes;
 
 const { login } = require('../../../service/documents/login');
 const { invalid } = require('../../statusAndMessage');
-const { EMAIL_OR_PASSWORD } = require('../../../service/utils/strings');
+const { EMAIL_OR_PASSWORD } = require('../../../service/strings');
 
 module.exports = async (req, res, next) => {
   const { email, password } = req.body;

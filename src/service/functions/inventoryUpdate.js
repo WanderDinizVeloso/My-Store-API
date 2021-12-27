@@ -1,5 +1,5 @@
 const { update, searchById } = require('../documents/products');
-const { ADDITION, SUBTRACTION } = require('../utils/strings');
+const { ADDITION, SUBTRACTION } = require('../strings');
 
 const QUANTITY_DECIMAL_PLACES = 3;
 const RADIX = 10;

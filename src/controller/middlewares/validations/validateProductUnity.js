@@ -4,7 +4,7 @@ const {
   required, noLengthBetweenTwoNumbers, isNotAString,
 } = require('../../statusAndMessage');
 
-const { UNITY, NO_LENGTH, IS_NOT_A_STRING } = require('../../../service/utils/strings');
+const { UNITY, NO_LENGTH, IS_NOT_A_STRING } = require('../../../service/strings');
 
 const INITIAL_LENGTH = 2;
 const FINAL_LENGTH = 3;

@@ -1,6 +1,6 @@
 const { verifyToken } = require('../../../service/auth');
 const { invalid, notFound } = require('../../statusAndMessage');
-const { TOKEN } = require('../../../service/utils/strings');
+const { TOKEN } = require('../../../service/strings');
 
 module.exports = (req, _res, next) => {
   const { authorization } = req.headers;

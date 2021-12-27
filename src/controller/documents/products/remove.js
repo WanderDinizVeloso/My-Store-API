@@ -2,7 +2,7 @@ const { OK } = require('http-status-codes').StatusCodes;
 
 const { remove } = require('../../../service/documents/products');
 const { deletedSuccessfully, notFound } = require('../../statusAndMessage');
-const { PRODUCT } = require('../../../service/utils/strings');
+const { PRODUCT } = require('../../../service/strings');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;

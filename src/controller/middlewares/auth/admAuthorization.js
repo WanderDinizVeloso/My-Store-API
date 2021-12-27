@@ -1,5 +1,5 @@
 const { notAuthorized } = require('../../statusAndMessage');
-const { ROLE_ADM } = require('../../../service/utils/strings');
+const { ROLE_ADM } = require('../../../service/strings');
 
 module.exports = async (req, _res, next) => {
   const { role } = req.user;

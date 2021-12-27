@@ -2,7 +2,7 @@ const { OK } = require('http-status-codes').StatusCodes;
 
 const { update } = require('../../../service/documents/sales');
 const { modifiedSuccessfully, notFound } = require('../../statusAndMessage');
-const { SALE } = require('../../../service/utils/strings');
+const { SALE } = require('../../../service/strings');
 
 module.exports = async (req, res, next) => {
   const { id } = req.params;
