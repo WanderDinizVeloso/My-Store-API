@@ -2213,8 +2213,9 @@ Responsável por capturar e guardar todos os error internos disparados na execu�
 
  <img src="https://avatars.githubusercontent.com/u/82230642?v=4" width="100px;" alt="minha foto"/>
  <br />
-  Wander Diniz Veloso <br />
-  Estudante de desenvolvimento web na [Trybe](https://www.betrybe.com) e a cada dia mais apaixonado por tecnologia!
+  Wander Diniz Veloso
+<br />
+  Estudante de Desenvolvimento WEB e a cada dia mais apaixonado por tecnologia!
 
 Feito com ❤️ por Wander Diniz Veloso. Entre em contato!
 
