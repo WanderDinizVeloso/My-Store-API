@@ -1,8 +1,8 @@
 const findProductName = require('../functions/findProductName');
 
-module.exports = async (dataProduct, product) => {
-  if (product.name !== dataProduct.name) {
-    const verifiedName = await findProductName(dataProduct);
+module.exports = async (productData, product) => {
+  if (product.name !== productData.name) {
+    const verifiedName = await findProductName(productData);
 
     return verifiedName;
   }
