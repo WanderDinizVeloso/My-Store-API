@@ -1,33 +1,34 @@
-My-Store-API
+# My-Store-API
+<img src="https://img.shields.io/static/v1?label=License&message=MIT&color=119CE1&style=for-the-badge&logo="/> <img src="https://img.shields.io/static/v1?label=PR&message=YES&color=4DC31A&style=for-the-badge&logo="/>
 
 Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-end, onde crio uma API para cadastro/leitura de produtos/vendas composta de:
 
- - Usuários:
-    - Criação;
-    - Remoçao;
-    - Atualização;
-    - Leitura por Id;
-    - Leitura de todos os usuários cadastrados.
+ - :green_check_mark: Usuários:
+    - [x] Criação;
+    - [x] Remoçao;
+    - [x] Atualização;
+    - [x] Leitura por Id;
+    - [x] Leitura de todos os usuários cadastrados.
 
- - Cadastro de produtos:
-    - Criação;
-    - Remoçao;
-    - Atualização;
-    - Leitura por Id;
-    - Leitura de todos os produtos cadastrados.
+ - :white_check_mark: Cadastro de produtos: 
+    - [x] Criação;
+    - [x] Remoçao;
+    - [x] Atualização;
+    - [x] Leitura por Id;
+    - [x] Leitura de todos os produtos cadastrados.
 
- - Cadastro de vendas:
-    - Criação;
-    - Remoçao;
-    - Atualização;
-    - Leitura por Id;
-    - Leitura de todas as vendas cadastradas.
+ - :white_check_mark: Cadastro de vendas:
+    - [x] Criação;
+    - [x] Remoçao;
+    - [x] Atualização;
+    - [x] Leitura por Id;
+    - [x] Leitura de todas as vendas cadastradas.
 
- - Leitura de todos os erros internos possivelmente encontrados na execução da API;
+ - :white_check_mark: Leitura de todos os erros internos possivelmente encontrados na execução da API;
 
 ---
 
-## Sumário
+# Sumário
 
 - [Status](#status)
 - [Licença](#licença)
@@ -66,19 +67,19 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
 
 ---
 
-## Status
+# Status
 
 Este projeto está em constante construção, pois a cada conhecimento adquirido e novas tecnologias aprendidas, as implementarei visando melhorar sua perfornance e escalabilidade.
 
 ---
 
-## Licença
+# Licença
 
 Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT).
 
 ---
 
-## Habilidades desenvolvidas
+# Habilidades desenvolvidas
 
 - Entender os conceitos básicos de como o JavaScript funciona;
 - Realizar operações assíncronas utilizando async/await;
@@ -102,7 +103,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
 ---
 
-## Tecnologias utilizadas
+# Tecnologias utilizadas
 
 - [Node.js](https://nodejs.org/en/)
 - [Express.js](https://expressjs.com/pt-br/)
@@ -117,7 +118,7 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
 ---
 
-## Organização e Estruturação do Projeto
+# Organização e Estruturação do Projeto
 
 O projeto está organizado e estruturado da seguinte maneira:
 ```bash
@@ -262,9 +263,9 @@ O projeto está organizado e estruturado da seguinte maneira:
 ```
 ---
 
-## Pré-requisitos
+# Pré-requisitos
 
-### Ferramentas necessárias
+## Ferramentas necessárias
 
 Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
  - [Git](https://git-scm.com);
@@ -272,7 +273,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
  - Um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/) ou outro de sua preferência;
  - Um cliente de API REST como [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/) ou outro de sua preferência;
 
-### Rodando no servidor local
+## Rodando no servidor local
 
  - Clone do Projeto e instale as dependências
 
@@ -288,7 +289,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
  - Crie o um arquivo chamado `.env` na raiz do projeto com as seguintes configurações:
     
-    #### .env
+    ### .env
 
     - PORT: Porta que rodará localmente o projeto (ex. 3000);
     - URL: URL do banco MongoDB (ex. mongodb://localhost:27017)
@@ -315,7 +316,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
  - Faça as requisições pelo [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/) ou outro de sua preferência;
 
-### Quer contribuir com o projeto?
+## Quer contribuir com o projeto?
 
   - Crie uma branch e faça sua contribuição:
 
@@ -341,9 +342,9 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 ---
 
-## Orientações detalhadas de como utilizar
+# Orientações detalhadas de como utilizar
 
-### Users
+## Users
 
  - Descrição: Responsável pela criação, remoção, atualização e leitura de usuários da API. 
 
@@ -358,19 +359,12 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
      
-#### Users create
+### Users create
+<img src="https://img.shields.io/static/v1?label=Metodo&message=POST&color=4DC31A&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/users'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=NAO&color=119CE1&style=flat-square&logo="/>
 
 - Descrição: Responsável pela criação de usuários.
 
-- Rota: '/users'
-
-- Método: POST
-
-- Autenticação? NÃO
-
-- Autorização? NÃO
-
-- body? SIM:
+- Body:
 
     ```json
     {
@@ -570,19 +564,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
 
-#### Users remove
+### Users remove
+<img src="https://img.shields.io/static/v1?label=Metodo&message=DEL&color=FF2102&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/users:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela remoção de usuários. 
-
-- Rota: '/users:id'
-
-- Método: DELETE
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- body? NÃO
 
 - Retorno:
 
@@ -638,19 +623,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "'usuário' não encontrado" 
 
-#### Users searchAll
+### Users searchAll
+<img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/users'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela leitura de todos usuários. 
-
-- Rota: '/users'
-
-- Método: GET
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- body? NÃO
 
 - Retorno:
 
@@ -695,19 +671,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       ```
       Tradução da mensagem: "não há 'usuários' registrados".
 
-#### Users searchById
+### Users searchById
+<img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/users:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela leitura de um usuário pelo id. 
-
-- Rota: '/users:id'
-
-- Método: GET
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- Body? NÃO
 
 - Retorno:
 
@@ -758,19 +725,12 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "'usuário' não encontrado" 
 
-#### Users update
+### Users update
+<img src="https://img.shields.io/static/v1?label=Metodo&message=PUT&color=D88A12&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/users:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela atualização dos dados do usuário. 
 
-- Rota: '/users:id'
-
-- Método: PUT
-
-- Autenticação? SIM (vide observação)
-
-- Autorização? SIM
-
-- body? SIM:
+- body:
 
     ```json
     {
@@ -1016,19 +976,12 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
 
-### Login
+## Login
+<img src="https://img.shields.io/static/v1?label=Metodo&message=POST&color=4DC31A&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/login'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=NAO&color=119CE1&style=flat-square&logo="/>
 
 - Descrição: Responsável por dar autorização para acesso ao sistema pelo usuário. 
 
-- Rota: '/login'
-
-- Método: POST
-
-- Autenticação? NÃO
-
-- Autorização? NÃO
-
-- body? SIM:
+- body:
 
     ```json
     {
@@ -1152,7 +1105,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
 
-### Products
+## Products
 
  - Descrição: Responsável pela criação, remoção, atualização e leitura de produtos. 
 
@@ -1166,19 +1119,12 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
      
-#### Products create
+### Products create
+<img src="https://img.shields.io/static/v1?label=Metodo&message=POST&color=4DC31A&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/products'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela criação de produtos. 
 
-- Rota: '/products'
-
-- Método: POST
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- body? SIM:
+- body:
 
     ```json
     {
@@ -1388,19 +1334,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "O campo 'preço' deve ser um número positivo."
 
-#### Products remove
+### Products remove
+<img src="https://img.shields.io/static/v1?label=Metodo&message=DEL&color=FF2102&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/products:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela remoção de produtos. 
-
-- Rota: '/products:id'
-
-- Método: DELETE
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- body? NÃO
 
 - Retorno:
 
@@ -1457,19 +1394,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "'product' não encontrado" 
 
-#### Products searchAll
-
+### Products searchAll
+<img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/products'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
+  
 - Descrição: Responsável pela leitura de todos os produtos cadastrados. 
-
-- Rota: '/product'
-
-- Método: GET
-
-- Autenticação? SIM
-
-- Autorização? NÃO
-
-- body? NÃO
 
 - Retorno:
 
@@ -1515,19 +1443,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       ```
       Tradução da mensagem: "não há 'produtos' registrados".
 
-#### Products searchById
+### Products searchById
+<img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/products:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela leitura de produtos pelo id. 
-
-- Rota: '/products:id'
-
-- Método: GET
-
-- Autenticação? SIM
-
-- Autorização? NÃO
-
-- body? NÃO
 
 - Retorno:
 
@@ -1578,19 +1497,12 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "'produto' não encontrado" 
 
-#### Products update
+### Products update
+<img src="https://img.shields.io/static/v1?label=Metodo&message=PUT&color=D88A12&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/products:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela atualização dos dados do produto. 
 
-- Rota: '/products:id'
-
-- Método: PUT
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- body? SIM:
+- body:
 
     ```json
     {
@@ -1834,7 +1746,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "O campo 'preço' deve ser um número positivo."
 
-### Sales
+## Sales
 
   - Descrição: Responsável pela criação, remoção, atualização e leitura de vendas de produtos previamente cadastrados. 
 
@@ -1856,19 +1768,12 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >
 > - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluida.
      
-#### Sales create
+### Sales create
+<img src="https://img.shields.io/static/v1?label=Metodo&message=POST&color=4DC31A&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/sales'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela criação de uma venda dos produtos previamente cadastrados.
 
-- Rota: '/sales'
-
-- Método: POST
-
-- Autenticação? SIM
-
-- Autorização? NÃO
-
-- body? SIM:
+- body:
 
     ```json
     [
@@ -1977,19 +1882,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       ```
       Tradução da mensagem: "Estoque insuficiente de produtos: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos com ausência de saldo.
 
-#### Sales remove
+### Sales remove
+<img src="https://img.shields.io/static/v1?label=Metodo&message=DEL&color=FF2102&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/sales:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela remoção de uma venda realizada. 
-
-- Rota: '/sales:id'
-
-- Método: DELETE
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- body? NAO
 
 - Retorno:
 
@@ -2060,19 +1956,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "'venda' não encontrada" 
 
-#### Sales searchAll
+### Sales searchAll
+<img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/sales'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela leitura de todas as vendas realizadas. 
-
-- Rota: '/sales'
-
-- Método: GET
-
-- Autenticação? SIM
-
-- Autorização? NAO
-
-- body? NAO
 
 - Retorno:
 
@@ -2160,19 +2047,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       ```
       Tradução da mensagem: "não há 'vendas' registradas".
 
-#### Sales searchById
+### Sales searchById
+<img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/sales:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela leitura de uma venda pelo id. 
-
-- Rota: '/sales:id'
-
-- Método: GET
-
-- Autenticação? SIM
-
-- Autorização? NAO
-
-- body? NAO
 
 - Retorno:
 
@@ -2244,19 +2122,12 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "'venda' não encontrada"
 
-#### Sales update
+### Sales update
+<img src="https://img.shields.io/static/v1?label=Metodo&message=PUT&color=D88A12&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/sales:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela atualização de dados de uma venda realizada. 
 
-- Rota: '/sales:id'
-
-- Método: PUT
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- body? SIM:
+- body:
 
     ```json
     [
@@ -2370,23 +2241,14 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       ```
       Tradução da mensagem: "Estoque insuficiente de produtos: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos com ausência de saldo.
 
-### Error
+## Error
 
   - Descrição: Responsável por capturar, guardar e leitura de todos os erros internos disparados na execução da API.
 
-#### Error searchAll
+### Error searchAll
+<img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/error'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela leitura de todos os erros internos disparaos na execução da API. 
-
-- Rota: '/error'
-
-- Método: GET
-
-- Autenticação? SIM
-
-- Autorização? SIM
-
-- body? NAO
 
 - Retorno:
 
@@ -2433,13 +2295,13 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 ---
 
-## Contribuição
+# Contribuição
 
 Bora entrar para esta lista? `;)` [AQUI](#pré-requisitos) 
 
 ---
 
-## Agradecimentos
+# Agradecimentos
 
 Agradeço:
  - À minha família por me apoiar nos estudos em minha transição de carreira;
@@ -2451,7 +2313,7 @@ Agradeço:
 
 ---
 
-## Autor
+# Autor
 
  <img src="https://avatars.githubusercontent.com/u/82230642?v=4" width="100px;" alt="minha foto"/>
  <br />
