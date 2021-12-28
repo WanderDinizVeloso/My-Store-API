@@ -296,16 +296,20 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     - EMAIL_ADM: email para acesso como administrador do sistema. 
     - PASSWORD_ADM: senha para acesso como administrador do sistema.
 
+
     >⚠️ ATENÇÃO ⚠️
     > - Existe um modelo do .env (.example.env) para ajudar na sua criação.
     > - Tanto o email quanto a senha de administrador deve atender aos mesmos requisitos de sua criação como usuário. vide: [Users create](#users-create).
 
-  ```bash
-  # Inicie o sistema
-  $ npm start
-  ou
-  $ npm run dev ('para ambiente de desenvolvimento')
-  ```
+ - Inicie o sistema:
+
+    ```bash
+    # Inicie o sistema
+    $ npm start
+    ou
+    $ npm run dev ('para ambiente de desenvolvimento')
+    ```
+
  - Faça as requisições pelo [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/) ou outro de sua preferência;
 
 ### Quer contribuir com o projeto?
@@ -690,7 +694,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Users searchById
 
-- Descrição: Responsável pela leitura de usuários pelo id. 
+- Descrição: Responsável pela leitura de um usuário pelo id. 
 
 - Rota: '/users:id'
 
@@ -1039,11 +1043,14 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
 
 >⚠️ ATENÇÃO ⚠️
-> - Para efetuar login como administrator do sistema, o `email` e `password`, além de atenderem os requisitos abaixo descritos, devem ser os mesmos cadastrados no arquivo [.env](#.env).
+> - Para efetuar login como administrator do sistema basta digitar o `email` e `password` cadastrados no arquivo [.env](#env).
+>
+> - Ao efetuar o primeiro acesso como administrador, será cadastrado automaticamente seus respectivos dados no sistema.
 
 - Erro retornado no login:
 
   - `Email ou senha incorreto`:
+
       ```json
       {
         "error": {
@@ -1826,7 +1833,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 ### Sales
 
-  - Descrição: Responsável pela criação, remoção, atualização e leitura de vendas. 
+  - Descrição: Responsável pela criação, remoção, atualização e leitura de vendas de produtos previamente cadastrados. 
 
 >⚠️ ATENÇÃO ⚠️
 > - Para a execução de `create`,`searchAll` e `searchId` é necessáro:
@@ -1848,7 +1855,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
      
 #### Sales create
 
-- Descrição: Responsável pela criação de uma venda dos produtos previamente cadastrados. 
+- Descrição: Responsável pela criação de uma venda dos produtos previamente cadastrados.
 
 - Rota: '/sales'
 
