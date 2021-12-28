@@ -290,15 +290,16 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
     - PORT: Porta que rodará localmente o projeto (ex. 3000);
     - URL: URL do banco MongoDB (ex. mongodb://localhost:27017)
-    - SECRET: Segredo utilizado na autenticação. [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-    - EXPIRES_IN: tempo de duração dos tokens gerados. (ex. `1d`)[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-    - ALGORITHM: algorítmo de criptografia do token. (ex. `HS256`) [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+    - SECRET: Segredo utilizado na autenticação.
+    - EXPIRES_IN: tempo de duração dos tokens gerados. (ex. `1d`)
+    - ALGORITHM: algorítmo de criptografia do token. (ex. `HS256`)
     - EMAIL_ADM: email para acesso como administrador do sistema. 
     - PASSWORD_ADM: senha para acesso como administrador do sistema.
 
 
     >⚠️ ATENÇÃO ⚠️
     > - Existe um modelo do .env (.example.env) para ajudar na sua criação.
+    > - Para mais detalhes sobre SECRET, EXPIRES_IN e ALGORITHM vide: [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
     > - Tanto o email quanto a senha de administrador deve atender aos mesmos requisitos de sua criação como usuário. vide: [Users create](#users-create).
 
  - Inicie o sistema:
@@ -320,8 +321,8 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     # Crie uma branch a partir da branch main
     $ git checkout -b nome-da-nova-branch
 
-    # Adicione as mudanças desejadas e com os devidos commits
-    $ git add . ('adicina as mudança ao stage do Git')
+    # Adicione as mudanças desejadas com os devidos commits
+    $ git add . ('adicina as mudanças ao stage do Git')
     $ git commit -m 'informacao do conteúdo do commit' ('salvando as alterações de cada pequena alteracao em um commit')
     $ git push -u origin nome-da-nova-branch ('adicina a nova branch no reposiótio remoto do Projeto')
     ```
