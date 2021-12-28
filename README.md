@@ -1,4 +1,4 @@
-# My-Store-API 
+My-Store-API
 
 Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-end, onde crio uma API para cadastro/leitura de produtos/vendas composta de:
 
@@ -60,6 +60,8 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
     - [Sales update](#sales-update)
   - [Error](#error)
     - [Error searchAll](#error-searchall)
+- [Contribuição](#contribuição)
+- [Agradecimentos](#agradecimentos)
 - [Autor](#autor)
 
 ---
@@ -2428,6 +2430,24 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >    - Ser usuário administrator do sistema (role: "adm").
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+---
+
+## Contribuição
+
+Bora entrar para esta lista? `;)` [AQUI](#pré-requisitos) 
+
+---
+
+## Agradecimentos
+
+Agradeço:
+ - À minha família por me apoiar nos estudos em minha transição de carreira;
+ - À [Trybe](https://www.betrybe.com) por me dar a oportunidade de aprender uma nova carreira, com seu Curso de Desenvolvimento WEB Full-Stack, na modalidade [MSC](https://www.betrybe.com/msc-modelo-de-sucesso-compartilhado#investimento-como-functiona-mobile-section).
+ - Toda a equipe Trybe, em especial:
+    - [Jadezita](https://www.linkedin.com/in/jade--vieira/) e [Rê](https://www.linkedin.com/in/renata-nazar%C3%A9-magalh%C3%A3es/), pelo carinho e apoio em [softs skills](https://www.youtube.com/watch?v=yA3sc5mnctg&t=1s);
+    - [Pedro](https://www.linkedin.com/in/phramos07/), [Nato](https://www.linkedin.com/in/renato-alvares/), [Ricci](https://www.linkedin.com/in/henriquericci/) e [Rafa Guimarães](https://www.linkedin.com/in/rafaelmguimaraes/), pelo belíssimo apoio e ensinamentos em back-end;
+    - [Daniel](https://www.linkedin.com/in/marciodanielll/) e [Rafa Medeiros](https://www.linkedin.com/in/rafael-medeiros-gomes/), monitores Summer de Instrução, pelo apoio, pricipalmente na introdução de novos conteúdos.     
 
 ---
 
