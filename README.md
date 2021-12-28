@@ -285,6 +285,9 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     $ npm install
     ```
  - Crie o um arquivo chamado `.env` na raiz do projeto com as seguintes configurações:
+    
+    #### .env
+
     - PORT: Porta que rodará localmente o projeto (ex. 3000);
     - URL: URL do banco MongoDB (ex. mongodb://localhost:27017)
     - SECRET: Segredo utilizado na autenticação. [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
@@ -294,8 +297,15 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     - PASSWORD_ADM: senha para acesso como administrador do sistema.
 
     >⚠️ ATENÇÃO ⚠️
+    > - Existe um modelo do .env (.example.env) para ajudar na sua criação.
     > - Tanto o email quanto a senha de administrador deve atender aos mesmos requisitos de sua criação como usuário. vide: [Users create](#users-create).
 
+  ```bash
+  # Inicie o sistema
+  $ npm start
+  ou
+  $ npm run dev ('para ambiente de desenvolvimento')
+  ```
  - Faça as requisições pelo [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/) ou outro de sua preferência;
 
 ### Quer contribuir com o projeto?
@@ -328,6 +338,8 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 ### Users
 
+ - Descrição: Responsável pela criação, remoção, atualização e leitura de usuários da API. 
+
 >⚠️ ATENÇÃO ⚠️
 > - Para a execução de `searchAll` e `searchId` é necessáro:
 >    - Estar logado e;
@@ -341,9 +353,26 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
      
 #### Users create
 
+- Descrição: Responsável pela criação de usuários.
+
 - Rota: '/users'
 
 - Método: POST
+
+- Autenticação? NÃO
+
+- Autorização? NÃO
+
+- body? SIM:
+
+    ```json
+    {
+      "firstName": " ",
+      "lastName": " ",
+      "email": " ",
+      "password": " ", 
+    }
+    ```
 
 - Retorno:
 
@@ -536,9 +565,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Users remove
 
+- Descrição: Responsável pela remoção de usuários. 
+
 - Rota: '/users:id'
 
 - Método: DELETE
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- body? NÃO
 
 - Retorno:
 
@@ -596,9 +633,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Users searchAll
 
+- Descrição: Responsável pela leitura de todos usuários. 
+
 - Rota: '/users'
 
 - Método: GET
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- body? NÃO
 
 - Retorno:
 
@@ -645,9 +690,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Users searchById
 
+- Descrição: Responsável pela leitura de usuários pelo id. 
+
 - Rota: '/users:id'
 
 - Método: GET
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- Body? NÃO
 
 - Retorno:
 
@@ -700,9 +753,26 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Users update
 
+- Descrição: Responsável pela atualização dos dados do usuário. 
+
 - Rota: '/users:id'
 
 - Método: PUT
+
+- Autenticação? SIM (vide observação)
+
+- Autorização? SIM
+
+- body? SIM:
+
+    ```json
+    {
+      "firstName": " ",
+      "lastName": " ",
+      "email": " ",
+      "password": " ",
+    }
+    ```
 
 - Retorno:
 
@@ -941,9 +1011,25 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 ### Login
 
+- Descrição: Responsável por dar autorização para acesso ao sistema pelo usuário. 
+
 - Rota: '/login'
 
 - Método: POST
+
+- Autenticação? NÃO
+
+- Autorização? NÃO
+
+- body? SIM:
+
+    ```json
+    {
+      "email": " ",
+      "password": " ",
+    }
+    ```
+
 - Retorno:
 
     ```json
@@ -1058,6 +1144,8 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 ### Products
 
+ - Descrição: Responsável pela criação, remoção, atualização e leitura de produtos. 
+
 >⚠️ ATENÇÃO ⚠️
 > - Para a execução de `searchAll` e `searchId` é necessáro:
 >    - Estar logado.
@@ -1070,9 +1158,27 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
      
 #### Products create
 
+- Descrição: Responsável pela criação de produtos. 
+
 - Rota: '/products'
 
 - Método: POST
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- body? SIM:
+
+    ```json
+    {
+      "name": " ",
+      "category": " ",
+      "unity": " ",
+      "quantity": " ",
+      "price": " "
+    }
+    ```
 
 - Retorno:
 
@@ -1274,9 +1380,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Products remove
 
+- Descrição: Responsável pela remoção de produtos. 
+
 - Rota: '/products:id'
 
 - Método: DELETE
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- body? NÃO
 
 - Retorno:
 
@@ -1335,9 +1449,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Products searchAll
 
+- Descrição: Responsável pela leitura de todos os produtos cadastrados. 
+
 - Rota: '/product'
 
 - Método: GET
+
+- Autenticação? SIM
+
+- Autorização? NÃO
+
+- body? NÃO
 
 - Retorno:
 
@@ -1385,9 +1507,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Products searchById
 
+- Descrição: Responsável pela leitura de produtos pelo id. 
+
 - Rota: '/products:id'
 
 - Método: GET
+
+- Autenticação? SIM
+
+- Autorização? NÃO
+
+- body? NÃO
 
 - Retorno:
 
@@ -1440,9 +1570,27 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Products update
 
+- Descrição: Responsável pela atualização dos dados do produto. 
+
 - Rota: '/products:id'
 
 - Método: PUT
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- body? SIM:
+
+    ```json
+    {
+      "name": " ",
+      "category": " ",
+      "unity": " ",
+      "quantity": " ",
+      "price": " "
+    }
+    ```
 
 - Retorno:
 
@@ -1678,6 +1826,8 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 ### Sales
 
+  - Descrição: Responsável pela criação, remoção, atualização e leitura de vendas. 
+
 >⚠️ ATENÇÃO ⚠️
 > - Para a execução de `create`,`searchAll` e `searchId` é necessáro:
 >    - Estar logado.
@@ -1687,40 +1837,48 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >    - Ser usuário administrator do sistema (role: "adm").
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
-
->⚠️ ATENÇÃO ⚠️
+>
 > - Para criar / atualizar uma venda, é necessário enviar um array de produtos, sendo eles previamente cadastrados no banco de dados;
+>
 > - Na execução de `create` e `update` será checado:
 >   - Se o produto contém saldo suficiente para a sua venda / atualização;
 >   - Se cada produto a ser vendido contém os mesmos requisitos de criaçao / atualização verificados no [create](#products-create) e [update](#products-update) do [Products](#products) 
-> - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluida.
 >
-> EXEMPLO DE ARRAY DE PRODUTOS VENDIDOS:
-> ```json
->  [
->    {
->      "name": " ",
->      "category": " ",
->      "unity": " ",
->      "quantity": " ",
->      "price": " "
->    },
->    {
->      "name": " ",
->      "category": " ",
->      "unity": " ",
->      "quantity": " ",
->      "price": " "
->    },
->    ...
->  ]
->  ```
+> - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluida.
      
 #### Sales create
+
+- Descrição: Responsável pela criação de uma venda dos produtos previamente cadastrados. 
 
 - Rota: '/sales'
 
 - Método: POST
+
+- Autenticação? SIM
+
+- Autorização? NÃO
+
+- body? SIM:
+
+    ```json
+    [
+      {
+        "name": " ",
+        "category": " ",
+        "unity": " ",
+        "quantity": " ",
+        "price": " "
+      },
+      {
+        "name": " ",
+        "category": " ",
+        "unity": " ",
+        "quantity": " ",
+        "price": " "
+      },
+      ...
+    ]
+    ```
 
 - Retorno:
 
@@ -1772,9 +1930,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >    - Estar logado.
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
-
->⚠️ ATENÇÃO ⚠️
-> - Para criar uma venda, é necessário enviar um array de produtos, sendo eles previamente cadastrados no banco de dados. [exemplo](#sales);
+>
 > - Na execução de `create` será checado:
 >   - Se o produto contém saldo suficiente para a sua venda;
 >   - Se cada produto a ser vendido contém os mesmos requisitos de criaçao verificados no [create](#products-create) do [Products](#products)
@@ -1813,9 +1969,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Sales remove
 
+- Descrição: Responsável pela remoção de uma venda realizada. 
+
 - Rota: '/sales:id'
 
 - Método: DELETE
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- body? NAO
 
 - Retorno:
 
@@ -1888,9 +2052,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Sales searchAll
 
+- Descrição: Responsável pela leitura de todas as vendas realizadas. 
+
 - Rota: '/sales'
 
 - Método: GET
+
+- Autenticação? SIM
+
+- Autorização? NAO
+
+- body? NAO
 
 - Retorno:
 
@@ -1980,9 +2152,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Sales searchById
 
+- Descrição: Responsável pela leitura de uma venda pelo id. 
+
 - Rota: '/sales:id'
 
 - Método: GET
+
+- Autenticação? SIM
+
+- Autorização? NAO
+
+- body? NAO
 
 - Retorno:
 
@@ -2056,9 +2236,37 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 #### Sales update
 
+- Descrição: Responsável pela atualização de dados de uma venda realizada. 
+
 - Rota: '/sales:id'
 
 - Método: PUT
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- body? SIM:
+
+    ```json
+    [
+      {
+        "name": " ",
+        "category": " ",
+        "unity": " ",
+        "quantity": " ",
+        "price": " "
+      },
+      {
+        "name": " ",
+        "category": " ",
+        "unity": " ",
+        "quantity": " ",
+        "price": " "
+      },
+      ...
+    ]
+    ```
 
 - Retorno:
 
@@ -2115,9 +2323,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >    - Ser usuário administrator do sistema (role: "adm").
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
-
->⚠️ ATENÇÃO ⚠️
-> - Para modificar uma venda, é necessário enviar um array de produtos, sendo eles previamente cadastrados no banco de dados. [exemplo](#sales);
+>
 > - Na execução de `update` será checado:
 >   - Se o produto contém saldo suficiente para a sua modificação;
 >   - Se cada produto a ser modificado contém os mesmos requisitos de criaçao verificados no [create](#products-create) do [Products](#products)
@@ -2156,13 +2362,21 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
 ### Error
 
-Responsável por capturar e guardar todos os error internos disparados na execução da API.
+  - Descrição: Responsável por capturar, guardar e leitura de todos os erros internos disparados na execução da API.
 
 #### Error searchAll
+
+- Descrição: Responsável pela leitura de todos os erros internos disparaos na execução da API. 
 
 - Rota: '/error'
 
 - Método: GET
+
+- Autenticação? SIM
+
+- Autorização? SIM
+
+- body? NAO
 
 - Retorno:
 
