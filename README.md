@@ -2447,7 +2447,7 @@ Agradeço:
  - Toda a equipe Trybe, em especial:
     - [Jadezita](https://www.linkedin.com/in/jade--vieira/) e [Rê](https://www.linkedin.com/in/renata-nazar%C3%A9-magalh%C3%A3es/), pelo carinho e apoio em [softs skills](https://www.youtube.com/watch?v=yA3sc5mnctg&t=1s);
     - [Pedro](https://www.linkedin.com/in/phramos07/), [Nato](https://www.linkedin.com/in/renato-alvares/), [Ricci](https://www.linkedin.com/in/henriquericci/) e [Rafa Guimarães](https://www.linkedin.com/in/rafaelmguimaraes/), pelo belíssimo apoio e ensinamentos em back-end;
-    - [Daniel](https://www.linkedin.com/in/marciodanielll/) e [Rafa Medeiros](https://www.linkedin.com/in/rafael-medeiros-gomes/), monitores Summer de Instrução, pelo apoio, pricipalmente na introdução de novos conteúdos.     
+    - [Daniel](https://www.linkedin.com/in/marciodanielll/) e [Rafa Medeiros](https://www.linkedin.com/in/rafael-medeiros-gomes/), monitores Summer de Instrução, pelo apoio, principalmente na introdução de novos conteúdos.     
 
 ---
 
@@ -2459,8 +2459,14 @@ Agradeço:
 <br />
   Estudante de Desenvolvimento WEB e a cada dia mais apaixonado por tecnologia!
 
-Feito com ❤️ por Wander Diniz Veloso. Entre em contato!
+Entre em contato!
 
 <section align="center"> 
   <a href="https://www.linkedin.com/in/wander-diniz-veloso" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 </section>
+
+---
+
+Feito com muito ❤️ e dedicação por Wander Diniz Veloso. 
+
+---
