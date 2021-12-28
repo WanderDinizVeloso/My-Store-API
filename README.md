@@ -3,7 +3,7 @@
 
 Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-end, onde crio uma API para cadastro/leitura de produtos/vendas composta de:
 
- - :green_check_mark: Usuários:
+ - :white_check_mark: Usuários:
     - [x] Criação;
     - [x] Remoçao;
     - [x] Atualização;
