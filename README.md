@@ -61,6 +61,8 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
     - [Sales update](#sales-update)
   - [Error](#error)
     - [Error searchAll](#error-searchall)
+  - [Authentication](#authentication)
+  - [Authorization](#authorization)
 - [Contribuição](#contribuição)
 - [Agradecimentos](#agradecimentos)
 - [Autor](#autor)
@@ -2291,6 +2293,29 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >    - Ser usuário administrator do sistema (role: "adm").
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
+
+## Authentication
+
+ - Para efetuar a autenticação, é necessário seguir os seguintes passos:
+    - Efetuar o seu cadastro como usuário. Vide [Users create](#users-create);
+    - Efetuar o login com dos dados do usuário criado. Em caso de sucesso você receberá um `token`. Vide [Login](#login);
+    - Incluir no Header, o campo `authorization` (exatamente assim, tudo com letras minúsculas) o `token` recebido ao efetuar o login. 
+  
+  >⚠️ ATENÇÃO ⚠️
+  > - Em todas as requisiçoes que contenha <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> será necessário a inclusão do token.
+
+
+
+## Authorization
+
+ - Para acesso ao sistema, como administrador, é necessário:
+    - A incluisão do `email`(EMAIL_ADM) e `password` (PASSWORD_ADM) no arquivo [.env](#env);
+    - Efetuar o login com os dados do usuário administador. Em caso de sucesso você receberá um `token`. Vide [Login](#login);
+    - Incluir no Header, o campo `authorization` (exatamente assim, tudo com letras minúsculas) o `token` recebido ao efetuar o login. 
+  
+  >⚠️ ATENÇÃO ⚠️
+  > - Somente terá acesso as requisições que contenham <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&style=flat-square&logo="/> com o efetivo login e token de `administrador`.
+  > - Na presente implementação existe a possibilidade de inclusão de somente 01 (um) usuário administrador. Em futuras implementações haverá rota específica para mais usuários administradores.
 
 ---
 
