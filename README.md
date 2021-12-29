@@ -297,7 +297,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     - URL: URL do banco MongoDB (ex. mongodb://localhost:27017)
     - SECRET: Segredo utilizado na autenticação.
     - EXPIRES_IN: tempo de duração dos tokens gerados. (ex. `1d`)
-    - ALGORITHM: algorítmo de criptografia do token. (ex. `HS256`)
+    - ALGORITHM: algoritmo de criptografia do token. (ex. `HS256`)
     - EMAIL_ADM: email para acesso como administrador do sistema. 
     - PASSWORD_ADM: senha para acesso como administrador do sistema.
 
@@ -1765,9 +1765,9 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >
 > - Na execução de `create` e `update` será checado:
 >   - Se o produto contém saldo suficiente para a sua venda / atualização;
->   - Se cada produto a ser vendido contém os mesmos requisitos de criaçao / atualização verificados no [create](#products-create) e [update](#products-update) do [Products](#products) 
+>   - Se cada produto a ser vendido contém os mesmos requisitos de criação / atualização verificados no [create](#products-create) e [update](#products-update) do [Products](#products) 
 >
-> - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluida.
+> - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluída.
      
 ### Sales create
 <img src="https://img.shields.io/static/v1?label=Metodo&message=POST&color=4DC31A&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/sales'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
@@ -1849,7 +1849,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >
 > - Na execução de `create` será checado:
 >   - Se o produto contém saldo suficiente para a sua venda;
->   - Se cada produto a ser vendido contém os mesmos requisitos de criaçao verificados no [create](#products-create) do [Products](#products)
+>   - Se cada produto a ser vendido contém os mesmos requisitos de criação verificados no [create](#products-create) do [Products](#products)
 
 - Erro(s) retornado(s) no create:
 
@@ -2249,7 +2249,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 ### Error searchAll
 <img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/error'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
-- Descrição: Responsável pela leitura de todos os erros internos disparaos na execução da API. 
+- Descrição: Responsável pela leitura de todos os erros internos disparados na execução da API. 
 
 - Retorno:
 
