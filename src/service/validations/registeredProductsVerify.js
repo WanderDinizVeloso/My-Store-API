@@ -1,8 +1,8 @@
-module.exports = (saleData, registeredProductslist) => {
+module.exports = (saleData, registeredProductsList) => {
   const filterName = (list) => list.map(({ name }) => name);
 
   const saleDataNameList = filterName(saleData);
-  const registeredProductsNameList = filterName(registeredProductslist);
+  const registeredProductsNameList = filterName(registeredProductsList);
 
   const productNameNotIncluded = saleDataNameList
     .filter((name) => !registeredProductsNameList.includes(name));

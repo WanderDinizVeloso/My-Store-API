@@ -1,5 +1,5 @@
 const admVerify = require('./admVerify');
-const caractersVerify = require('./caractersVerify');
+const charactersVerify = require('./charactersVerify');
 const emailVerify = require('./emailVerify');
 const fieldVerify = require('./fieldVerify');
 const idVerify = require('./idVerify');
@@ -7,7 +7,7 @@ const newEmailUpdateVerify = require('./newEmailUpdateVerify');
 const newProductNameUpdateVerify = require('./newProductNameUpdateVerify');
 const numbersVerify = require('./numbersVerify');
 const passwordVerify = require('./passwordVerify');
-const productInventaryVerify = require('./productInventaryVerify');
+const productInventoryVerify = require('./productInventoryVerify');
 const registeredProductsVerify = require('./registeredProductsVerify');
 const saleDataVerify = require('./saleDataVerify');
 const saleNumbersVerify = require('./saleNumbersVerify');
@@ -17,7 +17,7 @@ const unityVerify = require('./unityVerify');
 
 module.exports = {
   admVerify,
-  caractersVerify,
+  charactersVerify,
   emailVerify,
   fieldVerify,
   idVerify,
@@ -25,7 +25,7 @@ module.exports = {
   newProductNameUpdateVerify,
   numbersVerify,
   passwordVerify,
-  productInventaryVerify,
+  productInventoryVerify,
   registeredProductsVerify,
   saleDataVerify,
   saleNumbersVerify,

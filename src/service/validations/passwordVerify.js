@@ -1,16 +1,16 @@
 const fieldVerify = require('./fieldVerify');
-const caractersVerify = require('./caractersVerify');
+const charactersVerify = require('./charactersVerify');
 
 module.exports = (password, LENGTH) => {
   const verifiedPassword = fieldVerify(password, LENGTH);
-  const verifiedPasswordCaracters = caractersVerify(password);
+  const verifiedPasswordCharacters = charactersVerify(password);
 
   if (!verifiedPassword) {
     return null;
   }
 
   if (verifiedPassword === password) {
-    return verifiedPasswordCaracters;
+    return verifiedPasswordCharacters;
   }
 
   return verifiedPassword;

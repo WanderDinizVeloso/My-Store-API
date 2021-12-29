@@ -1,4 +1,4 @@
-const { saleVerify, productInventaryVerify } = require('../../../service/validations');
+const { saleVerify, productInventoryVerify } = require('../../../service/validations');
 
 const {
   invalid, insufficientStock, productNotRegistered,
@@ -15,7 +15,7 @@ module.exports = async (req, _res, next) => {
     return next(invalid(SALE));
   }
 
-  const verifiedProductInventory = await productInventaryVerify(verifiedSale.products);
+  const verifiedProductInventory = await productInventoryVerify(verifiedSale.products);
 
   if (verifiedProductInventory.error) {
     return next(insufficientStock(verifiedProductInventory.errorList));

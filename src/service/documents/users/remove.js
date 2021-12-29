@@ -1,10 +1,10 @@
 const { USERS } = require('../../strings');
 const { remove } = require('../../../model')(USERS);
 
-const searchByid = require('./searchById');
+const searchById = require('./searchById');
 
 module.exports = async (id) => {
-  const user = await searchByid(id);
+  const user = await searchById(id);
 
   if (!user) {
     return null;

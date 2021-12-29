@@ -4,14 +4,14 @@ const { USERS, EMAIL_EXIST } = require('../../strings');
 const { update } = require('../../../model')(USERS);
 
 const newEmailUpdateVerify = require('../../validations/newEmailUpdateVerify');
-const searchByid = require('./searchById');
+const searchById = require('./searchById');
 
 const SALT_ROUNDS = 10;
 
 module.exports = async (userData) => {
   const { id, password, ...userDataWithoutIdAndPassword } = userData;
 
-  const user = await searchByid(id);
+  const user = await searchById(id);
 
   if (!user) { return null; }
 
@@ -29,7 +29,7 @@ module.exports = async (userData) => {
 
   const { modifiedCount } = await update(modifiedUser);
 
-  const newUserData = await searchByid(id);
+  const newUserData = await searchById(id);
 
   const updated = { modifiedCount, newUserData };
 

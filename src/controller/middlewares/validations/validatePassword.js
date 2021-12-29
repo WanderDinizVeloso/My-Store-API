@@ -1,7 +1,7 @@
 const { passwordVerify } = require('../../../service/validations');
 
 const {
-  required, noLength, isNotAString, invalidCaracters,
+  required, noLength, isNotAString, invalidCharacters,
 } = require('../../statusAndMessage');
 
 const {
@@ -23,7 +23,7 @@ module.exports = async (req, _res, next) => {
     case NO_LENGTH:
       return next(noLength(PASSWORD, LENGTH));
     case INVALID_PASSWORD:
-      return next(invalidCaracters(PASSWORD));
+      return next(invalidCharacters(PASSWORD));
     default:
       return next();
   }

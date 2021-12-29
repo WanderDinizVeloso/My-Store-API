@@ -22,7 +22,7 @@ const invalid = (param) => ({
   message: `The invalid '${param}' field.`,
 });
 
-const invalidCaracters = (param) => ({
+const invalidCharacters = (param) => ({
   status: BAD_REQUEST,
   message: `The '${param}' field must contain at least: `
     + 'a capital letter, '
@@ -92,7 +92,7 @@ module.exports = {
   insufficientStock,
   internalError,
   invalid,
-  invalidCaracters,
+  invalidCharacters,
   isNotANumber,
   isNotAString,
   modifiedSuccessfully,

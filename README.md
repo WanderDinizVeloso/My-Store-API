@@ -5,21 +5,21 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
 
  - :white_check_mark: Usuários:
     - [x] Criação;
-    - [x] Remoçao;
+    - [x] Remoção;
     - [x] Atualização;
     - [x] Leitura por Id;
     - [x] Leitura de todos os usuários cadastrados.
 
  - :white_check_mark: Cadastro de produtos: 
     - [x] Criação;
-    - [x] Remoçao;
+    - [x] Remoção;
     - [x] Atualização;
     - [x] Leitura por Id;
     - [x] Leitura de todos os produtos cadastrados.
 
  - :white_check_mark: Cadastro de vendas:
     - [x] Criação;
-    - [x] Remoçao;
+    - [x] Remoção;
     - [x] Atualização;
     - [x] Leitura por Id;
     - [x] Leitura de todas as vendas cadastradas.
@@ -71,7 +71,7 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
 
 # Status
 
-Este projeto está em constante construção, pois a cada conhecimento adquirido e novas tecnologias aprendidas, as implementarei visando melhorar sua perfornance e escalabilidade.
+Este projeto está em constante construção, pois a cada conhecimento adquirido e novas tecnologias aprendidas, as implementarei visando melhorar sua performance e escalabilidade.
 
 ---
 
@@ -246,7 +246,7 @@ O projeto está organizado e estruturado da seguinte maneira:
         │   └── index.js
         └── validations
             ├── admVerify.js
-            ├── caractersVerify.js
+            ├── charactersVerify.js
             ├── emailVerify.js
             ├── fieldVerify.js
             ├── idVerify.js
@@ -255,7 +255,7 @@ O projeto está organizado e estruturado da seguinte maneira:
             ├── newProductNameUpdateVerify.js
             ├── numbersVerify.js
             ├── passwordVerify.js
-            ├── productInventaryVerify.js
+            ├── productInventoryVerify.js
             ├── registeredProductsVerify.js
             ├── saleDataVerify.js
             ├── saleNumbersVerify.js
@@ -326,9 +326,9 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     $ git checkout -b nome-da-nova-branch
 
     # Adicione as mudanças desejadas com os devidos commits
-    $ git add . ('adicina as mudanças ao stage do Git')
-    $ git commit -m 'informacao do conteúdo do commit' ('salvando as alterações de cada pequena alteracao em um commit')
-    $ git push -u origin nome-da-nova-branch ('adicina a nova branch no reposiótio remoto do Projeto')
+    $ git add . ('adiciona as mudanças ao stage do Git')
+    $ git commit -m 'informação do conteúdo do commit' ('salvando as alterações de cada pequena alteração em um commit')
+    $ git push -u origin nome-da-nova-branch ('adiciona a nova branch no repositório remoto do Projeto')
     ```
   - Crie um novo `Pull Request` (PR):
      - Vá até a página de `Pull Requests` do repositório no GitHub
@@ -350,11 +350,11 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
  - Descrição: Responsável pela criação, remoção, atualização e leitura de usuários da API. 
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchAll` e `searchId` é necessáro:
+> - Para a execução de `searchAll` e `searchId` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
-> - Para a execução de `remove` e `update` é necessáro:
+> - Para a execução de `remove` e `update` é necessário:
 >    - Estar logado e;
 >    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
 >
@@ -555,7 +555,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos 10 caracteres"
 
-      - `Conter caracters maiúsculos, números e especiais`:
+      - `Conter caracteres maiúsculos, números e especiais`:
           ```json
           {
             "error": {
@@ -563,7 +563,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
             }
           }
           ```
-          Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
+          Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caractere especial (!, $, #, %, _)."
 
 ### Users remove
 <img src="https://img.shields.io/static/v1?label=Metodo&message=DEL&color=FF2102&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/users:id'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
@@ -587,10 +587,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       }
     }
     ```
-    Tradução da mensagem: "'usuário' excluido com sucesso."
+    Tradução da mensagem: "'usuário' excluído com sucesso."
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `remove` é necessáro:
+> - Para a execução de `remove` é necessário:
 >    - Estar logado e;
 >    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
 >
@@ -654,7 +654,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchAll` é necessáro:
+> - Para a execução de `searchAll` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -692,7 +692,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchId` é necessáro:
+> - Para a execução de `searchId` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -764,7 +764,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     >⚠️ ATENÇÃO: Campos `"_id"`, `"role"` e `modifiedCount` são gerados automaticamente pelo sistema. ⚠️
 
 >⚠️ ATENÇÃO ⚠️
->  - Para a execução de `update` é necessáro:
+>  - Para a execução de `update` é necessário:
 >    - Estar logado e;
 >    - Ser o detentor da conta criada ou usuário administrator do sistema (role: "adm").
 >
@@ -967,7 +967,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos 10 caracteres"
 
-      - `Conter caracters maiúsculos, números e especiais`:
+      - `Conter caracteres maiúsculos, números e especiais`:
           ```json
           {
             "error": {
@@ -975,7 +975,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
             }
           }
           ```
-          Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
+          Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caractere especial (!, $, #, %, _)."
 
 ## Login
 <img src="https://img.shields.io/static/v1?label=Metodo&message=POST&color=4DC31A&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/login'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=NAO&color=119CE1&style=flat-square&logo="/>
@@ -1096,7 +1096,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
           ```
           Tradução da mensagem: "O campo 'senha' deve conter pelo menos 10 caracteres"
 
-      - `Conter caracters maiúsculos, números e especiais`:
+      - `Conter caracteres maiúsculos, números e especiais`:
           ```json
           {
             "error": {
@@ -1104,17 +1104,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
             }
           }
           ```
-          Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caracter especial (!, $, #, %, _)."
+          Tradução da mensagem: "O campo 'senha' deve conter pelo menos: uma letra maiúscula, um número e um caractere especial (!, $, #, %, _)."
 
 ## Products
 
  - Descrição: Responsável pela criação, remoção, atualização e leitura de produtos. 
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchAll` e `searchId` é necessáro:
+> - Para a execução de `searchAll` e `searchId` é necessário:
 >    - Estar logado.
 >
-> - Para a execução de `create`, `remove` e `update` é necessáro:
+> - Para a execução de `create`, `remove` e `update` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -1157,7 +1157,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     >⚠️ ATENÇÃO: O Campo `"_id"` é gerado automaticamente pelo sistema. ⚠️
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `create` é necessáro:
+> - Para a execução de `create` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -1358,10 +1358,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       }
     }
     ```
-    Tradução da mensagem: "'usuário' excluido com sucesso."
+    Tradução da mensagem: "'usuário' excluído com sucesso."
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `remove` é necessáro:
+> - Para a execução de `remove` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -1427,7 +1427,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchAll` é necessáro:
+> - Para a execução de `searchAll` é necessário:
 >    - Estar logado.
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
@@ -1465,7 +1465,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchById` é necessáro:
+> - Para a execução de `searchById` é necessário:
 >    - Estar logado.
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
@@ -1533,7 +1533,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     Tradução da mensagem: "'produto' modificado com sucesso."
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `update` é necessáro:
+> - Para a execução de `update` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -1752,10 +1752,10 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
   - Descrição: Responsável pela criação, remoção, atualização e leitura de vendas de produtos previamente cadastrados. 
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `create`,`searchAll` e `searchId` é necessáro:
+> - Para a execução de `create`,`searchAll` e `searchId` é necessário:
 >    - Estar logado.
 >
-> - Para a execução de `remove` e `update` é necessáro:
+> - Para a execução de `remove` e `update` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -1917,17 +1917,17 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       }
     }
     ```
-    Tradução da mensagem: "'venda' excluida com sucesso."
+    Tradução da mensagem: "'venda' excluída com sucesso."
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `remove` é necessáro:
+> - Para a execução de `remove` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
 
 >⚠️ ATENÇÃO ⚠️
-> - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluida.
+> - Na execução de `remove` será restabelecida a quantidade do produto registrado na venda excluída.
 
 - Campos obrigatórios:
 
@@ -2031,7 +2031,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchAll` é necessáro:
+> - Para a execução de `searchAll` é necessário:
 >    - Estar logado.
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
@@ -2090,7 +2090,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchById` é necessáro:
+> - Para a execução de `searchById` é necessário:
 >    - Estar logado.
 >
 >    Vide: [Authentication](#authentication), [Authorization](#authorization)
@@ -2200,7 +2200,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     > - `"modifiedDate"`: armazena o id do usuário que modificou a venda e a respectiva data e hora.
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `update` é necessáro:
+> - Para a execução de `update` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -2208,7 +2208,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 >
 > - Na execução de `update` será checado:
 >   - Se o produto contém saldo suficiente para a sua modificação;
->   - Se cada produto a ser modificado contém os mesmos requisitos de criaçao verificados no [create](#products-create) do [Products](#products)
+>   - Se cada produto a ser modificado contém os mesmos requisitos de criação verificados no [create](#products-create) do [Products](#products)
 
 - Erro(s) retornado(s) no update:
 
@@ -2288,7 +2288,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     ```
 
 >⚠️ ATENÇÃO ⚠️
-> - Para a execução de `searchAll` é necessáro:
+> - Para a execução de `searchAll` é necessário:
 >    - Estar logado e;
 >    - Ser usuário administrator do sistema (role: "adm").
 >
@@ -2302,15 +2302,15 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     - Incluir no Header, o campo `authorization` (exatamente assim, tudo com letras minúsculas) o `token` recebido ao efetuar o login. 
   
   >⚠️ ATENÇÃO ⚠️
-  > - Em todas as requisiçoes que contenha <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> será necessário a inclusão do token.
+  > - Em todas as requisições que contenha <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> será necessário a inclusão do token.
 
 
 
 ## Authorization
 
  - Para acesso ao sistema, como administrador, é necessário:
-    - A incluisão do `email`(EMAIL_ADM) e `password` (PASSWORD_ADM) no arquivo [.env](#env);
-    - Efetuar o login com os dados do usuário administador. Em caso de sucesso você receberá um `token`. Vide [Login](#login);
+    - A inclusão do `email`(EMAIL_ADM) e `password` (PASSWORD_ADM) no arquivo [.env](#env);
+    - Efetuar o login com os dados do usuário administrador. Em caso de sucesso você receberá um `token`. Vide [Login](#login);
     - Incluir no Header, o campo `authorization` (exatamente assim, tudo com letras minúsculas) o `token` recebido ao efetuar o login. 
   
   >⚠️ ATENÇÃO ⚠️
