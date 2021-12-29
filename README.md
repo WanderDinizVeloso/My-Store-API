@@ -206,35 +206,35 @@ O projeto está organizado e estruturado da seguinte maneira:
             │     ├── index.js
             │     └── verifyToken.js
             ├── documents
-            │   ├── error
-            │   │     ├── create.js
-            │   │     ├── index.js
-            │   │     └── searchAll.js
-            │   ├── login
-            │   │     ├── index.js
-            │   │     └── login.js
-            │   ├── products
-            │   │     ├── create.js
-            │   │     ├── index.js
-            │   │     ├── remove.js
-            │   │     ├── searchAll.js
-            │   │     ├── searchById.js
-            │   │     └── update.js
-            │   ├── sales
-            │   │     ├── create.js
-            │   │     ├── index.js
-            │   │     ├── remove.js
-            │   │     ├── searchAll.js
-            │   │     ├── searchById.js
-            │   │     └── update.js
-            │   └── users
-            │         ├── admCreate.js
-            │         ├── create.js
-            │         ├── index.js
-            │         ├── remove.js
-            │         ├── searchAll.js
-            │         ├── searchById.js
-            │         └── update.js
+            │     ├── error
+            │     │     ├── create.js
+            │     │     ├── index.js
+            │     │     └── searchAll.js
+            │     ├── login
+            │     │     ├── index.js
+            │     │     └── login.js
+            │     ├── products
+            │     │     ├── create.js
+            │     │     ├── index.js
+            │     │     ├── remove.js
+            │     │     ├── searchAll.js
+            │     │     ├── searchById.js
+            │     │     └── update.js
+            │     ├── sales
+            │     │     ├── create.js
+            │     │     ├── index.js
+            │     │     ├── remove.js
+            │     │     ├── searchAll.js
+            │     │     ├── searchById.js
+            │     │     └── update.js
+            │     └── users
+            │           ├── admCreate.js
+            │           ├── create.js
+            │           ├── index.js
+            │           ├── remove.js
+            │           ├── searchAll.js
+            │           ├── searchById.js
+            │           └── update.js
             ├── functions
             │     ├── findEmail.js
             │     ├── findProductName.js
