@@ -13,7 +13,6 @@ module.exports = async (req, _res, next) => {
   const { unity } = req.body;
 
   const verifiedUnity = unityVerify(unity, INITIAL_LENGTH, FINAL_LENGTH);
-  const convertedUnity = unity.toUpperCase();
 
   switch (verifiedUnity) {
     case null:
@@ -23,7 +22,7 @@ module.exports = async (req, _res, next) => {
     case NO_LENGTH:
       return next(noLengthBetweenTwoNumbers(UNITY, INITIAL_LENGTH, FINAL_LENGTH));
     default:
-      req.body.unity = convertedUnity;
+      req.body.unity = unity.toUpperCase();
       return next();
   }
 };
