@@ -8,7 +8,6 @@ module.exports = async (req, _res, next) => {
   const { price } = req.body;
 
   const verifiedPrice = numbersVerify(price);
-  const convertedPrice = price.toFixed(DECIMAL_PLACES);
 
   switch (verifiedPrice) {
     case null:
@@ -16,7 +15,7 @@ module.exports = async (req, _res, next) => {
     case IS_NOT_A_NUMBER:
       return next(isNotANumber(PRICE));
     default:
-      req.body.price = convertedPrice;      
+      req.body.price = price.toFixed(DECIMAL_PLACES);      
       return next();
   }
 };
