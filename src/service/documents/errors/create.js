@@ -1,5 +1,5 @@
-const { ERROR } = require('../../strings');
-const { create } = require('../../../model')(ERROR);
+const { ERRORS } = require('../../strings');
+const { create } = require('../../../model')(ERRORS);
 
 module.exports = async (error) => {
   const date = new Date();

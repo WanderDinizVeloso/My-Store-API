@@ -1,6 +1,6 @@
 const { OK } = require('http-status-codes').StatusCodes;
 
-const { searchAll } = require('../../../service/documents/error');
+const { searchAll } = require('../../../service/documents/errors');
 const { notRegistered } = require('../../statusAndMessage');
 const { ERRORS } = require('../../../service/strings');
 

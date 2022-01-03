@@ -1,5 +1,5 @@
-const { ERROR } = require('../../strings');
-const { searchAll } = require('../../../model')(ERROR);
+const { ERRORS } = require('../../strings');
+const { searchAll } = require('../../../model')(ERRORS);
 
 module.exports = async () => {
   const errors = await searchAll();

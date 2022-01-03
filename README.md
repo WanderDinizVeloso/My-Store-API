@@ -59,8 +59,8 @@ Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-e
     - [Sales searchAll](#sales-searchall)
     - [Sales searchById](#sales-searchbyid)
     - [Sales update](#sales-update)
-  - [Error](#error)
-    - [Error searchAll](#error-searchall)
+  - [Errors](#error)
+    - [Errors searchAll](#errors-searchall)
   - [Authentication](#authentication)
   - [Authorization](#authorization)
 - [Contribuição](#contribuição)
@@ -133,7 +133,7 @@ O projeto está organizado e estruturado da seguinte maneira:
       │     └── server.js
       ├── controller
       │     ├── documents
-      │     │     ├── error
+      │     │     ├── errors
       │     │     │     ├── index.js
       │     │     │     └── searchAll.js
       │     │     ├── login
@@ -183,7 +183,7 @@ O projeto está organizado e estruturado da seguinte maneira:
       │     │     └── wrapper
       │     │           └── index.js
       │     ├── routers
-      │     │     ├── error.js
+      │     │     ├── errors.js
       │     │     ├── login.js
       │     │     ├── products.js
       │     │     ├── root.js
@@ -206,7 +206,7 @@ O projeto está organizado e estruturado da seguinte maneira:
             │     ├── index.js
             │     └── verifyToken.js
             ├── documents
-            │     ├── error
+            │     ├── errors
             │     │     ├── create.js
             │     │     ├── index.js
             │     │     └── searchAll.js
@@ -2242,11 +2242,11 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
       ```
       Tradução da mensagem: "Estoque insuficiente de produtos: (lista)". `OBS.:` no lugar de '(lista)'será retornado o nome dos produtos com ausência de saldo.
 
-## Error
+## Errors
 
   - Descrição: Responsável por capturar, guardar e leitura de todos os erros internos disparados na execução da API.
 
-### Error searchAll
+### Errors searchAll
 <img src="https://img.shields.io/static/v1?label=Metodo&message=GET&color=9002FF&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Rota&message='/error'&color=712776&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autenticacao&message=SIM&color=DFCA11&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Autorizacao&message=SIM&color=DFCA11&&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Param&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Body&message=NAO&color=119CE1&style=flat-square&logo="/> <img src="https://img.shields.io/static/v1?label=Header&message=SIM&color=DFCA11&&style=flat-square&logo="/>
 
 - Descrição: Responsável pela leitura de todos os erros internos disparados na execução da API. 
