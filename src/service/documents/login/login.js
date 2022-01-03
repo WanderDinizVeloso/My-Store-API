@@ -1,13 +1,17 @@
 const { compare } = require('bcrypt');
 
+const { USERS } = require('../../strings');
+const { searchAll } = require('../../../model')(USERS);
+
 const { getToken } = require('../../auth');
 const { admVerify } = require('../../validations');
-const { findEmail } = require('../../functions');
 
 module.exports = async ({ email, password }) => {
   await admVerify(email, password);
+
+  const users = await searchAll();
   
-  const userFound = await findEmail({ email });
+  const userFound = users.find((user) => user.email === email);
   
   if (!userFound) {
     return null;
