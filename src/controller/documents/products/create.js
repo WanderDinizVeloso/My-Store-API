@@ -7,9 +7,7 @@ const { PRODUCT } = require('../../../service/strings');
 module.exports = async (req, res, next) => {
   const { name, category, unity, quantity, price } = req.body;
 
-  const newProduct = { name, category, unity, quantity, price };
-
-  const created = await create(newProduct);
+  const created = await create({ name, category, unity, quantity, price });
 
   if (!created) {
     return next(registered(PRODUCT));
