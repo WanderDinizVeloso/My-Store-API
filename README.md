@@ -236,8 +236,6 @@ O projeto está organizado e estruturado da seguinte maneira:
             │           ├── searchById.js
             │           └── update.js
             ├── functions
-            │     ├── findEmail.js
-            │     ├── findProductName.js
             │     ├── includeTotalAndAmountOnSale.js
             │     ├── index.js
             │     ├── inventoryUpdate.js

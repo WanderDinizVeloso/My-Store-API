@@ -1,8 +1,9 @@
-const findEmail = require('../functions/findEmail');
+const { USERS } = require('../strings');
+const { searchByField } = require('../../model')(USERS);
 
-module.exports = async (dataUser, user) => {
-  if (user.email !== dataUser.email) {
-    const verifiedEmail = await findEmail(dataUser);
+module.exports = async (userData, user) => {
+  if (user.email !== userData.email) {
+    const verifiedEmail = await searchByField({ email: userData.email });
 
     return verifiedEmail;
   }
