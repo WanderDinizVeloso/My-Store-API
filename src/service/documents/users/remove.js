@@ -12,7 +12,5 @@ module.exports = async (id) => {
 
   const { deletedCount } = await remove(id);
 
-  const deleted = { deletedCount, user };
-
-  return deleted;
+  return { deletedCount, user };
 };
