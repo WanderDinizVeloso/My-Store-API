@@ -31,7 +31,5 @@ module.exports = async (userData) => {
 
   const newUserData = await searchById(id);
 
-  const updated = { modifiedCount, newUserData };
-
-  return updated;
+  return { modifiedCount, newUserData };
 };
