@@ -7,9 +7,7 @@ const { EMAIL, USER } = require('../../../service/strings');
 module.exports = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;
 
-  const newUser = { firstName, lastName, email, password };
-
-  const created = await create(newUser);
+  const created = await create({ firstName, lastName, email, password });
 
   if (!created) {
     return next(registered(EMAIL));
