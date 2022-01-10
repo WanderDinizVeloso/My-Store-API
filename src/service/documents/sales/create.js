@@ -4,8 +4,8 @@ const { includeTotalAndAmountOnSale, inventoryUpdate } = require('../../function
 
 const searchById = require('./searchById');
 
-module.exports = async ({ sale, userId }) => {
-  const newSale = includeTotalAndAmountOnSale(sale);
+module.exports = async ({ saleData, userId }) => {
+  const newSale = includeTotalAndAmountOnSale(saleData);
   
   const date = new Date();
   const creationDate = { userId, date };

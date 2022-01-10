@@ -7,7 +7,11 @@ const { SALE } = require('../../../service/strings');
 module.exports = async (req, res, next) => {
   const { id } = req.params;
   const { _id: userId } = req.user;
-  const saleData = req.body;
+  const sale = req.body;
+
+  const saleData = sale.map(({ name, category, unity, quantity, price }) => ({ 
+    name, category, unity, quantity, price,
+  }));
 
   const updated = await update({ id, saleData, userId });
 
