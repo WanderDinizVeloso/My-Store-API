@@ -302,7 +302,6 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     - PASSWORD_ADM: senha para acesso como administrador do sistema.
 
   >⚠️ ATENÇÃO ⚠️
-  > - Existe um modelo do .env (.example.env) para ajudar na sua criação.
   > - Para mais detalhes sobre SECRET, EXPIRES_IN e ALGORITHM vide: [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
   > - Tanto o email quanto a senha de administrador deve atender aos mesmos requisitos de sua criação como usuário. vide: [Users create](#users-create).
 
