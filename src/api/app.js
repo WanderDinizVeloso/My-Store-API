@@ -1,10 +1,9 @@
 const express = require('express');
 const { json } = require('body-parser');
+require('dotenv').config();
 
 const root = require('../controller/routers/root');
 const { error } = require('../controller/middlewares');
-
-require('dotenv').config();
 
 const app = express();
 
