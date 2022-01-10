@@ -8,9 +8,7 @@ module.exports = async (req, res, next) => {
   const { id } = req.params;
   const { firstName, lastName, email, password } = req.body;
 
-  const newUpdate = { id, firstName, lastName, email, password };
-
-  const updated = await update(newUpdate);
+  const updated = await update({ id, firstName, lastName, email, password });
 
   if (!updated) {
     return next(notFound(USER));
