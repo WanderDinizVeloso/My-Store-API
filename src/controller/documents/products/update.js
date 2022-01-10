@@ -11,9 +11,7 @@ module.exports = async (req, res, next) => {
   const { id } = req.params;
   const { name, category, unity, quantity, price } = req.body;
 
-  const newUpdate = { id, name, category, unity, quantity, price };
-
-  const updated = await update(newUpdate);
+  const updated = await update({ id, name, category, unity, quantity, price });
 
   if (!updated) {
     return next(notFound(PRODUCT));
