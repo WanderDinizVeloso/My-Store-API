@@ -3,11 +3,11 @@ const { verify } = require('jsonwebtoken');
 const { SECRET } = process.env;
 
 module.exports = (token) => {
-  const result = verify(token, SECRET, (err, decoded) => {
-    if (err) return null;
+  try {
+    const decoded = verify(token, SECRET);
 
     return decoded.data;
-  });
-
-  return result;
+  } catch (err) {
+    return null;
+  }
 };
