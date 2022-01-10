@@ -25,8 +25,6 @@ module.exports = async (productData) => {
   const { modifiedCount } = await update(modifiedProduct);
 
   const newProductData = await searchById(id);
-
-  const updated = { modifiedCount, newProductData };
-
-  return updated;
+  
+  return { modifiedCount, newProductData };
 };
