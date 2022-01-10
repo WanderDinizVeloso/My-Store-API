@@ -124,7 +124,6 @@ Este projeto esta sobe a licença [MIT](https://pt.wikipedia.org/wiki/Licen%C3%A
 
 O projeto está organizado e estruturado da seguinte maneira:
 ```bash
-├── .example.env
 ├── .env
 ├── README.md
 └── src
