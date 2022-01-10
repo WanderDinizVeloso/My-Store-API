@@ -8,9 +8,12 @@ const { login } = require('../documents/login');
 
 const router = express.Router({ mergeParams: true });
 
-router.post('/',
-  wrapper(validateEmail), 
-  wrapper(validatePassword),
-  wrapper(login));
+router.post('/', wrapper(
+  [
+    validateEmail,
+    validatePassword,
+    login,
+  ],
+));
 
 module.exports = router;

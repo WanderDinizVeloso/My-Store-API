@@ -8,9 +8,12 @@ const { searchAll } = require('../documents/errors');
 
 const router = express.Router({ mergeParams: true });
 
-router.get('/',
-  wrapper(authentication),
-  wrapper(admAuthorization),
-  wrapper(searchAll));
+router.get('/', wrapper(
+  [
+    authentication,
+    admAuthorization,
+    searchAll,
+  ],
+));
   
 module.exports = router;

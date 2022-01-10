@@ -18,40 +18,55 @@ const {
 
 const router = express.Router({ mergeParams: true });
 
-router.get('/',
-  wrapper(authentication),
-  wrapper(searchAll));
+router.get('/', wrapper(
+  [
+    authentication,
+    searchAll,
+  ],
+));
 
-router.get('/:id',
-  wrapper(authentication),
-  wrapper(validateId),
-  wrapper(searchById));
+router.get('/:id', wrapper(
+  [
+    authentication,
+    validateId,
+    searchById,
+  ],
+));
 
-router.post('/',
-  wrapper(authentication),
-  wrapper(admAuthorization),
-  wrapper(validateProductName),
-  wrapper(validateProductCategory),
-  wrapper(validateProductUnity),
-  wrapper(validateProductQuantity),
-  wrapper(validateProductPrice),
-  wrapper(create));
+router.post('/', wrapper(
+  [
+    authentication,
+    admAuthorization,
+    validateProductName,
+    validateProductCategory,
+    validateProductUnity,
+    validateProductQuantity,
+    validateProductPrice,
+    create,
+  ],
+));
 
-router.put('/:id',
-  wrapper(authentication),
-  wrapper(admAuthorization),
-  wrapper(validateId),
-  wrapper(validateProductName),
-  wrapper(validateProductCategory),
-  wrapper(validateProductUnity),
-  wrapper(validateProductQuantity),
-  wrapper(validateProductPrice),
-  wrapper(update));
+router.put('/:id', wrapper(
+  [
+    authentication,
+    admAuthorization,
+    validateId,
+    validateProductName,
+    validateProductCategory,
+    validateProductUnity,
+    validateProductQuantity,
+    validateProductPrice,
+    update,
+  ],
+));
 
-router.delete('/:id',
-  wrapper(authentication),
-  wrapper(admAuthorization),
-  wrapper(validateId),
-  wrapper(remove));
+router.delete('/:id', wrapper(
+  [
+    authentication,
+    admAuthorization,
+    validateId,
+    remove,
+  ],
+));
 
 module.exports = router;

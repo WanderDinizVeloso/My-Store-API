@@ -14,31 +14,46 @@ const {
 
 const router = express.Router({ mergeParams: true });
 
-router.get('/',
-  wrapper(authentication),
-  wrapper(searchAll));
+router.get('/', wrapper(
+  [
+    authentication,
+    searchAll,
+  ],
+));
 
-router.get('/:id',
-  wrapper(authentication),
-  wrapper(validateId),
-  wrapper(searchById));
+router.get('/:id', wrapper(
+  [
+    authentication,
+    validateId,
+    searchById,
+  ],
+));
 
-router.post('/',
-  wrapper(authentication),
-  wrapper(validateSale),
-  wrapper(create));
+router.post('/', wrapper(
+  [
+    authentication,
+    validateSale,
+    create,
+  ],
+));
 
-router.put('/:id',
-  wrapper(authentication),
-  wrapper(admAuthorization),
-  wrapper(validateId),
-  wrapper(validateSale),
-  wrapper(update));
+router.put('/:id', wrapper(
+  [
+    authentication,
+    admAuthorization,
+    validateId,
+    validateSale,
+    update,
+  ],
+));
 
-router.delete('/:id',
-  wrapper(authentication),
-  wrapper(admAuthorization),
-  wrapper(validateId),
-  wrapper(remove));
+router.delete('/:id', wrapper(
+  [
+    authentication,
+    admAuthorization,
+    validateId,
+    remove,
+  ],
+));
 
 module.exports = router;
