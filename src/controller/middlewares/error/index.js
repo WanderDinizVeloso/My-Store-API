@@ -2,7 +2,7 @@ const { INTERNAL_SERVER_ERROR } = require('http-status-codes').StatusCodes;
 
 const { internalError } = require('../../statusAndMessage');
 const { UNAUTHENTICATED } = require('../../../service/strings');
-const { create } = require('../../../service/documents/errors');
+const { create: createError } = require('../../../service/documents/errors');
 
 module.exports = async (err, req, res, _next) => {
   const { status = null, message } = err;
@@ -20,7 +20,7 @@ module.exports = async (err, req, res, _next) => {
       .json({ error: { message } });
   }
   
-  await create({ message, method, URL, bodyWithoutPassword, user });
+  await createError({ message, method, URL, bodyWithoutPassword, user });
 
   return res
     .status(INTERNAL_SERVER_ERROR)
