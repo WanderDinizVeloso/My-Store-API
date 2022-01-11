@@ -6,6 +6,8 @@ const {
 
 const { SALE } = require('../../../service/strings');
 
+const LENGTH = 0;
+
 module.exports = async (req, _res, next) => {
   const sale = req.body;
 
@@ -21,11 +23,11 @@ module.exports = async (req, _res, next) => {
 
   const verifiedProductInventory = await productInventoryVerify(verifiedSale.products);
 
-  if (verifiedProductInventory.notExist.length !== 0) { 
+  if (verifiedProductInventory.notExist.length !== LENGTH) { 
     return next(productNotRegistered(verifiedProductInventory.notExist));
   }
 
-  if (verifiedProductInventory.noStock.length !== 0) {
+  if (verifiedProductInventory.noStock.length !== LENGTH) {
     return next(insufficientStock(verifiedProductInventory.noStock));
   }
 
