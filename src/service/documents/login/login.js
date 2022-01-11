@@ -15,13 +15,13 @@ module.exports = async ({ email, password }) => {
     return null;
   }
   
-  const user = await compare(password, userFound[0].password);
+  const user = await compare(password, userFound.password);
  
   if (!user) {
     return null;
   }
 
-  const { password: pass, ...userWithoutPassword } = userFound[0];
+  const { password: pass, ...userWithoutPassword } = userFound;
 
   const token = getToken(userWithoutPassword);
 
