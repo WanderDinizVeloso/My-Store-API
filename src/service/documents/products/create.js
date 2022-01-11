@@ -6,7 +6,7 @@ const searchById = require('./searchById');
 module.exports = async (product) => {
   const verifiedProduct = await searchByField({ name: product.name });
 
-  if (verifiedProduct[0]) {
+  if (verifiedProduct) {
     return null;
   }
 

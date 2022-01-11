@@ -10,7 +10,7 @@ const SALT_ROUNDS = 10;
 module.exports = async (user) => {
   const verifiedUser = await searchByField({ email: user.email });
 
-  if (verifiedUser[0]) {
+  if (verifiedUser) {
     return null;
   }
 

@@ -11,7 +11,7 @@ module.exports = async ({ email, password }) => {
  
   const userFound = await searchByField({ email });
   
-  if (!userFound[0]) {
+  if (!userFound) {
     return null;
   }
   
