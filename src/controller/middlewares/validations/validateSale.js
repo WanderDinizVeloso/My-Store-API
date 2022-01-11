@@ -1,4 +1,4 @@
-const { saleVerify, productInventoryVerify } = require('../../../service/validations');
+const { saleFieldVerify, productInventoryVerify } = require('../../../service/validations');
 
 const {
   invalid, insufficientStock, productNotRegistered,
@@ -9,25 +9,27 @@ const { SALE } = require('../../../service/strings');
 module.exports = async (req, _res, next) => {
   const sale = req.body;
 
-  const verifiedSale = saleVerify(sale);
+  const saleData = sale.map(({ name, category, unity, quantity, price }) => ({ 
+    name, category, unity, quantity, price,
+  }));
 
-  if (verifiedSale.error) { 
+  const verifiedSale = saleFieldVerify(saleData);
+
+  if (verifiedSale.invalid) { 
     return next(invalid(SALE));
   }
 
   const verifiedProductInventory = await productInventoryVerify(verifiedSale.products);
 
-  if (verifiedProductInventory.error) {
-    return next(insufficientStock(verifiedProductInventory.errorList));
+  if (verifiedProductInventory.notExist.length !== 0) { 
+    return next(productNotRegistered(verifiedProductInventory.notExist));
   }
 
-  if (verifiedProductInventory.count !== sale.length) { 
-    return next(productNotRegistered(verifiedProductInventory.unregisteredList));
+  if (verifiedProductInventory.noStock.length !== 0) {
+    return next(insufficientStock(verifiedProductInventory.noStock));
   }
 
-  const newBody = verifiedProductInventory.products;
-
-  req.body = newBody;
+  req.body = verifiedProductInventory.products;
 
   return next();
 };

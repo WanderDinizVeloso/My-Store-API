@@ -1,16 +1,30 @@
-const { searchAll } = require('../documents/products');
+const { PRODUCTS } = require('../strings');
+const { searchByField } = require('../../model')(PRODUCTS);
 
-const saleDataVerify = require('./saleDataVerify');
-const registeredProductsVerify = require('./registeredProductsVerify');
+const RADIX = 10;
 
 module.exports = async (saleData) => {
-  const allProducts = await searchAll() || [];
+  const products = saleData.map(({ name }) => searchByField({ name }));
+  const productsStock = await Promise.all(products);
+  
+  const verify = saleData.reduce((acc, productSold, index) => {  
+    if (!productsStock[index]) {
+      acc.notExist = [...acc.notExist, productSold.name];
+      return acc;
+    }
 
-  const dataVerified = saleDataVerify(saleData, allProducts);
+    const convertedSaleQuantity = parseInt(productSold.quantity, RADIX);
+    const convertedCurrentQuantity = parseInt(productsStock[index].quantity, RADIX);
 
-  const unregisteredList = registeredProductsVerify(saleData, dataVerified.products);
+    if (convertedCurrentQuantity < convertedSaleQuantity) {
+      acc.noStock = [...acc.noStock, productSold.name];
+      return acc;
+    }
 
-  const dataVerifiedWithNotRegisteredList = { ...dataVerified, unregisteredList };
+    acc.products = [...acc.products, { ...productsStock[index], quantity: productSold.quantity }];
 
-  return dataVerifiedWithNotRegisteredList;
+    return acc;
+  }, { products: [], noStock: [], notExist: [] });
+
+  return verify;
 };

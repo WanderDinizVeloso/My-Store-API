@@ -8,7 +8,7 @@ module.exports = (saleData) => saleData.reduce((acc, sale) => {
   const verifiedNumbers = saleNumbersVerify(sale);
 
   if (!verifiedStrings || !verifiedNumbers) {
-    acc.error = true;
+    acc.invalid = true;
     return acc;
   }
 
@@ -20,4 +20,4 @@ module.exports = (saleData) => saleData.reduce((acc, sale) => {
   ];
   
   return acc;
-}, { error: false, products: [] });
+}, { invalid: false, products: [] });
