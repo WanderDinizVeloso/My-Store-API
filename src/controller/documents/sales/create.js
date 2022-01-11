@@ -8,8 +8,8 @@ module.exports = async (req, res, _next) => {
   const sale = req.body;
   const { _id: userId } = req.user;
 
-  const saleData = sale.map(({ name, category, unity, quantity, price }) => ({ 
-    name, category, unity, quantity, price,
+  const saleData = sale.map(({ _id, name, category, unity, quantity, price }) => ({ 
+    _id, name, category, unity, quantity, price,
   }));
 
   const created = await create({ saleData, userId });
