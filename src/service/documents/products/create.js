@@ -1,10 +1,11 @@
 const { PRODUCTS } = require('../../strings');
-const { create, searchByField } = require('../../../model')(PRODUCTS);
+const { create } = require('../../../model')(PRODUCTS);
 
+const searchByName = require('./searchByName');
 const searchById = require('./searchById');
 
 module.exports = async (product) => {
-  const verifiedProduct = await searchByField({ name: product.name });
+  const verifiedProduct = await searchByName(product.name);
 
   if (verifiedProduct) {
     return null;
