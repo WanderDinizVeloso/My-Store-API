@@ -1,14 +1,15 @@
 const { hash } = require('bcrypt');
 
 const { USERS, USER } = require('../../strings');
-const { create, searchByField } = require('../../../model')(USERS);
+const { create } = require('../../../model')(USERS);
 
+const searchByEmail = require('./searchByEmail');
 const searchById = require('./searchById');
 
 const SALT_ROUNDS = 10;
 
 module.exports = async (user) => {
-  const verifiedUser = await searchByField({ email: user.email });
+  const verifiedUser = await searchByEmail(user.email);
 
   if (verifiedUser) {
     return null;
