@@ -15,7 +15,7 @@ module.exports = async ({ saleData, userId }) => {
 
   const created = await searchById(insertedId);
 
-  await inventoryUpdate(created.soldProducts, SUBTRACTION);
+  await inventoryUpdate(created, SUBTRACTION);
 
   return created;
 };

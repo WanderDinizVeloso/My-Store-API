@@ -20,7 +20,7 @@ module.exports = async ({ id, saleData, userId }) => {
     
   const { modifiedCount } = await update(modifiedSale);
   
-  const newData = await searchById(id);  
+  const newData = await searchById(id);
   
   const updated = { modifiedCount, newData };
   
