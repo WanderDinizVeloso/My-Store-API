@@ -1,7 +1,7 @@
 # My-Store-API
 <img src="https://img.shields.io/static/v1?label=Version&message=1.0.0&color=FF2102&style=for-the-badge&logo="/> <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=119CE1&style=for-the-badge&logo="/> <img src="https://img.shields.io/static/v1?label=PR&message=YES&color=4DC31A&style=for-the-badge&logo="/>
 
-Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-end, onde crio uma API para cadastro/leitura de produtos/vendas composta de:
+Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-end, onde crio uma API REST para cadastro/leitura de produtos/vendas composta de:
 
  - :white_check_mark: Usuários:
     - [x] Criação;
@@ -196,6 +196,7 @@ O projeto está organizado e estruturado da seguinte maneira:
       │     │     ├── create.js
       │     │     ├── remove.js
       │     │     ├── searchAll.js
+      │     │     ├── searchByField.js
       │     │     ├── searchById.js
       │     │     └── update.js
       │     └── index.js
@@ -253,8 +254,7 @@ O projeto está organizado e estruturado da seguinte maneira:
                   ├── numbersVerify.js
                   ├── passwordVerify.js
                   ├── productInventoryVerify.js
-                  ├── registeredProductsVerify.js
-                  ├── saleDataVerify.js
+                  ├── saleFieldVerify.js
                   ├── saleNumbersVerify.js
                   ├── saleStringsVerify.js
                   ├── saleVerify.js
@@ -308,7 +308,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     # Inicie o sistema
     $ npm start
     ou
-    $ npm run dev ('para ambiente de desenvolvimento')
+    $ npm run dev # para ambiente de desenvolvimento
     ```
 
  - Faça as requisições pelo [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/) ou outro de sua preferência;
@@ -322,9 +322,9 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
     $ git checkout -b nome-da-nova-branch
 
     # Adicione as mudanças desejadas com os devidos commits
-    $ git add . ('adiciona as mudanças ao stage do Git')
-    $ git commit -m 'informação do conteúdo do commit' ('salvando as alterações de cada pequena alteração em um commit')
-    $ git push -u origin nome-da-nova-branch ('adiciona a nova branch no repositório remoto do Projeto')
+    $ git add . # adiciona as mudanças ao stage do Git
+    $ git commit -m 'informação do conteúdo do commit' # salvando as alterações de cada pequena alteração em um commit
+    $ git push -u origin nome-da-nova-branch # adiciona a nova branch no repositório remoto do Projeto
     ```
   - Crie um novo `Pull Request` (PR):
      - Vá até a página de `Pull Requests` do repositório no GitHub
