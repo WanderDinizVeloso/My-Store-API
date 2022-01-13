@@ -1,14 +1,17 @@
-const { update, searchById } = require('../documents/products');
+const { PRODUCTS } = require('../strings');
+const { searchByField } = require('../../model')(PRODUCTS);
+
+const { update } = require('../documents/products');
 const { ADDITION, SUBTRACTION } = require('../strings');
 
 const QUANTITY_DECIMAL_PLACES = 3;
 const RADIX = 10;
 
-module.exports = async (productList, operator) => {
-  const products = productList.map(({ _id: id }) => searchById(id));
+module.exports = async ({ soldProducts }, operator) => {
+  const products = soldProducts.map(({ name }) => searchByField({ name }));
   const productsStock = await Promise.all(products);
 
-  const result = productList.map((productsSold, index) => {
+  const result = soldProducts.map((productsSold, index) => {
     const { quantity: saleQuantity } = productsSold;
     const { _id: id, quantity: currentQuantity, ...productRest } = productsStock[index];
     
