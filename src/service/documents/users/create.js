@@ -30,7 +30,7 @@ module.exports = async (user) => {
 
   const { insertedId } = await create(userWithHashedPasswordAndRole);
 
-  const created = await searchById(insertedId);
+  const { password: pass, ...userCreatedWithoutPassword } = await searchById(insertedId);
 
-  return created;
+  return userCreatedWithoutPassword;
 };
