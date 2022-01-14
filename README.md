@@ -243,9 +243,7 @@ O projeto está organizado e estruturado da seguinte maneira:
             │     └── index.js
             └── validations
                   ├── admVerify.js
-                  ├── charactersVerify.js
                   ├── emailVerify.js
-                  ├── fieldVerify.js
                   ├── idVerify.js
                   ├── index.js
                   ├── newEmailUpdateVerify.js
@@ -256,7 +254,7 @@ O projeto está organizado e estruturado da seguinte maneira:
                   ├── saleFieldVerify.js
                   ├── saleNumbersVerify.js
                   ├── saleStringsVerify.js
-                  ├── saleVerify.js
+                  ├── stringsVerify.js
                   └── unityVerify.js
 ```
 ---
