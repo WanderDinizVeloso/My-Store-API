@@ -1,0 +1,35 @@
+{
+  "name": "my-store-api",
+  "version": "1.0.0",
+  "description": "Projeto criado visando colocar em prática os conhecimentos adquiridos em Back-end",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/api/server.js",
+    "dev": "nodemon ./src/api/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WanderDinizVeloso/My-Store-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WanderDinizVeloso/My-Store-API/issues"
+  },
+  "homepage": "https://github.com/WanderDinizVeloso/My-Store-API#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "dotenv": "^10.0.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "express": "^4.17.1",
+    "http-status-codes": "^2.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.2.2"
+  }
+}
