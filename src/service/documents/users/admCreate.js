@@ -1,15 +1,12 @@
 const { hash } = require('bcrypt');
 
 const { USERS, ROLE_ADM } = require('../../strings');
-const { create } = require('../../../model')(USERS);
-
-const searchByEmail = require('./searchByEmail');
-const searchById = require('./searchById');
+const { create, searchByField, searchById } = require('../../../model')(USERS);
 
 const SALT_ROUNDS = 10;
 
 module.exports = async (user) => {
-  const verifiedUser = await searchByEmail(user.email);
+  const verifiedUser = await searchByField({ email: user.email });
 
   if (verifiedUser) {
     return null;
@@ -19,10 +16,8 @@ module.exports = async (user) => {
 
   const hashedPassword = await hash(password, SALT_ROUNDS);
 
-  const userWithHashedPasswordAndRole = {
-    ...userWithoutPassword,
-    password: hashedPassword,
-    role: ROLE_ADM,
+  const userWithHashedPasswordAndRole = { 
+    ...userWithoutPassword, password: hashedPassword, role: ROLE_ADM,
   };
 
   const { insertedId } = await create(userWithHashedPasswordAndRole);

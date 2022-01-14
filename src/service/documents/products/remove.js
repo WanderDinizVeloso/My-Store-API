@@ -1,7 +1,5 @@
 const { PRODUCTS } = require('../../strings');
-const { remove } = require('../../../model')(PRODUCTS);
-
-const searchById = require('./searchById');
+const { remove, searchById } = require('../../../model')(PRODUCTS);
 
 module.exports = async (id) => {
   const product = await searchById(id);

@@ -1,8 +1,6 @@
 const { SALES, ADDITION, SUBTRACTION } = require('../../strings');
-const { update } = require('../../../model')(SALES);
+const { update, searchById } = require('../../../model')(SALES);
 const { includeTotalAndAmountOnSale, inventoryUpdate } = require('../../functions');
-
-const searchById = require('./searchById');
 
 module.exports = async ({ id, saleData, userId }) => {
   const newSaleData = includeTotalAndAmountOnSale(saleData);

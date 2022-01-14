@@ -4,7 +4,6 @@ const searchAll = require('./searchAll');
 const searchByEmail = require('./searchByEmail');
 const searchById = require('./searchById');
 const update = require('./update');
-const admCreate = require('./admCreate');
 
 module.exports = {
   create,
@@ -13,5 +12,4 @@ module.exports = {
   searchByEmail,
   searchById,
   update,
-  admCreate,
 };

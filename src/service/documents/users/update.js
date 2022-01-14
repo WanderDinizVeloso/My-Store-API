@@ -1,10 +1,8 @@
 const { hash } = require('bcrypt');
 
 const { USERS, EMAIL_EXIST } = require('../../strings');
-const { update } = require('../../../model')(USERS);
-
+const { update, searchById } = require('../../../model')(USERS);
 const newEmailUpdateVerify = require('../../validations/newEmailUpdateVerify');
-const searchById = require('./searchById');
 
 const SALT_ROUNDS = 10;
 

@@ -1,6 +1,5 @@
 const saleNumbersVerify = require('./saleNumbersVerify');
 const saleStringsVerify = require('./saleStringsVerify');
-
 const { saleDataConvert } = require('../functions');
 
 module.exports = (saleData) => saleData.reduce((acc, sale) => {

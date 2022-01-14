@@ -228,7 +228,6 @@ O projeto está organizado e estruturado da seguinte maneira:
             │     │     ├── searchById.js
             │     │     └── update.js
             │     └── users
-            │           ├── admCreate.js
             │           ├── create.js
             │           ├── index.js
             │           ├── remove.js

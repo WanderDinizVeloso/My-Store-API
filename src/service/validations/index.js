@@ -1,7 +1,6 @@
 const admVerify = require('./admVerify');
-const charactersVerify = require('./charactersVerify');
 const emailVerify = require('./emailVerify');
-const fieldVerify = require('./fieldVerify');
+const stringsVerify = require('./stringsVerify');
 const idVerify = require('./idVerify');
 const newEmailUpdateVerify = require('./newEmailUpdateVerify');
 const newProductNameUpdateVerify = require('./newProductNameUpdateVerify');
@@ -15,9 +14,8 @@ const unityVerify = require('./unityVerify');
 
 module.exports = {
   admVerify,
-  charactersVerify,
   emailVerify,
-  fieldVerify,
+  stringsVerify,
   idVerify,
   newEmailUpdateVerify,
   newProductNameUpdateVerify,

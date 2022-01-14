@@ -1,4 +1,4 @@
-const fieldVerify = require('./fieldVerify');
+const stringsVerify = require('./stringsVerify');
 const unityVerify = require('./unityVerify');
 
 const LENGTH = 4;
@@ -8,8 +8,8 @@ const FINAL_LENGTH = 3;
 module.exports = (sale) => {
   const { name, category, unity } = sale;
 
-  const verifiedName = fieldVerify(name, LENGTH);
-  const verifiedCategory = fieldVerify(category, LENGTH);
+  const verifiedName = stringsVerify(name, LENGTH);
+  const verifiedCategory = stringsVerify(category, LENGTH);
   const verifiedUnity = unityVerify(unity, INITIAL_LENGTH, FINAL_LENGTH);
 
   if (verifiedName !== name || verifiedCategory !== category || verifiedUnity !== unity) {

@@ -1,8 +1,6 @@
 const { PRODUCTS, PRODUCT_NAME_EXIST } = require('../../strings');
-const { update } = require('../../../model')(PRODUCTS);
-
+const { update, searchById } = require('../../../model')(PRODUCTS);
 const newProductNameUpdateVerify = require('../../validations/newProductNameUpdateVerify');
-const searchById = require('./searchById');
 
 module.exports = async (productData) => {
   const { id, ...productDataWithoutId } = productData;

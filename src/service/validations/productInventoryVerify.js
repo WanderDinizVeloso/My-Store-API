@@ -1,9 +1,10 @@
-const { searchByName } = require('../documents/products');
+const { PRODUCTS } = require('../strings');
+const { searchByField } = require('../../model')(PRODUCTS);
 
 const RADIX = 10;
 
 module.exports = async (saleData) => {
-  const products = saleData.map(({ name }) => searchByName(name));
+  const products = saleData.map(({ name }) => searchByField({ name }));
   const productsStock = await Promise.all(products);
   
   const verify = saleData.reduce((acc, productSold, index) => {  

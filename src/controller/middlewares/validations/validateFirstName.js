@@ -1,4 +1,4 @@
-const { fieldVerify } = require('../../../service/validations');
+const { stringsVerify } = require('../../../service/validations');
 const { required, noLength, isNotAString } = require('../../statusAndMessage');
 const { FIRST_NAME, NO_LENGTH, IS_NOT_A_STRING } = require('../../../service/strings');
 
@@ -7,7 +7,7 @@ const LENGTH = 3;
 module.exports = async (req, _res, next) => {
   const { firstName } = req.body;
 
-  const verifiedFirsName = fieldVerify(firstName, LENGTH);
+  const verifiedFirsName = stringsVerify(firstName, LENGTH);
 
   switch (verifiedFirsName) {
     case null:

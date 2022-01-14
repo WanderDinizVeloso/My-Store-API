@@ -2,7 +2,6 @@ const { compare } = require('bcrypt');
 
 const { USERS } = require('../../strings');
 const { searchByField } = require('../../../model')(USERS);
-
 const { getToken } = require('../../auth');
 const { admVerify } = require('../../validations');
 
