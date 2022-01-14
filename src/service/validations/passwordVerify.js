@@ -13,7 +13,11 @@ module.exports = (password, LENGTH) => {
   const numberRegex = /[0-9]+/.test(password);
   const specialCharacterRegex = /[!$#%_]+/.test(password);
 
-  if (!upperCaseRegex || !numberRegex || !specialCharacterRegex) {
+  const characterArray = [upperCaseRegex, numberRegex, specialCharacterRegex];
+
+  const characterNotValid = characterArray.some((character) => !character);
+
+  if (verifiedPassword === password && characterNotValid) {
     return INVALID_PASSWORD;
   }
 
