@@ -29,5 +29,7 @@ module.exports = async (userData) => {
 
   const newUserData = await searchById(id);
 
-  return { modifiedCount, newUserData };
+  const { password: pass, ...userWithoutPassword } = newUserData;
+
+  return { modifiedCount, newUserData: userWithoutPassword };
 };
