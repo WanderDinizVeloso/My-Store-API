@@ -1,8 +1,6 @@
 const { ObjectId } = require('mongodb');
 
-const connection = require('../connection');
-
-module.exports = async (collection, id) => {
+module.exports = async (collection, connection, id) => {
   const removed = (await connection())
     .collection(collection)
     .deleteOne({ _id: ObjectId(id) });

@@ -1,6 +1,4 @@
-const connection = require('../connection');
-
-module.exports = async (collection, entity) => {
+module.exports = async (collection, connection, entity) => {
   const createEntity = (await connection())
     .collection(collection)
     .insertOne(entity);

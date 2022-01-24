@@ -1,6 +1,4 @@
-const connection = require('../connection');
-
-module.exports = async (collection, field) => {
+module.exports = async (collection, connection, field) => {
   const entity = (await connection())
     .collection(collection)
     .findOne(field);

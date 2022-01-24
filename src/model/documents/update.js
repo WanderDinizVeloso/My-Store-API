@@ -1,6 +1,4 @@
-const connection = require('../connection');
-
-module.exports = async (collection, document) => {
+module.exports = async (collection, connection, document) => {
   const { _id, ...documentWithoutId } = document;
 
   const updated = (await connection())
